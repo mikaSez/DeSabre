@@ -1,0 +1,1149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.data.mongo.SampleMongoApplicationTests" time="4.391" tests="1" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.5-b02"/>
+    <property name="user.country.format" value="US"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/MikaSez/Downloads/mongo_books"/>
+    <property name="java.runtime.version" value="1.8.0_05-b13"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/yy/pjlt7qyn5_lbj17k4bcb212w0000gp/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Users/MikaSez/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf8964874996971087742.tmp"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/MikaSez/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.10"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/MikaSez"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="MikaSez"/>
+    <property name="java.class.path" value="/Users/MikaSez/Downloads/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.5.0.20140605-2032/jars/plexus-classworlds-2.5.1.jar"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="fr"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_05"/>
+    <property name="java.ext.dirs" value="/Users/MikaSez/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Users/MikaSez/Downloads/mongo_books/EMBEDDED"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testDefaultSettings" classname="sample.data.mongo.SampleMongoApplicationTests" time="4.391">
+    <failure message="Wrong output: &#10;  .   ____          _            __ _ _&#10; /\\ / ___&apos;_ __ _ _(_)_ __  __ _ \ \ \ \&#10;( ( )\___ | &apos;_ | &apos;_| | &apos;_ \/ _` | \ \ \ \&#10; \\/  ___)| |_)| | | | | || (_| |  ) ) ) )&#10;  &apos;  |____| .__|_| |_|_| |_\__, | / / / /&#10; =========|_|==============|___/=/_/_/_/&#10; :: Spring Boot ::        (v1.1.9.RELEASE)&#10;&#10;2014-11-27 11:02:35.381  INFO 1976 --- [           main] s.data.mongo.SampleMongoApplication      : Starting SampleMongoApplication on Macs with PID 1976 (/Users/MikaSez/Downloads/mongo_books/target/classes started by MikaSez in /Users/MikaSez/Downloads/mongo_books)&#10;2014-11-27 11:02:35.384 DEBUG 1976 --- [           main] o.s.boot.SpringApplication               : Loading source class sample.data.mongo.SampleMongoApplication&#10;2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;file:./config/application.yml&apos; resource not found&#10;2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;file:./config/application.properties&apos; resource not found&#10;2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;file:./config/application.yaml&apos; resource not found&#10;2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;file:./application.yml&apos; resource not found&#10;2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;file:./application.properties&apos; resource not found&#10;2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;file:./application.yaml&apos; resource not found&#10;2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;classpath:/config/application.yml&apos; resource not found&#10;2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;classpath:/config/application.properties&apos; resource not found&#10;2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;classpath:/config/application.yaml&apos; resource not found&#10;2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;classpath:/application.yml&apos; resource not found&#10;2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Loaded config file &apos;classpath:/application.properties&apos; &#10;2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file &apos;classpath:/application.yaml&apos; resource not found&#10;2014-11-27 11:02:35.414  INFO 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b26e945: startup date [Thu Nov 27 11:02:35 CET 2014]; root of context hierarchy&#10;2014-11-27 11:02:35.416 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Bean factory for org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b26e945: org.springframework.beans.factory.support.DefaultListableBeanFactory@42a48628: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,sampleMongoApplication]; root of factory hierarchy&#10;2014-11-27 11:02:35.930  INFO 1976 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean &apos;beanNameViewResolver&apos;: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]&#10;2014-11-27 11:02:36.161 DEBUG 1976 --- [           main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package &apos;sample.data.mongo&apos;. Automatic @Repository and @Entity scanning is enabled.&#10;2014-11-27 11:02:36.480 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Unable to locate MessageSource with name &apos;messageSource&apos;: using default [org.springframework.context.support.DelegatingMessageSource@5c530d1e]&#10;2014-11-27 11:02:36.480 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Using ApplicationEventMulticaster [org.springframework.context.event.SimpleApplicationEventMulticaster@6c25e6c4]&#10;2014-11-27 11:02:36.708 DEBUG 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Code archive: /Users/MikaSez/.m2/repository/org/springframework/boot/spring-boot/1.1.9.RELEASE/spring-boot-1.1.9.RELEASE.jar&#10;2014-11-27 11:02:36.708 DEBUG 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Code archive: /Users/MikaSez/.m2/repository/org/springframework/boot/spring-boot/1.1.9.RELEASE/spring-boot-1.1.9.RELEASE.jar&#10;2014-11-27 11:02:36.708 DEBUG 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.&#10;2014-11-27 11:02:36.739  INFO 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 8080&#10;2014-11-27 11:02:36.928  INFO 1976 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat&#10;2014-11-27 11:02:36.929  INFO 1976 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.56&#10;2014-11-27 11:02:37.027  INFO 1976 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext&#10;2014-11-27 11:02:37.028  INFO 1976 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1616 ms&#10;2014-11-27 11:02:37.829  INFO 1976 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: &apos;dispatcherServlet&apos; to [/]&#10;2014-11-27 11:02:37.831  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: &apos;metricFilter&apos; to: [/*]&#10;2014-11-27 11:02:37.832  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: &apos;hiddenHttpMethodFilter&apos; to: [/*]&#10;2014-11-27 11:02:37.832  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: &apos;applicationContextIdFilter&apos; to: [/*]&#10;2014-11-27 11:02:37.833  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: &apos;webRequestLoggingFilter&apos; to: [/*]&#10;2014-11-27 11:02:37.869 DEBUG 1976 --- [ost-startStop-1] iguration$ApplicationContextHeaderFilter : Initializing filter &apos;applicationContextIdFilter&apos;&#10;2014-11-27 11:02:37.870 DEBUG 1976 --- [ost-startStop-1] iguration$ApplicationContextHeaderFilter : Filter &apos;applicationContextIdFilter&apos; configured successfully&#10;2014-11-27 11:02:37.871 DEBUG 1976 --- [ost-startStop-1] ricFilterAutoConfiguration$MetricsFilter : Initializing filter &apos;metricFilter&apos;&#10;2014-11-27 11:02:37.871 DEBUG 1976 --- [ost-startStop-1] ricFilterAutoConfiguration$MetricsFilter : Filter &apos;metricFilter&apos; configured successfully&#10;2014-11-27 11:02:37.871 DEBUG 1976 --- [ost-startStop-1] o.s.b.a.trace.WebRequestTraceFilter      : Initializing filter &apos;webRequestLoggingFilter&apos;&#10;2014-11-27 11:02:37.872 DEBUG 1976 --- [ost-startStop-1] o.s.b.a.trace.WebRequestTraceFilter      : Filter &apos;webRequestLoggingFilter&apos; configured successfully&#10;2014-11-27 11:02:38.293  INFO 1976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]&#10;2014-11-27 11:02:38.437  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.String sample.data.mongo.SampleMongoApplication.index(java.util.Map&lt;java.lang.String, java.lang.Object&gt;)&#10;2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/books],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.util.List&lt;sample.data.mongo.Book&gt; sample.data.mongo.SampleMongoApplication.getListOfBooks()&#10;2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/book/{author}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.util.List&lt;sample.data.mongo.Book&gt; sample.data.mongo.SampleMongoApplication.getBookFromAuthor(java.lang.String)&#10;2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/book/delete/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public boolean sample.data.mongo.SampleMongoApplication.deleteABook(java.lang.String)&#10;2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/book/add/{author}/{summary}/{title}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public sample.data.mongo.Book sample.data.mongo.SampleMongoApplication.addABook(java.lang.String,java.lang.String,java.lang.String)&#10;2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/book/update],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public sample.data.mongo.Book sample.data.mongo.SampleMongoApplication.updateABook(sample.data.mongo.Book)&#10;2014-11-27 11:02:38.440  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)&#10;2014-11-27 11:02:38.441  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}&quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)&#10;2014-11-27 11:02:38.458  INFO 1976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]&#10;2014-11-27 11:02:38.458  INFO 1976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]&#10;2014-11-27 11:02:38.972  INFO 1976 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup&#10;2014-11-27 11:02:38.996  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Registering beans for JMX exposure on startup&#10;2014-11-27 11:02:39.043 DEBUG 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Looking for request mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b26e945: startup date [Thu Nov 27 11:02:35 CET 2014]; root of context hierarchy&#10;2014-11-27 11:02:39.044  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()&#10;2014-11-27 11:02:39.045  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)&#10;2014-11-27 11:02:39.045  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()&#10;2014-11-27 11:02:39.046  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()&#10;2014-11-27 11:02:39.046  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)&#10;2014-11-27 11:02:39.046  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()&#10;2014-11-27 11:02:39.047  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke()&#10;2014-11-27 11:02:39.047  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()&#10;2014-11-27 11:02:39.048  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()&#10;2014-11-27 11:02:39.048  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()&#10;2014-11-27 11:02:39.048  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()&#10;2014-11-27 11:02:39.049  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()&#10;2014-11-27 11:02:39.065 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Unable to locate LifecycleProcessor with name &apos;lifecycleProcessor&apos;: using default [org.springframework.context.support.DefaultLifecycleProcessor@322803db]&#10;2014-11-27 11:02:39.067  INFO 1976 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0&#10;2014-11-27 11:02:39.068  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;requestMappingEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]&#10;2014-11-27 11:02:39.096  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;environmentEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]&#10;2014-11-27 11:02:39.104  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;healthEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]&#10;2014-11-27 11:02:39.109  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;beansEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]&#10;2014-11-27 11:02:39.115  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;infoEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]&#10;2014-11-27 11:02:39.120  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;metricsEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]&#10;2014-11-27 11:02:39.125  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;traceEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]&#10;2014-11-27 11:02:39.128  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;dumpEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]&#10;2014-11-27 11:02:39.136  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;autoConfigurationAuditEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]&#10;2014-11-27 11:02:39.142  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;shutdownEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]&#10;2014-11-27 11:02:39.155  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean &apos;configurationPropertiesReportEndpoint&apos;: registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]&#10;2014-11-27 11:02:39.160 DEBUG 1976 --- [           main] utoConfigurationReportLoggingInitializer : &#10;&#10;&#10;=========================&#10;AUTO-CONFIGURATION REPORT&#10;=========================&#10;&#10;&#10;Positive matches:&#10;-----------------&#10;&#10;   AuditAutoConfiguration.AuditEventRepositoryConfiguration&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.audit.AuditEventRepository; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   DispatcherServletAutoConfiguration&#10;      - found web application StandardServletEnvironment (OnWebApplicationCondition)&#10;      - @ConditionalOnClass classes found: org.springframework.web.servlet.DispatcherServlet (OnClassCondition)&#10;&#10;   DispatcherServletAutoConfiguration.DispatcherServletConfiguration&#10;      - no ServletRegistrationBean found (DispatcherServletAutoConfiguration.DefaultDispatcherServletCondition)&#10;      - @ConditionalOnClass classes found: javax.servlet.ServletRegistration (OnClassCondition)&#10;&#10;   EmbeddedServletContainerAutoConfiguration&#10;      - found web application StandardServletEnvironment (OnWebApplicationCondition)&#10;&#10;   EmbeddedServletContainerAutoConfiguration.EmbeddedTomcat&#10;      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.apache.catalina.startup.Tomcat (OnClassCondition)&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.context.embedded.EmbeddedServletContainerFactory; SearchStrategy: current) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration#autoConfigurationAuditEndpoint&#10;      - @ConditionalOnBean (types: org.springframework.boot.autoconfigure.condition.ConditionEvaluationReport; SearchStrategy: all) found the following [autoConfigurationReport] @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint; SearchStrategy: current) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration#beansEndpoint&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.BeansEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration#configurationPropertiesReportEndpoint&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration#dumpEndpoint&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.DumpEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration#environmentEndpoint&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.EnvironmentEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration#healthEndpoint&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.HealthEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration#infoEndpoint&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.InfoEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration#metricsEndpoint&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.MetricsEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration#shutdownEndpoint&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.ShutdownEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration#traceEndpoint&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.TraceEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointAutoConfiguration.RequestMappingEndpointConfiguration&#10;      - @ConditionalOnClass classes found: org.springframework.web.servlet.handler.AbstractHandlerMethodMapping (OnClassCondition)&#10;&#10;   EndpointAutoConfiguration.RequestMappingEndpointConfiguration#requestMappingEndpoint&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.RequestMappingEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointMBeanExportAutoConfiguration&#10;      - SpEL expression on org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportAutoConfiguration: ${endpoints.jmx.enabled:true} &amp;&amp; ${spring.jmx.enabled:true} (OnExpressionCondition)&#10;&#10;   EndpointWebMvcAutoConfiguration&#10;      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet (OnClassCondition)&#10;      - found web application StandardServletEnvironment (OnWebApplicationCondition)&#10;&#10;   EndpointWebMvcAutoConfiguration#endpointHandlerMapping&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   EndpointWebMvcAutoConfiguration#environmentMvcEndpoint&#10;      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.EnvironmentEndpoint; SearchStrategy: all) found the following [environmentEndpoint] (OnBeanCondition)&#10;      - SpEL expression: ${endpoints.env.enabled:true} (OnExpressionCondition)&#10;&#10;   EndpointWebMvcAutoConfiguration#healthMvcEndpoint&#10;      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.HealthEndpoint; SearchStrategy: all) found the following [healthEndpoint] (OnBeanCondition)&#10;      - SpEL expression: ${endpoints.health.enabled:true} (OnExpressionCondition)&#10;&#10;   EndpointWebMvcAutoConfiguration#metricsMvcEndpoint&#10;      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.MetricsEndpoint; SearchStrategy: all) found the following [metricsEndpoint] (OnBeanCondition)&#10;      - SpEL expression: ${endpoints.metrics.enabled:true} (OnExpressionCondition)&#10;&#10;   EndpointWebMvcAutoConfiguration#mvcEndpoints&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.mvc.MvcEndpoints; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   ErrorMvcAutoConfiguration&#10;      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet (OnClassCondition)&#10;      - found web application StandardServletEnvironment (OnWebApplicationCondition)&#10;&#10;   ErrorMvcAutoConfiguration#basicErrorController&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ErrorController; SearchStrategy: current) found no beans (OnBeanCondition)&#10;&#10;   ErrorMvcAutoConfiguration#errorAttributes&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ErrorAttributes; SearchStrategy: current) found no beans (OnBeanCondition)&#10;&#10;   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration&#10;      - No error template view detected (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)&#10;      - SpEL expression on org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration: ${error.whitelabel.enabled:true} (OnExpressionCondition)&#10;&#10;   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver&#10;      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView&#10;      - @ConditionalOnMissingBean (names: error; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   HealthIndicatorAutoConfiguration#healthAggregator&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.health.HealthAggregator; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   HealthIndicatorAutoConfiguration.MongoHealthIndicatorConfiguration&#10;      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$MongoHealthIndicatorConfiguration: ${health.mongo.enabled:true} (OnExpressionCondition)&#10;      - @ConditionalOnBean (types: org.springframework.data.mongodb.core.MongoTemplate; SearchStrategy: all) found the following [mongoTemplate] (OnBeanCondition)&#10;&#10;   HealthIndicatorAutoConfiguration.MongoHealthIndicatorConfiguration#mongoHealthIndicator&#10;      - @ConditionalOnMissingBean (names: mongoHealthIndicator; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   HttpMessageConvertersAutoConfiguration&#10;      - @ConditionalOnClass classes found: org.springframework.http.converter.HttpMessageConverter (OnClassCondition)&#10;&#10;   HttpMessageConvertersAutoConfiguration#messageConverters&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.HttpMessageConverters; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   HttpMessageConvertersAutoConfiguration.ObjectMappers&#10;      - @ConditionalOnClass classes found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)&#10;&#10;   HttpMessageConvertersAutoConfiguration.ObjectMappers#mappingJackson2HttpMessageConverter&#10;      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   JacksonAutoConfiguration&#10;      - @ConditionalOnClass classes found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)&#10;&#10;   JacksonAutoConfiguration.JacksonObjectMapperAutoConfiguration&#10;      - @ConditionalOnClass classes found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)&#10;&#10;   JacksonAutoConfiguration.JacksonObjectMapperAutoConfiguration#jacksonObjectMapper&#10;      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   JmxAutoConfiguration&#10;      - @ConditionalOnClass classes found: org.springframework.jmx.export.MBeanExporter (OnClassCondition)&#10;      - SpEL expression on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration: ${spring.jmx.enabled:true} (OnExpressionCondition)&#10;&#10;   JmxAutoConfiguration#mbeanServer&#10;      - @ConditionalOnMissingBean (types: javax.management.MBeanServer; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   JmxAutoConfiguration#objectNamingStrategy&#10;      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.naming.ObjectNamingStrategy; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   ManagementServerPropertiesAutoConfiguration#managementServerProperties&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.autoconfigure.ManagementServerProperties; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   MetricFilterAutoConfiguration&#10;      - @ConditionalOnClass classes found: javax.servlet.Servlet,javax.servlet.ServletRegistration,org.springframework.web.filter.OncePerRequestFilter (OnClassCondition)&#10;      - @ConditionalOnBean (types: org.springframework.boot.actuate.metrics.CounterService,org.springframework.boot.actuate.metrics.GaugeService; SearchStrategy: all) found the following [counterService, gaugeService] (OnBeanCondition)&#10;&#10;   MetricRepositoryAutoConfiguration#counterService&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.metrics.CounterService; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   MetricRepositoryAutoConfiguration#gaugeService&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.metrics.GaugeService; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   MetricRepositoryAutoConfiguration.MetricRepositoryConfiguration&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.metrics.repository.MetricRepository; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   MongoAutoConfiguration&#10;      - @ConditionalOnClass classes found: com.mongodb.Mongo (OnClassCondition)&#10;&#10;   MongoAutoConfiguration#mongo&#10;      - @ConditionalOnMissingBean (types: com.mongodb.Mongo; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   MongoDataAutoConfiguration&#10;      - @ConditionalOnClass classes found: com.mongodb.Mongo,org.springframework.data.mongodb.core.MongoTemplate (OnClassCondition)&#10;      - @ConditionalOnBean (types: org.springframework.boot.autoconfigure.mongo.MongoProperties; SearchStrategy: all) found the following [spring.data.mongodb.CONFIGURATION_PROPERTIES] (OnBeanCondition)&#10;&#10;   MongoDataAutoConfiguration#gridFsTemplate&#10;      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.gridfs.GridFsTemplate; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   MongoDataAutoConfiguration#mongoDbFactory&#10;      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.MongoDbFactory; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   MongoDataAutoConfiguration#mongoTemplate&#10;      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.core.MongoTemplate; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   MongoRepositoriesAutoConfiguration&#10;      - @ConditionalOnClass classes found: com.mongodb.Mongo,org.springframework.data.mongodb.repository.MongoRepository (OnClassCondition)&#10;      - SpEL expression on org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration: ${spring.data.mongo.repositories.enabled:true} (OnExpressionCondition)&#10;      - @ConditionalOnMissingBean (types: org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   MultipartAutoConfiguration&#10;      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.multipart.support.StandardServletMultipartResolver,javax.servlet.MultipartConfigElement (OnClassCondition)&#10;      - SpEL expression on org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration: ${multipart.enabled:true} (OnExpressionCondition)&#10;&#10;   MultipartAutoConfiguration#multipartConfigElement&#10;      - @ConditionalOnMissingBean (types: javax.servlet.MultipartConfigElement; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   MultipartAutoConfiguration#multipartResolver&#10;      - @ConditionalOnMissingBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer&#10;      - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) found no beans (OnBeanCondition)&#10;&#10;   ServerPropertiesAutoConfiguration&#10;      - found web application StandardServletEnvironment (OnWebApplicationCondition)&#10;&#10;   ServerPropertiesAutoConfiguration#serverProperties&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ServerProperties; SearchStrategy: current) found no beans (OnBeanCondition)&#10;&#10;   ThymeleafAutoConfiguration&#10;      - @ConditionalOnClass classes found: org.thymeleaf.spring4.SpringTemplateEngine (OnClassCondition)&#10;&#10;   ThymeleafAutoConfiguration.DefaultTemplateResolverConfiguration&#10;      - @ConditionalOnMissingBean (names: defaultTemplateResolver; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   ThymeleafAutoConfiguration.ThymeleafDefaultConfiguration&#10;      - @ConditionalOnMissingBean (types: org.thymeleaf.spring4.SpringTemplateEngine; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   ThymeleafAutoConfiguration.ThymeleafViewResolverConfiguration&#10;      - @ConditionalOnClass classes found: javax.servlet.Servlet (OnClassCondition)&#10;      - found web application StandardServletEnvironment (OnWebApplicationCondition)&#10;&#10;   ThymeleafAutoConfiguration.ThymeleafViewResolverConfiguration#thymeleafViewResolver&#10;      - @ConditionalOnMissingBean (names: thymeleafViewResolver; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   ThymeleafAutoConfiguration.ThymeleafWebLayoutConfiguration&#10;      - @ConditionalOnClass classes found: nz.net.ultraq.thymeleaf.LayoutDialect (OnClassCondition)&#10;&#10;   TraceRepositoryAutoConfiguration#traceRepository&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.trace.TraceRepository; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   TraceWebFilterAutoConfiguration&#10;      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet,javax.servlet.ServletRegistration (OnClassCondition)&#10;&#10;   WebMvcAutoConfiguration&#10;      - found web application StandardServletEnvironment (OnWebApplicationCondition)&#10;      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet,org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter (OnClassCondition)&#10;      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   WebMvcAutoConfiguration#hiddenHttpMethodFilter&#10;      - @ConditionalOnMissingBean (types: org.springframework.web.filter.HiddenHttpMethodFilter; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver&#10;      - @ConditionalOnBean (types: org.springframework.web.servlet.View; SearchStrategy: all) found the following [error] (OnBeanCondition)&#10;&#10;   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver&#10;      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextListener&#10;      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver&#10;      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found the following [beanNameViewResolver, defaultViewResolver] @ConditionalOnMissingBean (names: viewResolver; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;&#10;Negative matches:&#10;-----------------&#10;&#10;   ActiveMQAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: javax.jms.ConnectionFactory,org.apache.activemq.ActiveMQConnectionFactory (OnClassCondition)&#10;&#10;   AopAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.aspectj.lang.annotation.Aspect,org.aspectj.lang.reflect.Advice (OnClassCondition)&#10;&#10;   AuditAutoConfiguration#authenticationAuditListener&#10;      - required @ConditionalOnClass classes not found: org.springframework.security.authentication.event.AbstractAuthenticationEvent (OnClassCondition)&#10;&#10;   AuditAutoConfiguration#authorizationAuditListener&#10;      - required @ConditionalOnClass classes not found: org.springframework.security.access.event.AbstractAuthorizationEvent (OnClassCondition)&#10;&#10;   BatchAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.batch.core.launch.JobLauncher,org.springframework.jdbc.core.JdbcOperations (OnClassCondition)&#10;&#10;   CrshAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.crsh.plugin.PluginLifeCycle (OnClassCondition)&#10;&#10;   DataSourceAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType (OnClassCondition)&#10;&#10;   DataSourceTransactionManagerAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.jdbc.core.JdbcTemplate (OnClassCondition)&#10;&#10;   DeviceDelegatingViewResolverAutoConfiguration&#10;      - found web application StandardServletEnvironment (OnWebApplicationCondition)&#10;      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolver (OnClassCondition)&#10;&#10;   DeviceResolverAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.DeviceResolverHandlerInterceptor,org.springframework.mobile.device.DeviceHandlerMethodArgumentResolver (OnClassCondition)&#10;&#10;   ElasticsearchAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.client.TransportClientFactoryBean,org.springframework.data.elasticsearch.client.NodeClientFactoryBean (OnClassCondition)&#10;&#10;   ElasticsearchDataAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.core.ElasticsearchTemplate (OnClassCondition)&#10;&#10;   ElasticsearchRepositoriesAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.repository.ElasticsearchRepository (OnClassCondition)&#10;&#10;   EmbeddedServletContainerAutoConfiguration.EmbeddedJetty&#10;      - required @ConditionalOnClass classes not found: org.eclipse.jetty.server.Server,org.eclipse.jetty.util.Loader (OnClassCondition)&#10;&#10;   EndpointMBeanExportAutoConfiguration#mbeanServer&#10;      - @ConditionalOnMissingBean (types: javax.management.MBeanServer; SearchStrategy: all) found the following [mbeanServer] (OnBeanCondition)&#10;&#10;   EndpointWebMvcAutoConfiguration#shutdownMvcEndpoint&#10;      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.ShutdownEndpoint; SearchStrategy: all) found the following [shutdownEndpoint] (OnBeanCondition)&#10;      - SpEL expression: ${endpoints.shutdown.enabled:false} (OnExpressionCondition)&#10;&#10;   FacebookAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.facebook.connect.FacebookConnectionFactory (OnClassCondition)&#10;&#10;   FallbackWebSecurityAutoConfiguration&#10;      - SpEL expression on org.springframework.boot.autoconfigure.security.FallbackWebSecurityAutoConfiguration: !${security.basic.enabled:true} (OnExpressionCondition)&#10;&#10;   FlywayAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.flywaydb.core.Flyway (OnClassCondition)&#10;&#10;   FreeMarkerAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: freemarker.template.Configuration,org.springframework.ui.freemarker.FreeMarkerConfigurationFactory (OnClassCondition)&#10;&#10;   GroovyTemplateAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: groovy.text.TemplateEngine (OnClassCondition)&#10;&#10;   HealthIndicatorAutoConfiguration#statusHealthIndicator&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.health.HealthIndicator; SearchStrategy: all) found the following [mongoHealthIndicator] (OnBeanCondition)&#10;&#10;   HealthIndicatorAutoConfiguration.DataSourcesHealthIndicatorConfiguration&#10;      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$DataSourcesHealthIndicatorConfiguration: ${health.db.enabled:true} (OnExpressionCondition)&#10;      - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   HealthIndicatorAutoConfiguration.RabbitHealthIndicatorConfiguration&#10;      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$RabbitHealthIndicatorConfiguration: ${health.rabbit.enabled:true} (OnExpressionCondition)&#10;      - @ConditionalOnBean (types: org.springframework.amqp.rabbit.core.RabbitTemplate; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   HealthIndicatorAutoConfiguration.RedisHealthIndicatorConfiguration&#10;      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$RedisHealthIndicatorConfiguration: ${health.redis.enabled:true} (OnExpressionCondition)&#10;      - @ConditionalOnBean (types: org.springframework.data.redis.connection.RedisConnectionFactory; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   HealthIndicatorAutoConfiguration.SolrHealthIndicatorConfiguration&#10;      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$SolrHealthIndicatorConfiguration: ${health.solr.enabled:true} (OnExpressionCondition)&#10;      - @ConditionalOnBean (types: org.apache.solr.client.solrj.SolrServer; SearchStrategy: all) found no beans (OnBeanCondition)&#10;&#10;   HibernateJpaAutoConfiguration&#10;      - did not find HibernateEntityManager class (HibernateJpaAutoConfiguration.HibernateEntityManagerCondition)&#10;&#10;   HornetQAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: javax.jms.ConnectionFactory,org.hornetq.api.jms.HornetQJMSClient (OnClassCondition)&#10;&#10;   HypermediaAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.hateoas.Resource,org.springframework.plugin.core.Plugin (OnClassCondition)&#10;&#10;   IntegrationAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.integration.config.EnableIntegration (OnClassCondition)&#10;&#10;   JacksonAutoConfiguration.JodaModuleAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: com.fasterxml.jackson.datatype.joda.JodaModule (OnClassCondition)&#10;&#10;   JacksonAutoConfiguration.Jsr310ModuleAutoConfiguration&#10;      - Required JVM version 1.8 or newer found 1.8 (OnJavaCondition)&#10;      - required @ConditionalOnClass classes not found: com.fasterxml.jackson.datatype.jsr310.JSR310Module (OnClassCondition)&#10;&#10;   JmsAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.jms.core.JmsTemplate (OnClassCondition)&#10;&#10;   JmxAutoConfiguration#mbeanExporter&#10;      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.MBeanExporter; SearchStrategy: current) found the following [mbeanExporter] (OnBeanCondition)&#10;&#10;   JolokiaAutoConfiguration&#10;      - found web application StandardServletEnvironment (OnWebApplicationCondition)&#10;      - required @ConditionalOnClass classes not found: org.jolokia.http.AgentServlet (OnClassCondition)&#10;&#10;   JpaRepositoriesAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.data.jpa.repository.JpaRepository (OnClassCondition)&#10;&#10;   LinkedInAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.linkedin.connect.LinkedInConnectionFactory (OnClassCondition)&#10;&#10;   LiquibaseAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: liquibase.integration.spring.SpringLiquibase (OnClassCondition)&#10;&#10;   ManagementSecurityAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.security.config.annotation.web.configuration.EnableWebSecurity (OnClassCondition)&#10;&#10;   ManagementServerPropertiesAutoConfiguration#securityProperties&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.security.SecurityProperties; SearchStrategy: all) found no beans (OnBeanCondition)&#10;      - required @ConditionalOnClass classes not found: org.springframework.security.config.annotation.web.configuration.EnableWebSecurity (OnClassCondition)&#10;&#10;   ManagementServerPropertiesAutoConfiguration#serverProperties&#10;      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ServerProperties; SearchStrategy: all) found the following [serverProperties] (OnBeanCondition)&#10;&#10;   MessageSourceAutoConfiguration&#10;      - No bundle found for spring.messages.basename: messages (MessageSourceAutoConfiguration.ResourceBundleCondition)&#10;&#10;   MetricRepositoryAutoConfiguration.CodahaleMetricRegistryConfiguration&#10;      - required @ConditionalOnClass classes not found: com.codahale.metrics.MetricRegistry (OnClassCondition)&#10;&#10;   MetricRepositoryAutoConfiguration.MetricsChannelConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.messaging.MessageChannel (OnClassCondition)&#10;&#10;   RabbitAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.amqp.rabbit.core.RabbitTemplate,com.rabbitmq.client.Channel (OnClassCondition)&#10;&#10;   ReactorAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: reactor.spring.context.config.EnableReactor (OnClassCondition)&#10;&#10;   RedisAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.data.redis.connection.jedis.JedisConnection,org.springframework.data.redis.core.RedisOperations,redis.clients.jedis.Jedis (OnClassCondition)&#10;&#10;   RepositoryRestMvcAutoConfiguration&#10;      - found web application StandardServletEnvironment (OnWebApplicationCondition)&#10;      - required @ConditionalOnClass classes not found: org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration (OnClassCondition)&#10;&#10;   SecurityAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.security.authentication.AuthenticationManager (OnClassCondition)&#10;&#10;   SitePreferenceAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.site.SitePreferenceHandlerInterceptor,org.springframework.mobile.device.site.SitePreferenceHandlerMethodArgumentResolver (OnClassCondition)&#10;&#10;   SocialWebAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.social.connect.web.ConnectController,org.springframework.social.config.annotation.SocialConfigurerAdapter (OnClassCondition)&#10;&#10;   SolrAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.apache.solr.client.solrj.impl.HttpSolrServer,org.apache.solr.client.solrj.impl.CloudSolrServer (OnClassCondition)&#10;&#10;   SolrRepositoriesAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.apache.solr.client.solrj.SolrServer,org.springframework.data.solr.repository.SolrRepository (OnClassCondition)&#10;&#10;   ThymeleafAutoConfiguration.ThymeleafSecurityDialectConfiguration&#10;      - required @ConditionalOnClass classes not found: org.thymeleaf.extras.springsecurity3.dialect.SpringSecurityDialect (OnClassCondition)&#10;&#10;   TwitterAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.twitter.connect.TwitterConnectionFactory (OnClassCondition)&#10;&#10;   VelocityAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.apache.velocity.app.VelocityEngine,org.springframework.ui.velocity.VelocityEngineFactory (OnClassCondition)&#10;&#10;   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#dateFormatter&#10;      - @ConditionalOnProperty missing required properties: date-format not found (OnPropertyCondition)&#10;&#10;   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#localeResolver&#10;      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.LocaleResolver; SearchStrategy: all) found no beans (OnBeanCondition)&#10;      - @ConditionalOnProperty missing required properties: locale not found (OnPropertyCondition)&#10;&#10;   WebSocketAutoConfiguration&#10;      - required @ConditionalOnClass classes not found: org.springframework.web.socket.WebSocketHandler (OnClassCondition)&#10;&#10;&#10;&#10;2014-11-27 11:02:39.212  INFO 1976 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080/http&#10;2014-11-27 11:02:39.214  INFO 1976 --- [           main] s.data.mongo.SampleMongoApplication      : Started SampleMongoApplication in 4.175 seconds (JVM running for 4.59)&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Wrong output: 
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.1.9.RELEASE)
+
+2014-11-27 11:02:35.381  INFO 1976 --- [           main] s.data.mongo.SampleMongoApplication      : Starting SampleMongoApplication on Macs with PID 1976 (/Users/MikaSez/Downloads/mongo_books/target/classes started by MikaSez in /Users/MikaSez/Downloads/mongo_books)
+2014-11-27 11:02:35.384 DEBUG 1976 --- [           main] o.s.boot.SpringApplication               : Loading source class sample.data.mongo.SampleMongoApplication
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.yml' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.properties' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.yaml' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.yml' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.properties' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.yaml' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.yml' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.properties' resource not found
+2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.yaml' resource not found
+2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.yml' resource not found
+2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Loaded config file 'classpath:/application.properties' 
+2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.yaml' resource not found
+2014-11-27 11:02:35.414  INFO 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b26e945: startup date [Thu Nov 27 11:02:35 CET 2014]; root of context hierarchy
+2014-11-27 11:02:35.416 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Bean factory for org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b26e945: org.springframework.beans.factory.support.DefaultListableBeanFactory@42a48628: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,sampleMongoApplication]; root of factory hierarchy
+2014-11-27 11:02:35.930  INFO 1976 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2014-11-27 11:02:36.161 DEBUG 1976 --- [           main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'sample.data.mongo'. Automatic @Repository and @Entity scanning is enabled.
+2014-11-27 11:02:36.480 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@5c530d1e]
+2014-11-27 11:02:36.480 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Using ApplicationEventMulticaster [org.springframework.context.event.SimpleApplicationEventMulticaster@6c25e6c4]
+2014-11-27 11:02:36.708 DEBUG 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Code archive: /Users/MikaSez/.m2/repository/org/springframework/boot/spring-boot/1.1.9.RELEASE/spring-boot-1.1.9.RELEASE.jar
+2014-11-27 11:02:36.708 DEBUG 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Code archive: /Users/MikaSez/.m2/repository/org/springframework/boot/spring-boot/1.1.9.RELEASE/spring-boot-1.1.9.RELEASE.jar
+2014-11-27 11:02:36.708 DEBUG 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2014-11-27 11:02:36.739  INFO 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 8080
+2014-11-27 11:02:36.928  INFO 1976 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2014-11-27 11:02:36.929  INFO 1976 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.56
+2014-11-27 11:02:37.027  INFO 1976 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2014-11-27 11:02:37.028  INFO 1976 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1616 ms
+2014-11-27 11:02:37.829  INFO 1976 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2014-11-27 11:02:37.831  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'metricFilter' to: [/*]
+2014-11-27 11:02:37.832  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2014-11-27 11:02:37.832  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2014-11-27 11:02:37.833  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2014-11-27 11:02:37.869 DEBUG 1976 --- [ost-startStop-1] iguration$ApplicationContextHeaderFilter : Initializing filter 'applicationContextIdFilter'
+2014-11-27 11:02:37.870 DEBUG 1976 --- [ost-startStop-1] iguration$ApplicationContextHeaderFilter : Filter 'applicationContextIdFilter' configured successfully
+2014-11-27 11:02:37.871 DEBUG 1976 --- [ost-startStop-1] ricFilterAutoConfiguration$MetricsFilter : Initializing filter 'metricFilter'
+2014-11-27 11:02:37.871 DEBUG 1976 --- [ost-startStop-1] ricFilterAutoConfiguration$MetricsFilter : Filter 'metricFilter' configured successfully
+2014-11-27 11:02:37.871 DEBUG 1976 --- [ost-startStop-1] o.s.b.a.trace.WebRequestTraceFilter      : Initializing filter 'webRequestLoggingFilter'
+2014-11-27 11:02:37.872 DEBUG 1976 --- [ost-startStop-1] o.s.b.a.trace.WebRequestTraceFilter      : Filter 'webRequestLoggingFilter' configured successfully
+2014-11-27 11:02:38.293  INFO 1976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-11-27 11:02:38.437  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String sample.data.mongo.SampleMongoApplication.index(java.util.Map<java.lang.String, java.lang.Object>)
+2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/books],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<sample.data.mongo.Book> sample.data.mongo.SampleMongoApplication.getListOfBooks()
+2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/book/{author}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<sample.data.mongo.Book> sample.data.mongo.SampleMongoApplication.getBookFromAuthor(java.lang.String)
+2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/book/delete/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public boolean sample.data.mongo.SampleMongoApplication.deleteABook(java.lang.String)
+2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/book/add/{author}/{summary}/{title}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public sample.data.mongo.Book sample.data.mongo.SampleMongoApplication.addABook(java.lang.String,java.lang.String,java.lang.String)
+2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/book/update],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public sample.data.mongo.Book sample.data.mongo.SampleMongoApplication.updateABook(sample.data.mongo.Book)
+2014-11-27 11:02:38.440  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2014-11-27 11:02:38.441  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2014-11-27 11:02:38.458  INFO 1976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-11-27 11:02:38.458  INFO 1976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-11-27 11:02:38.972  INFO 1976 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2014-11-27 11:02:38.996  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Registering beans for JMX exposure on startup
+2014-11-27 11:02:39.043 DEBUG 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Looking for request mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b26e945: startup date [Thu Nov 27 11:02:35 CET 2014]; root of context hierarchy
+2014-11-27 11:02:39.044  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.045  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2014-11-27 11:02:39.045  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.046  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.046  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2014-11-27 11:02:39.046  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.047  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke()
+2014-11-27 11:02:39.047  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.048  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.048  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.048  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.049  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.065 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@322803db]
+2014-11-27 11:02:39.067  INFO 1976 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2014-11-27 11:02:39.068  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+2014-11-27 11:02:39.096  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+2014-11-27 11:02:39.104  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+2014-11-27 11:02:39.109  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+2014-11-27 11:02:39.115  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+2014-11-27 11:02:39.120  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+2014-11-27 11:02:39.125  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+2014-11-27 11:02:39.128  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+2014-11-27 11:02:39.136  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+2014-11-27 11:02:39.142  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+2014-11-27 11:02:39.155  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+2014-11-27 11:02:39.160 DEBUG 1976 --- [           main] utoConfigurationReportLoggingInitializer : 
+
+
+=========================
+AUTO-CONFIGURATION REPORT
+=========================
+
+
+Positive matches:
+-----------------
+
+   AuditAutoConfiguration.AuditEventRepositoryConfiguration
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.audit.AuditEventRepository; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   DispatcherServletAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+      - @ConditionalOnClass classes found: org.springframework.web.servlet.DispatcherServlet (OnClassCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletConfiguration
+      - no ServletRegistrationBean found (DispatcherServletAutoConfiguration.DefaultDispatcherServletCondition)
+      - @ConditionalOnClass classes found: javax.servlet.ServletRegistration (OnClassCondition)
+
+   EmbeddedServletContainerAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+   EmbeddedServletContainerAutoConfiguration.EmbeddedTomcat
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.apache.catalina.startup.Tomcat (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.boot.context.embedded.EmbeddedServletContainerFactory; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#autoConfigurationAuditEndpoint
+      - @ConditionalOnBean (types: org.springframework.boot.autoconfigure.condition.ConditionEvaluationReport; SearchStrategy: all) found the following [autoConfigurationReport] @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#beansEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.BeansEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#configurationPropertiesReportEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#dumpEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.DumpEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#environmentEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.EnvironmentEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#healthEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.HealthEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#infoEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.InfoEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#metricsEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.MetricsEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#shutdownEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.ShutdownEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#traceEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.TraceEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration.RequestMappingEndpointConfiguration
+      - @ConditionalOnClass classes found: org.springframework.web.servlet.handler.AbstractHandlerMethodMapping (OnClassCondition)
+
+   EndpointAutoConfiguration.RequestMappingEndpointConfiguration#requestMappingEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.RequestMappingEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointMBeanExportAutoConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportAutoConfiguration: ${endpoints.jmx.enabled:true} && ${spring.jmx.enabled:true} (OnExpressionCondition)
+
+   EndpointWebMvcAutoConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet (OnClassCondition)
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+   EndpointWebMvcAutoConfiguration#endpointHandlerMapping
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointWebMvcAutoConfiguration#environmentMvcEndpoint
+      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.EnvironmentEndpoint; SearchStrategy: all) found the following [environmentEndpoint] (OnBeanCondition)
+      - SpEL expression: ${endpoints.env.enabled:true} (OnExpressionCondition)
+
+   EndpointWebMvcAutoConfiguration#healthMvcEndpoint
+      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.HealthEndpoint; SearchStrategy: all) found the following [healthEndpoint] (OnBeanCondition)
+      - SpEL expression: ${endpoints.health.enabled:true} (OnExpressionCondition)
+
+   EndpointWebMvcAutoConfiguration#metricsMvcEndpoint
+      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.MetricsEndpoint; SearchStrategy: all) found the following [metricsEndpoint] (OnBeanCondition)
+      - SpEL expression: ${endpoints.metrics.enabled:true} (OnExpressionCondition)
+
+   EndpointWebMvcAutoConfiguration#mvcEndpoints
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.mvc.MvcEndpoints; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet (OnClassCondition)
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+   ErrorMvcAutoConfiguration#basicErrorController
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ErrorController; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration#errorAttributes
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ErrorAttributes; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration
+      - No error template view detected (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+      - SpEL expression on org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration: ${error.whitelabel.enabled:true} (OnExpressionCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView
+      - @ConditionalOnMissingBean (names: error; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration#healthAggregator
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.health.HealthAggregator; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.MongoHealthIndicatorConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$MongoHealthIndicatorConfiguration: ${health.mongo.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnBean (types: org.springframework.data.mongodb.core.MongoTemplate; SearchStrategy: all) found the following [mongoTemplate] (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.MongoHealthIndicatorConfiguration#mongoHealthIndicator
+      - @ConditionalOnMissingBean (names: mongoHealthIndicator; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration
+      - @ConditionalOnClass classes found: org.springframework.http.converter.HttpMessageConverter (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration#messageConverters
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.HttpMessageConverters; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration.ObjectMappers
+      - @ConditionalOnClass classes found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration.ObjectMappers#mappingJackson2HttpMessageConverter
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   JacksonAutoConfiguration
+      - @ConditionalOnClass classes found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperAutoConfiguration
+      - @ConditionalOnClass classes found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperAutoConfiguration#jacksonObjectMapper
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   JmxAutoConfiguration
+      - @ConditionalOnClass classes found: org.springframework.jmx.export.MBeanExporter (OnClassCondition)
+      - SpEL expression on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration: ${spring.jmx.enabled:true} (OnExpressionCondition)
+
+   JmxAutoConfiguration#mbeanServer
+      - @ConditionalOnMissingBean (types: javax.management.MBeanServer; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   JmxAutoConfiguration#objectNamingStrategy
+      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.naming.ObjectNamingStrategy; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ManagementServerPropertiesAutoConfiguration#managementServerProperties
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.autoconfigure.ManagementServerProperties; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MetricFilterAutoConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,javax.servlet.ServletRegistration,org.springframework.web.filter.OncePerRequestFilter (OnClassCondition)
+      - @ConditionalOnBean (types: org.springframework.boot.actuate.metrics.CounterService,org.springframework.boot.actuate.metrics.GaugeService; SearchStrategy: all) found the following [counterService, gaugeService] (OnBeanCondition)
+
+   MetricRepositoryAutoConfiguration#counterService
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.metrics.CounterService; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MetricRepositoryAutoConfiguration#gaugeService
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.metrics.GaugeService; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MetricRepositoryAutoConfiguration.MetricRepositoryConfiguration
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.metrics.repository.MetricRepository; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MongoAutoConfiguration
+      - @ConditionalOnClass classes found: com.mongodb.Mongo (OnClassCondition)
+
+   MongoAutoConfiguration#mongo
+      - @ConditionalOnMissingBean (types: com.mongodb.Mongo; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MongoDataAutoConfiguration
+      - @ConditionalOnClass classes found: com.mongodb.Mongo,org.springframework.data.mongodb.core.MongoTemplate (OnClassCondition)
+      - @ConditionalOnBean (types: org.springframework.boot.autoconfigure.mongo.MongoProperties; SearchStrategy: all) found the following [spring.data.mongodb.CONFIGURATION_PROPERTIES] (OnBeanCondition)
+
+   MongoDataAutoConfiguration#gridFsTemplate
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.gridfs.GridFsTemplate; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MongoDataAutoConfiguration#mongoDbFactory
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.MongoDbFactory; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MongoDataAutoConfiguration#mongoTemplate
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.core.MongoTemplate; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MongoRepositoriesAutoConfiguration
+      - @ConditionalOnClass classes found: com.mongodb.Mongo,org.springframework.data.mongodb.repository.MongoRepository (OnClassCondition)
+      - SpEL expression on org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration: ${spring.data.mongo.repositories.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MultipartAutoConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.multipart.support.StandardServletMultipartResolver,javax.servlet.MultipartConfigElement (OnClassCondition)
+      - SpEL expression on org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration: ${multipart.enabled:true} (OnExpressionCondition)
+
+   MultipartAutoConfiguration#multipartConfigElement
+      - @ConditionalOnMissingBean (types: javax.servlet.MultipartConfigElement; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MultipartAutoConfiguration#multipartResolver
+      - @ConditionalOnMissingBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer
+      - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   ServerPropertiesAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+   ServerPropertiesAutoConfiguration#serverProperties
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ServerProperties; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration
+      - @ConditionalOnClass classes found: org.thymeleaf.spring4.SpringTemplateEngine (OnClassCondition)
+
+   ThymeleafAutoConfiguration.DefaultTemplateResolverConfiguration
+      - @ConditionalOnMissingBean (names: defaultTemplateResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafDefaultConfiguration
+      - @ConditionalOnMissingBean (types: org.thymeleaf.spring4.SpringTemplateEngine; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafViewResolverConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet (OnClassCondition)
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafViewResolverConfiguration#thymeleafViewResolver
+      - @ConditionalOnMissingBean (names: thymeleafViewResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebLayoutConfiguration
+      - @ConditionalOnClass classes found: nz.net.ultraq.thymeleaf.LayoutDialect (OnClassCondition)
+
+   TraceRepositoryAutoConfiguration#traceRepository
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.trace.TraceRepository; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   TraceWebFilterAutoConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet,javax.servlet.ServletRegistration (OnClassCondition)
+
+   WebMvcAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet,org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#hiddenHttpMethodFilter
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.HiddenHttpMethodFilter; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver
+      - @ConditionalOnBean (types: org.springframework.web.servlet.View; SearchStrategy: all) found the following [error] (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextListener
+      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver
+      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found the following [beanNameViewResolver, defaultViewResolver] @ConditionalOnMissingBean (names: viewResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   ActiveMQAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.jms.ConnectionFactory,org.apache.activemq.ActiveMQConnectionFactory (OnClassCondition)
+
+   AopAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.aspectj.lang.annotation.Aspect,org.aspectj.lang.reflect.Advice (OnClassCondition)
+
+   AuditAutoConfiguration#authenticationAuditListener
+      - required @ConditionalOnClass classes not found: org.springframework.security.authentication.event.AbstractAuthenticationEvent (OnClassCondition)
+
+   AuditAutoConfiguration#authorizationAuditListener
+      - required @ConditionalOnClass classes not found: org.springframework.security.access.event.AbstractAuthorizationEvent (OnClassCondition)
+
+   BatchAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.batch.core.launch.JobLauncher,org.springframework.jdbc.core.JdbcOperations (OnClassCondition)
+
+   CrshAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.crsh.plugin.PluginLifeCycle (OnClassCondition)
+
+   DataSourceAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jdbc.core.JdbcTemplate (OnClassCondition)
+
+   DeviceDelegatingViewResolverAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolver (OnClassCondition)
+
+   DeviceResolverAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.DeviceResolverHandlerInterceptor,org.springframework.mobile.device.DeviceHandlerMethodArgumentResolver (OnClassCondition)
+
+   ElasticsearchAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.client.TransportClientFactoryBean,org.springframework.data.elasticsearch.client.NodeClientFactoryBean (OnClassCondition)
+
+   ElasticsearchDataAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.core.ElasticsearchTemplate (OnClassCondition)
+
+   ElasticsearchRepositoriesAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.repository.ElasticsearchRepository (OnClassCondition)
+
+   EmbeddedServletContainerAutoConfiguration.EmbeddedJetty
+      - required @ConditionalOnClass classes not found: org.eclipse.jetty.server.Server,org.eclipse.jetty.util.Loader (OnClassCondition)
+
+   EndpointMBeanExportAutoConfiguration#mbeanServer
+      - @ConditionalOnMissingBean (types: javax.management.MBeanServer; SearchStrategy: all) found the following [mbeanServer] (OnBeanCondition)
+
+   EndpointWebMvcAutoConfiguration#shutdownMvcEndpoint
+      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.ShutdownEndpoint; SearchStrategy: all) found the following [shutdownEndpoint] (OnBeanCondition)
+      - SpEL expression: ${endpoints.shutdown.enabled:false} (OnExpressionCondition)
+
+   FacebookAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.facebook.connect.FacebookConnectionFactory (OnClassCondition)
+
+   FallbackWebSecurityAutoConfiguration
+      - SpEL expression on org.springframework.boot.autoconfigure.security.FallbackWebSecurityAutoConfiguration: !${security.basic.enabled:true} (OnExpressionCondition)
+
+   FlywayAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.flywaydb.core.Flyway (OnClassCondition)
+
+   FreeMarkerAutoConfiguration
+      - required @ConditionalOnClass classes not found: freemarker.template.Configuration,org.springframework.ui.freemarker.FreeMarkerConfigurationFactory (OnClassCondition)
+
+   GroovyTemplateAutoConfiguration
+      - required @ConditionalOnClass classes not found: groovy.text.TemplateEngine (OnClassCondition)
+
+   HealthIndicatorAutoConfiguration#statusHealthIndicator
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.health.HealthIndicator; SearchStrategy: all) found the following [mongoHealthIndicator] (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.DataSourcesHealthIndicatorConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$DataSourcesHealthIndicatorConfiguration: ${health.db.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.RabbitHealthIndicatorConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$RabbitHealthIndicatorConfiguration: ${health.rabbit.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnBean (types: org.springframework.amqp.rabbit.core.RabbitTemplate; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.RedisHealthIndicatorConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$RedisHealthIndicatorConfiguration: ${health.redis.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnBean (types: org.springframework.data.redis.connection.RedisConnectionFactory; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.SolrHealthIndicatorConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$SolrHealthIndicatorConfiguration: ${health.solr.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnBean (types: org.apache.solr.client.solrj.SolrServer; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HibernateJpaAutoConfiguration
+      - did not find HibernateEntityManager class (HibernateJpaAutoConfiguration.HibernateEntityManagerCondition)
+
+   HornetQAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.jms.ConnectionFactory,org.hornetq.api.jms.HornetQJMSClient (OnClassCondition)
+
+   HypermediaAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.hateoas.Resource,org.springframework.plugin.core.Plugin (OnClassCondition)
+
+   IntegrationAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.integration.config.EnableIntegration (OnClassCondition)
+
+   JacksonAutoConfiguration.JodaModuleAutoConfiguration
+      - required @ConditionalOnClass classes not found: com.fasterxml.jackson.datatype.joda.JodaModule (OnClassCondition)
+
+   JacksonAutoConfiguration.Jsr310ModuleAutoConfiguration
+      - Required JVM version 1.8 or newer found 1.8 (OnJavaCondition)
+      - required @ConditionalOnClass classes not found: com.fasterxml.jackson.datatype.jsr310.JSR310Module (OnClassCondition)
+
+   JmsAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jms.core.JmsTemplate (OnClassCondition)
+
+   JmxAutoConfiguration#mbeanExporter
+      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.MBeanExporter; SearchStrategy: current) found the following [mbeanExporter] (OnBeanCondition)
+
+   JolokiaAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+      - required @ConditionalOnClass classes not found: org.jolokia.http.AgentServlet (OnClassCondition)
+
+   JpaRepositoriesAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.data.jpa.repository.JpaRepository (OnClassCondition)
+
+   LinkedInAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.linkedin.connect.LinkedInConnectionFactory (OnClassCondition)
+
+   LiquibaseAutoConfiguration
+      - required @ConditionalOnClass classes not found: liquibase.integration.spring.SpringLiquibase (OnClassCondition)
+
+   ManagementSecurityAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.security.config.annotation.web.configuration.EnableWebSecurity (OnClassCondition)
+
+   ManagementServerPropertiesAutoConfiguration#securityProperties
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.security.SecurityProperties; SearchStrategy: all) found no beans (OnBeanCondition)
+      - required @ConditionalOnClass classes not found: org.springframework.security.config.annotation.web.configuration.EnableWebSecurity (OnClassCondition)
+
+   ManagementServerPropertiesAutoConfiguration#serverProperties
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ServerProperties; SearchStrategy: all) found the following [serverProperties] (OnBeanCondition)
+
+   MessageSourceAutoConfiguration
+      - No bundle found for spring.messages.basename: messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   MetricRepositoryAutoConfiguration.CodahaleMetricRegistryConfiguration
+      - required @ConditionalOnClass classes not found: com.codahale.metrics.MetricRegistry (OnClassCondition)
+
+   MetricRepositoryAutoConfiguration.MetricsChannelConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.messaging.MessageChannel (OnClassCondition)
+
+   RabbitAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.amqp.rabbit.core.RabbitTemplate,com.rabbitmq.client.Channel (OnClassCondition)
+
+   ReactorAutoConfiguration
+      - required @ConditionalOnClass classes not found: reactor.spring.context.config.EnableReactor (OnClassCondition)
+
+   RedisAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.data.redis.connection.jedis.JedisConnection,org.springframework.data.redis.core.RedisOperations,redis.clients.jedis.Jedis (OnClassCondition)
+
+   RepositoryRestMvcAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+      - required @ConditionalOnClass classes not found: org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration (OnClassCondition)
+
+   SecurityAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.security.authentication.AuthenticationManager (OnClassCondition)
+
+   SitePreferenceAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.site.SitePreferenceHandlerInterceptor,org.springframework.mobile.device.site.SitePreferenceHandlerMethodArgumentResolver (OnClassCondition)
+
+   SocialWebAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.connect.web.ConnectController,org.springframework.social.config.annotation.SocialConfigurerAdapter (OnClassCondition)
+
+   SolrAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.apache.solr.client.solrj.impl.HttpSolrServer,org.apache.solr.client.solrj.impl.CloudSolrServer (OnClassCondition)
+
+   SolrRepositoriesAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.apache.solr.client.solrj.SolrServer,org.springframework.data.solr.repository.SolrRepository (OnClassCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafSecurityDialectConfiguration
+      - required @ConditionalOnClass classes not found: org.thymeleaf.extras.springsecurity3.dialect.SpringSecurityDialect (OnClassCondition)
+
+   TwitterAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.twitter.connect.TwitterConnectionFactory (OnClassCondition)
+
+   VelocityAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.apache.velocity.app.VelocityEngine,org.springframework.ui.velocity.VelocityEngineFactory (OnClassCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#dateFormatter
+      - @ConditionalOnProperty missing required properties: date-format not found (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#localeResolver
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.LocaleResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+      - @ConditionalOnProperty missing required properties: locale not found (OnPropertyCondition)
+
+   WebSocketAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.web.socket.WebSocketHandler (OnClassCondition)
+
+
+
+2014-11-27 11:02:39.212  INFO 1976 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080/http
+2014-11-27 11:02:39.214  INFO 1976 --- [           main] s.data.mongo.SampleMongoApplication      : Started SampleMongoApplication in 4.175 seconds (JVM running for 4.59)
+
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at sample.data.mongo.SampleMongoApplicationTests.testDefaultSettings(SampleMongoApplicationTests.java:55)
+]]></failure>
+    <system-out>
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.1.9.RELEASE)
+
+2014-11-27 11:02:35.381  INFO 1976 --- [           main] s.data.mongo.SampleMongoApplication      : Starting SampleMongoApplication on Macs with PID 1976 (/Users/MikaSez/Downloads/mongo_books/target/classes started by MikaSez in /Users/MikaSez/Downloads/mongo_books)
+2014-11-27 11:02:35.384 DEBUG 1976 --- [           main] o.s.boot.SpringApplication               : Loading source class sample.data.mongo.SampleMongoApplication
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.yml' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.properties' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.yaml' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.yml' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.properties' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.yaml' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.yml' resource not found
+2014-11-27 11:02:35.410 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.properties' resource not found
+2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.yaml' resource not found
+2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.yml' resource not found
+2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Loaded config file 'classpath:/application.properties' 
+2014-11-27 11:02:35.411 DEBUG 1976 --- [           main] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.yaml' resource not found
+2014-11-27 11:02:35.414  INFO 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b26e945: startup date [Thu Nov 27 11:02:35 CET 2014]; root of context hierarchy
+2014-11-27 11:02:35.416 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Bean factory for org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b26e945: org.springframework.beans.factory.support.DefaultListableBeanFactory@42a48628: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,sampleMongoApplication]; root of factory hierarchy
+2014-11-27 11:02:35.930  INFO 1976 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2014-11-27 11:02:36.161 DEBUG 1976 --- [           main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'sample.data.mongo'. Automatic @Repository and @Entity scanning is enabled.
+2014-11-27 11:02:36.480 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@5c530d1e]
+2014-11-27 11:02:36.480 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Using ApplicationEventMulticaster [org.springframework.context.event.SimpleApplicationEventMulticaster@6c25e6c4]
+2014-11-27 11:02:36.708 DEBUG 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Code archive: /Users/MikaSez/.m2/repository/org/springframework/boot/spring-boot/1.1.9.RELEASE/spring-boot-1.1.9.RELEASE.jar
+2014-11-27 11:02:36.708 DEBUG 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Code archive: /Users/MikaSez/.m2/repository/org/springframework/boot/spring-boot/1.1.9.RELEASE/spring-boot-1.1.9.RELEASE.jar
+2014-11-27 11:02:36.708 DEBUG 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2014-11-27 11:02:36.739  INFO 1976 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 8080
+2014-11-27 11:02:36.928  INFO 1976 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2014-11-27 11:02:36.929  INFO 1976 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.56
+2014-11-27 11:02:37.027  INFO 1976 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2014-11-27 11:02:37.028  INFO 1976 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1616 ms
+2014-11-27 11:02:37.829  INFO 1976 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2014-11-27 11:02:37.831  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'metricFilter' to: [/*]
+2014-11-27 11:02:37.832  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2014-11-27 11:02:37.832  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2014-11-27 11:02:37.833  INFO 1976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2014-11-27 11:02:37.869 DEBUG 1976 --- [ost-startStop-1] iguration$ApplicationContextHeaderFilter : Initializing filter 'applicationContextIdFilter'
+2014-11-27 11:02:37.870 DEBUG 1976 --- [ost-startStop-1] iguration$ApplicationContextHeaderFilter : Filter 'applicationContextIdFilter' configured successfully
+2014-11-27 11:02:37.871 DEBUG 1976 --- [ost-startStop-1] ricFilterAutoConfiguration$MetricsFilter : Initializing filter 'metricFilter'
+2014-11-27 11:02:37.871 DEBUG 1976 --- [ost-startStop-1] ricFilterAutoConfiguration$MetricsFilter : Filter 'metricFilter' configured successfully
+2014-11-27 11:02:37.871 DEBUG 1976 --- [ost-startStop-1] o.s.b.a.trace.WebRequestTraceFilter      : Initializing filter 'webRequestLoggingFilter'
+2014-11-27 11:02:37.872 DEBUG 1976 --- [ost-startStop-1] o.s.b.a.trace.WebRequestTraceFilter      : Filter 'webRequestLoggingFilter' configured successfully
+2014-11-27 11:02:38.293  INFO 1976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-11-27 11:02:38.437  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String sample.data.mongo.SampleMongoApplication.index(java.util.Map&lt;java.lang.String, java.lang.Object&gt;)
+2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/books],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List&lt;sample.data.mongo.Book&gt; sample.data.mongo.SampleMongoApplication.getListOfBooks()
+2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/book/{author}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List&lt;sample.data.mongo.Book&gt; sample.data.mongo.SampleMongoApplication.getBookFromAuthor(java.lang.String)
+2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/book/delete/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public boolean sample.data.mongo.SampleMongoApplication.deleteABook(java.lang.String)
+2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/book/add/{author}/{summary}/{title}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public sample.data.mongo.Book sample.data.mongo.SampleMongoApplication.addABook(java.lang.String,java.lang.String,java.lang.String)
+2014-11-27 11:02:38.438  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/book/update],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public sample.data.mongo.Book sample.data.mongo.SampleMongoApplication.updateABook(sample.data.mongo.Book)
+2014-11-27 11:02:38.440  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2014-11-27 11:02:38.441  INFO 1976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2014-11-27 11:02:38.458  INFO 1976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-11-27 11:02:38.458  INFO 1976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2014-11-27 11:02:38.972  INFO 1976 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2014-11-27 11:02:38.996  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Registering beans for JMX exposure on startup
+2014-11-27 11:02:39.043 DEBUG 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Looking for request mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6b26e945: startup date [Thu Nov 27 11:02:35 CET 2014]; root of context hierarchy
+2014-11-27 11:02:39.044  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.045  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2014-11-27 11:02:39.045  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.046  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.046  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2014-11-27 11:02:39.046  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.047  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke()
+2014-11-27 11:02:39.047  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.048  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.048  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.048  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.049  INFO 1976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2014-11-27 11:02:39.065 DEBUG 1976 --- [           main] ationConfigEmbeddedWebApplicationContext : Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@322803db]
+2014-11-27 11:02:39.067  INFO 1976 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2014-11-27 11:02:39.068  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+2014-11-27 11:02:39.096  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+2014-11-27 11:02:39.104  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+2014-11-27 11:02:39.109  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+2014-11-27 11:02:39.115  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+2014-11-27 11:02:39.120  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+2014-11-27 11:02:39.125  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+2014-11-27 11:02:39.128  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+2014-11-27 11:02:39.136  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+2014-11-27 11:02:39.142  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+2014-11-27 11:02:39.155  INFO 1976 --- [           main] o.s.b.a.e.jmx.EndpointMBeanExporter      : Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+2014-11-27 11:02:39.160 DEBUG 1976 --- [           main] utoConfigurationReportLoggingInitializer : 
+
+
+=========================
+AUTO-CONFIGURATION REPORT
+=========================
+
+
+Positive matches:
+-----------------
+
+   AuditAutoConfiguration.AuditEventRepositoryConfiguration
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.audit.AuditEventRepository; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   DispatcherServletAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+      - @ConditionalOnClass classes found: org.springframework.web.servlet.DispatcherServlet (OnClassCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletConfiguration
+      - no ServletRegistrationBean found (DispatcherServletAutoConfiguration.DefaultDispatcherServletCondition)
+      - @ConditionalOnClass classes found: javax.servlet.ServletRegistration (OnClassCondition)
+
+   EmbeddedServletContainerAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+   EmbeddedServletContainerAutoConfiguration.EmbeddedTomcat
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.apache.catalina.startup.Tomcat (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.boot.context.embedded.EmbeddedServletContainerFactory; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#autoConfigurationAuditEndpoint
+      - @ConditionalOnBean (types: org.springframework.boot.autoconfigure.condition.ConditionEvaluationReport; SearchStrategy: all) found the following [autoConfigurationReport] @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#beansEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.BeansEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#configurationPropertiesReportEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#dumpEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.DumpEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#environmentEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.EnvironmentEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#healthEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.HealthEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#infoEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.InfoEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#metricsEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.MetricsEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#shutdownEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.ShutdownEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration#traceEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.TraceEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointAutoConfiguration.RequestMappingEndpointConfiguration
+      - @ConditionalOnClass classes found: org.springframework.web.servlet.handler.AbstractHandlerMethodMapping (OnClassCondition)
+
+   EndpointAutoConfiguration.RequestMappingEndpointConfiguration#requestMappingEndpoint
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.RequestMappingEndpoint; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointMBeanExportAutoConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.EndpointMBeanExportAutoConfiguration: ${endpoints.jmx.enabled:true} &amp;&amp; ${spring.jmx.enabled:true} (OnExpressionCondition)
+
+   EndpointWebMvcAutoConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet (OnClassCondition)
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+   EndpointWebMvcAutoConfiguration#endpointHandlerMapping
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.mvc.EndpointHandlerMapping; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   EndpointWebMvcAutoConfiguration#environmentMvcEndpoint
+      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.EnvironmentEndpoint; SearchStrategy: all) found the following [environmentEndpoint] (OnBeanCondition)
+      - SpEL expression: ${endpoints.env.enabled:true} (OnExpressionCondition)
+
+   EndpointWebMvcAutoConfiguration#healthMvcEndpoint
+      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.HealthEndpoint; SearchStrategy: all) found the following [healthEndpoint] (OnBeanCondition)
+      - SpEL expression: ${endpoints.health.enabled:true} (OnExpressionCondition)
+
+   EndpointWebMvcAutoConfiguration#metricsMvcEndpoint
+      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.MetricsEndpoint; SearchStrategy: all) found the following [metricsEndpoint] (OnBeanCondition)
+      - SpEL expression: ${endpoints.metrics.enabled:true} (OnExpressionCondition)
+
+   EndpointWebMvcAutoConfiguration#mvcEndpoints
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.endpoint.mvc.MvcEndpoints; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet (OnClassCondition)
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+   ErrorMvcAutoConfiguration#basicErrorController
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ErrorController; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration#errorAttributes
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ErrorAttributes; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration
+      - No error template view detected (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+      - SpEL expression on org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration: ${error.whitelabel.enabled:true} (OnExpressionCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView
+      - @ConditionalOnMissingBean (names: error; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration#healthAggregator
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.health.HealthAggregator; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.MongoHealthIndicatorConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$MongoHealthIndicatorConfiguration: ${health.mongo.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnBean (types: org.springframework.data.mongodb.core.MongoTemplate; SearchStrategy: all) found the following [mongoTemplate] (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.MongoHealthIndicatorConfiguration#mongoHealthIndicator
+      - @ConditionalOnMissingBean (names: mongoHealthIndicator; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration
+      - @ConditionalOnClass classes found: org.springframework.http.converter.HttpMessageConverter (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration#messageConverters
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.HttpMessageConverters; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration.ObjectMappers
+      - @ConditionalOnClass classes found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration.ObjectMappers#mappingJackson2HttpMessageConverter
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   JacksonAutoConfiguration
+      - @ConditionalOnClass classes found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperAutoConfiguration
+      - @ConditionalOnClass classes found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperAutoConfiguration#jacksonObjectMapper
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   JmxAutoConfiguration
+      - @ConditionalOnClass classes found: org.springframework.jmx.export.MBeanExporter (OnClassCondition)
+      - SpEL expression on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration: ${spring.jmx.enabled:true} (OnExpressionCondition)
+
+   JmxAutoConfiguration#mbeanServer
+      - @ConditionalOnMissingBean (types: javax.management.MBeanServer; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   JmxAutoConfiguration#objectNamingStrategy
+      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.naming.ObjectNamingStrategy; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ManagementServerPropertiesAutoConfiguration#managementServerProperties
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.autoconfigure.ManagementServerProperties; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MetricFilterAutoConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,javax.servlet.ServletRegistration,org.springframework.web.filter.OncePerRequestFilter (OnClassCondition)
+      - @ConditionalOnBean (types: org.springframework.boot.actuate.metrics.CounterService,org.springframework.boot.actuate.metrics.GaugeService; SearchStrategy: all) found the following [counterService, gaugeService] (OnBeanCondition)
+
+   MetricRepositoryAutoConfiguration#counterService
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.metrics.CounterService; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MetricRepositoryAutoConfiguration#gaugeService
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.metrics.GaugeService; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MetricRepositoryAutoConfiguration.MetricRepositoryConfiguration
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.metrics.repository.MetricRepository; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MongoAutoConfiguration
+      - @ConditionalOnClass classes found: com.mongodb.Mongo (OnClassCondition)
+
+   MongoAutoConfiguration#mongo
+      - @ConditionalOnMissingBean (types: com.mongodb.Mongo; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MongoDataAutoConfiguration
+      - @ConditionalOnClass classes found: com.mongodb.Mongo,org.springframework.data.mongodb.core.MongoTemplate (OnClassCondition)
+      - @ConditionalOnBean (types: org.springframework.boot.autoconfigure.mongo.MongoProperties; SearchStrategy: all) found the following [spring.data.mongodb.CONFIGURATION_PROPERTIES] (OnBeanCondition)
+
+   MongoDataAutoConfiguration#gridFsTemplate
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.gridfs.GridFsTemplate; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MongoDataAutoConfiguration#mongoDbFactory
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.MongoDbFactory; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MongoDataAutoConfiguration#mongoTemplate
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.core.MongoTemplate; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MongoRepositoriesAutoConfiguration
+      - @ConditionalOnClass classes found: com.mongodb.Mongo,org.springframework.data.mongodb.repository.MongoRepository (OnClassCondition)
+      - SpEL expression on org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration: ${spring.data.mongo.repositories.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MultipartAutoConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.multipart.support.StandardServletMultipartResolver,javax.servlet.MultipartConfigElement (OnClassCondition)
+      - SpEL expression on org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration: ${multipart.enabled:true} (OnExpressionCondition)
+
+   MultipartAutoConfiguration#multipartConfigElement
+      - @ConditionalOnMissingBean (types: javax.servlet.MultipartConfigElement; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   MultipartAutoConfiguration#multipartResolver
+      - @ConditionalOnMissingBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer
+      - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   ServerPropertiesAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+   ServerPropertiesAutoConfiguration#serverProperties
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ServerProperties; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration
+      - @ConditionalOnClass classes found: org.thymeleaf.spring4.SpringTemplateEngine (OnClassCondition)
+
+   ThymeleafAutoConfiguration.DefaultTemplateResolverConfiguration
+      - @ConditionalOnMissingBean (names: defaultTemplateResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafDefaultConfiguration
+      - @ConditionalOnMissingBean (types: org.thymeleaf.spring4.SpringTemplateEngine; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafViewResolverConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet (OnClassCondition)
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafViewResolverConfiguration#thymeleafViewResolver
+      - @ConditionalOnMissingBean (names: thymeleafViewResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebLayoutConfiguration
+      - @ConditionalOnClass classes found: nz.net.ultraq.thymeleaf.LayoutDialect (OnClassCondition)
+
+   TraceRepositoryAutoConfiguration#traceRepository
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.trace.TraceRepository; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   TraceWebFilterAutoConfiguration
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet,javax.servlet.ServletRegistration (OnClassCondition)
+
+   WebMvcAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+      - @ConditionalOnClass classes found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet,org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#hiddenHttpMethodFilter
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.HiddenHttpMethodFilter; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver
+      - @ConditionalOnBean (types: org.springframework.web.servlet.View; SearchStrategy: all) found the following [error] (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextListener
+      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver
+      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found the following [beanNameViewResolver, defaultViewResolver] @ConditionalOnMissingBean (names: viewResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   ActiveMQAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.jms.ConnectionFactory,org.apache.activemq.ActiveMQConnectionFactory (OnClassCondition)
+
+   AopAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.aspectj.lang.annotation.Aspect,org.aspectj.lang.reflect.Advice (OnClassCondition)
+
+   AuditAutoConfiguration#authenticationAuditListener
+      - required @ConditionalOnClass classes not found: org.springframework.security.authentication.event.AbstractAuthenticationEvent (OnClassCondition)
+
+   AuditAutoConfiguration#authorizationAuditListener
+      - required @ConditionalOnClass classes not found: org.springframework.security.access.event.AbstractAuthorizationEvent (OnClassCondition)
+
+   BatchAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.batch.core.launch.JobLauncher,org.springframework.jdbc.core.JdbcOperations (OnClassCondition)
+
+   CrshAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.crsh.plugin.PluginLifeCycle (OnClassCondition)
+
+   DataSourceAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jdbc.core.JdbcTemplate (OnClassCondition)
+
+   DeviceDelegatingViewResolverAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolver (OnClassCondition)
+
+   DeviceResolverAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.DeviceResolverHandlerInterceptor,org.springframework.mobile.device.DeviceHandlerMethodArgumentResolver (OnClassCondition)
+
+   ElasticsearchAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.client.TransportClientFactoryBean,org.springframework.data.elasticsearch.client.NodeClientFactoryBean (OnClassCondition)
+
+   ElasticsearchDataAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.core.ElasticsearchTemplate (OnClassCondition)
+
+   ElasticsearchRepositoriesAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.repository.ElasticsearchRepository (OnClassCondition)
+
+   EmbeddedServletContainerAutoConfiguration.EmbeddedJetty
+      - required @ConditionalOnClass classes not found: org.eclipse.jetty.server.Server,org.eclipse.jetty.util.Loader (OnClassCondition)
+
+   EndpointMBeanExportAutoConfiguration#mbeanServer
+      - @ConditionalOnMissingBean (types: javax.management.MBeanServer; SearchStrategy: all) found the following [mbeanServer] (OnBeanCondition)
+
+   EndpointWebMvcAutoConfiguration#shutdownMvcEndpoint
+      - @ConditionalOnBean (types: org.springframework.boot.actuate.endpoint.ShutdownEndpoint; SearchStrategy: all) found the following [shutdownEndpoint] (OnBeanCondition)
+      - SpEL expression: ${endpoints.shutdown.enabled:false} (OnExpressionCondition)
+
+   FacebookAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.facebook.connect.FacebookConnectionFactory (OnClassCondition)
+
+   FallbackWebSecurityAutoConfiguration
+      - SpEL expression on org.springframework.boot.autoconfigure.security.FallbackWebSecurityAutoConfiguration: !${security.basic.enabled:true} (OnExpressionCondition)
+
+   FlywayAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.flywaydb.core.Flyway (OnClassCondition)
+
+   FreeMarkerAutoConfiguration
+      - required @ConditionalOnClass classes not found: freemarker.template.Configuration,org.springframework.ui.freemarker.FreeMarkerConfigurationFactory (OnClassCondition)
+
+   GroovyTemplateAutoConfiguration
+      - required @ConditionalOnClass classes not found: groovy.text.TemplateEngine (OnClassCondition)
+
+   HealthIndicatorAutoConfiguration#statusHealthIndicator
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.health.HealthIndicator; SearchStrategy: all) found the following [mongoHealthIndicator] (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.DataSourcesHealthIndicatorConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$DataSourcesHealthIndicatorConfiguration: ${health.db.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.RabbitHealthIndicatorConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$RabbitHealthIndicatorConfiguration: ${health.rabbit.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnBean (types: org.springframework.amqp.rabbit.core.RabbitTemplate; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.RedisHealthIndicatorConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$RedisHealthIndicatorConfiguration: ${health.redis.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnBean (types: org.springframework.data.redis.connection.RedisConnectionFactory; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HealthIndicatorAutoConfiguration.SolrHealthIndicatorConfiguration
+      - SpEL expression on org.springframework.boot.actuate.autoconfigure.HealthIndicatorAutoConfiguration$SolrHealthIndicatorConfiguration: ${health.solr.enabled:true} (OnExpressionCondition)
+      - @ConditionalOnBean (types: org.apache.solr.client.solrj.SolrServer; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HibernateJpaAutoConfiguration
+      - did not find HibernateEntityManager class (HibernateJpaAutoConfiguration.HibernateEntityManagerCondition)
+
+   HornetQAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.jms.ConnectionFactory,org.hornetq.api.jms.HornetQJMSClient (OnClassCondition)
+
+   HypermediaAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.hateoas.Resource,org.springframework.plugin.core.Plugin (OnClassCondition)
+
+   IntegrationAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.integration.config.EnableIntegration (OnClassCondition)
+
+   JacksonAutoConfiguration.JodaModuleAutoConfiguration
+      - required @ConditionalOnClass classes not found: com.fasterxml.jackson.datatype.joda.JodaModule (OnClassCondition)
+
+   JacksonAutoConfiguration.Jsr310ModuleAutoConfiguration
+      - Required JVM version 1.8 or newer found 1.8 (OnJavaCondition)
+      - required @ConditionalOnClass classes not found: com.fasterxml.jackson.datatype.jsr310.JSR310Module (OnClassCondition)
+
+   JmsAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jms.core.JmsTemplate (OnClassCondition)
+
+   JmxAutoConfiguration#mbeanExporter
+      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.MBeanExporter; SearchStrategy: current) found the following [mbeanExporter] (OnBeanCondition)
+
+   JolokiaAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+      - required @ConditionalOnClass classes not found: org.jolokia.http.AgentServlet (OnClassCondition)
+
+   JpaRepositoriesAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.data.jpa.repository.JpaRepository (OnClassCondition)
+
+   LinkedInAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.linkedin.connect.LinkedInConnectionFactory (OnClassCondition)
+
+   LiquibaseAutoConfiguration
+      - required @ConditionalOnClass classes not found: liquibase.integration.spring.SpringLiquibase (OnClassCondition)
+
+   ManagementSecurityAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.security.config.annotation.web.configuration.EnableWebSecurity (OnClassCondition)
+
+   ManagementServerPropertiesAutoConfiguration#securityProperties
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.security.SecurityProperties; SearchStrategy: all) found no beans (OnBeanCondition)
+      - required @ConditionalOnClass classes not found: org.springframework.security.config.annotation.web.configuration.EnableWebSecurity (OnClassCondition)
+
+   ManagementServerPropertiesAutoConfiguration#serverProperties
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.ServerProperties; SearchStrategy: all) found the following [serverProperties] (OnBeanCondition)
+
+   MessageSourceAutoConfiguration
+      - No bundle found for spring.messages.basename: messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   MetricRepositoryAutoConfiguration.CodahaleMetricRegistryConfiguration
+      - required @ConditionalOnClass classes not found: com.codahale.metrics.MetricRegistry (OnClassCondition)
+
+   MetricRepositoryAutoConfiguration.MetricsChannelConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.messaging.MessageChannel (OnClassCondition)
+
+   RabbitAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.amqp.rabbit.core.RabbitTemplate,com.rabbitmq.client.Channel (OnClassCondition)
+
+   ReactorAutoConfiguration
+      - required @ConditionalOnClass classes not found: reactor.spring.context.config.EnableReactor (OnClassCondition)
+
+   RedisAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.data.redis.connection.jedis.JedisConnection,org.springframework.data.redis.core.RedisOperations,redis.clients.jedis.Jedis (OnClassCondition)
+
+   RepositoryRestMvcAutoConfiguration
+      - found web application StandardServletEnvironment (OnWebApplicationCondition)
+      - required @ConditionalOnClass classes not found: org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration (OnClassCondition)
+
+   SecurityAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.security.authentication.AuthenticationManager (OnClassCondition)
+
+   SitePreferenceAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.site.SitePreferenceHandlerInterceptor,org.springframework.mobile.device.site.SitePreferenceHandlerMethodArgumentResolver (OnClassCondition)
+
+   SocialWebAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.connect.web.ConnectController,org.springframework.social.config.annotation.SocialConfigurerAdapter (OnClassCondition)
+
+   SolrAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.apache.solr.client.solrj.impl.HttpSolrServer,org.apache.solr.client.solrj.impl.CloudSolrServer (OnClassCondition)
+
+   SolrRepositoriesAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.apache.solr.client.solrj.SolrServer,org.springframework.data.solr.repository.SolrRepository (OnClassCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafSecurityDialectConfiguration
+      - required @ConditionalOnClass classes not found: org.thymeleaf.extras.springsecurity3.dialect.SpringSecurityDialect (OnClassCondition)
+
+   TwitterAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.twitter.connect.TwitterConnectionFactory (OnClassCondition)
+
+   VelocityAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.apache.velocity.app.VelocityEngine,org.springframework.ui.velocity.VelocityEngineFactory (OnClassCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#dateFormatter
+      - @ConditionalOnProperty missing required properties: date-format not found (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#localeResolver
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.LocaleResolver; SearchStrategy: all) found no beans (OnBeanCondition)
+      - @ConditionalOnProperty missing required properties: locale not found (OnPropertyCondition)
+
+   WebSocketAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.web.socket.WebSocketHandler (OnClassCondition)
+
+
+
+2014-11-27 11:02:39.212  INFO 1976 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080/http
+2014-11-27 11:02:39.214  INFO 1976 --- [           main] s.data.mongo.SampleMongoApplication      : Started SampleMongoApplication in 4.175 seconds (JVM running for 4.59)
+</system-out>
+  </testcase>
+</testsuite>

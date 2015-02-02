@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Spring Boot CLI + Javascript</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="../../css/bootstrap.min.css" />
+	
+<script type="text/javascript" th:src="@{/js/angular.min.js}"
+	src="../../js/angular.min.js" />
+</head>
+<body ng-app="BooksApp" ng-controller="HeadController">
+  <table class="table table-stripped table-condensed">
+  		<tr>
+  			<th>Auteur</th>
+  			<th>Titre</th>
+  			<th>Resumé</th>
+  			<th>Action</th>
+  		</tr>
+  		<tr ng-repeat="book in books" ng-click="showBook(book)">
+  			<td> {{book.author}} </td>
+  			<td> {{book.title}} </td>
+  			<td> {{book.summary}} </td>
+  			<td> <button class="btn btn-danger" ng-click="suppr(book.id)">delete</button></td>
+  		</tr>
+  </table>
+  <div ng-show="book" class="alert alert-warning">
+  		<h2>{{book.title}} <small>{{book.author}}</small></h2>
+  		<p>{{book.summary}}</p>
+  </div> 
+  
+  <form novalidate="novalidate" class="addBook form"> 
+  	<input type="text" name="title" ng-model="book.title" placeholder="Titre du livre"/> 
+  	<input type="text" name="author" ng-model="book.author" placeholder="L'auteur du livre"/> 
+  	<input type="text" name="summary" ng-model="book.summary" placeholder="Résumé du livre"/> 
+    <button ng-click="save(book)" class="btn btn-large btn-success">Enregistrer</button>
+  </form>
+<script>
+	
+'use strict';
+//Declare app level module which depends on filters, and services
+angular.module('BooksApp', [
+'BooksApp.controllers'
+]);
+
+/* Controllers */
+
+var app = angular.module('BooksApp.controllers', []);
+app.controller('HeadController', function($scope,$http){
+		function init(){
+			$http.get("/books").success(function(data){
+				$scope.books = data;
+			});
+		$scope.suppr = function(id){
+			$http.post("/book/delete/" + id).success(function(data){
+				 var index = $scope.books.indexOf(data);
+  				$scope.books.splice(index, 1);    
+			});
+		};
+		
+		$scope.showBook = function(book){
+			$scope.book = book;
+		};
+		$scope.save = function(book){
+			if(typeof book.id === "undefined"){
+				$http.post("/book/add/" + book.author + "/" + book.summary + "/" + book.title).success(function(data){ //si crade :)
+					init(); //to get the generated id
+				});
+			} else {
+				$http.post("/book/update/", book).success(function(data){ //si crade :)
+					
+				});
+			}
+		};
+	};
+	init();
+	
+})
+</script>
+</body>
+</html>
