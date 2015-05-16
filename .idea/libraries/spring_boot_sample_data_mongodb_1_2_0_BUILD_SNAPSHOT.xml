@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="spring-boot-sample-data-mongodb-1.2.0.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/DeSabre/target/spring-boot-sample-data-mongodb-1.2.0.BUILD-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
