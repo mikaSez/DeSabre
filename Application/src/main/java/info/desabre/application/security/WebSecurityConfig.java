@@ -1,4 +1,4 @@
-package info.desabre.security;
+package info.desabre.application.security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/index").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
