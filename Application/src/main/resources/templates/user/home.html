@@ -1,13 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head lang="fr">
     <meta charset="UTF-8">
     </meta>
     <title>Home page</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Page principale"/>
+    <meta name="author" content="MikaSez"/>
+
+    <title>DeSaBre : Création job</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/CSS/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- MetisMenu CSS -->
+    <link href="/CSS/plugins/metisMenu/metisMenu.min.css" rel="stylesheet"/>
+
+
+    <!-- DataTables CSS -->
+    <link href="/CSS/plugins/dataTables.bootstrap.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="/CSS/sb-admin-2.css" rel="stylesheet"/>
+
+    <!-- Morris Charts CSS -->
+    <link href="/CSS/plugins/morris.css" rel="stylesheet"/>
+
+    <!-- Custom Fonts -->
+    <link href="/CSS/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/CSS/global.css" rel="stylesheet" type="text/css"/>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/javascript/react-with-addons.js"></script>
+    <script src="/javascript/JSXTransformer.js"></script>
+    <script src="/javascript/temp-mock-data.js"></script>
+
 </head>
 <body>
-<h1>Welcome!</h1>
+<div th:include="fragments/navigation :: navigation"></div>
 
-<p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+<!-- jQuery -->
+<script src="/javascript/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/javascript/bootstrap.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/javascript/plugins/metisMenu/metisMenu.min.js"></script>
+
+
+<script src="/javascript/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="/javascript/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/javascript/sb-admin-2.js"></script>
+
+<script type="text/jsx">
+    $(document).ready(function () {
+        $('#dataTables-viewJobs').dataTable();
+        React.render(
+                <NavigationMenu />,
+                document.getElementById('navigation')
+        );
+    });
+</script>
 </body>
 </html>
