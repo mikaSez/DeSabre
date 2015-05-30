@@ -50,3 +50,9 @@ var messageData = [
         message: "Ce travail lancé le *15/12/2013* sur le serveur *CALC1* est en erreur. "
     }
 ];
+
+var widgetBoxData = [
+    {id: 1, color: "primary", icon: "bell", number: 5, path: "#", text: "Nouvelle(s) notification(s)."},
+    {id: 2, color: "red", icon: "database", number: 3, path: "#", text: "Job(s) en cours."},
+    {id: 3, color: "green", icon: "tasks", number: 12, path: "#", text: "Messages."}
+];

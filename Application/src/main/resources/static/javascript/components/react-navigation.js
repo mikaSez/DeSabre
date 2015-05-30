@@ -305,7 +305,7 @@ var NavigationMenu = React.createClass({
             <div className="Navigation">
                 <TopNav />
 
-                <div className="page-wrapper">
+                <div style={{display: "none"}}>
                     <SideNav />
                 </div>
             </div>
