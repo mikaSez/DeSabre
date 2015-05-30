@@ -56,3 +56,11 @@ var widgetBoxData = [
     {id: 2, color: "red", icon: "database", number: 3, path: "#", text: "Job(s) en cours."},
     {id: 3, color: "green", icon: "tasks", number: 12, path: "#", text: "Messages."}
 ];
+
+
+var widgetNewsData = [
+    {id: 1, title: "Job en erreur !", time: "20/10/2015", icon: "tasks", path: "#"},
+    {id: 2, title: "Serveur redemarre.", time: "20/10/2015", icon: "database", path: "#"},
+    {id: 3, title: "En informer le monde", time: "5/10/2015", icon: "twitter", path: "#"},
+    {id: 4, title: "Verifier le status", time: "20/10/2016", icon: "facebook", path: "#"}
+];
