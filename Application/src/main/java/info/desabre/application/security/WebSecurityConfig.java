@@ -15,8 +15,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/user/*").hasAnyRole("USER")
-                .antMatchers("/admin/*").hasAnyRole("ADMIN")
+                .antMatchers("/user/*").hasAnyRole(Role.USER.getRoleName())
+                .antMatchers("/admin/*").hasAnyRole(Role.ADMIN.getRoleName())
                 .antMatchers("/CSS/*").permitAll()
                 .antMatchers("/javascript/*").permitAll()
                 .anyRequest().authenticated()
@@ -30,9 +30,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER").and()
-                .withUser("admin").password("password").roles("ADMIN").and()
-                .withUser("dorian").password("toto").roles("USER", "ADMIN").and()
-                .withUser("maxime").password("toto").roles("USER", "ADMIN");
+                .withUser(Role.USER.getRoleName()).password("password").roles(Role.USER.getRoleName()).and()
+                .withUser(Role.ADMIN.getRoleName()).password("password").roles(Role.ADMIN.getRoleName()).and()
+                .withUser("dorian").password("toto").roles(Role.USER.getRoleName(), Role.ADMIN.getRoleName()).and()
+                .withUser("maxime").password("toto").roles(Role.USER.getRoleName(), Role.ADMIN.getRoleName());
     }
 }
