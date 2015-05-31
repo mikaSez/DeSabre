@@ -64,3 +64,42 @@ var widgetNewsData = [
     {id: 3, title: "En informer le monde", time: "5/10/2015", icon: "twitter", path: "#"},
     {id: 4, title: "Verifier le status", time: "20/10/2016", icon: "facebook", path: "#"}
 ];
+
+var widgetTimelineData =
+{
+    title: "Compter les poules", steps: [
+    {id: 0, title: "Creation du job", text: "Le job a été crée le 12.04.15", step: 1, icon: "gift", iconType: "info"},
+    {
+        id: 1,
+        title: "Lancement du job",
+        text: "Le job a été lancé le 14.12.15",
+        step: 2,
+        icon: "play",
+        iconType: "success"
+    },
+    {
+        id: 2,
+        title: "Chargement sur le serveur",
+        text: "Le job a été cahrgé sur le serveur le 12.04.15",
+        step: 3,
+        icon: "upload",
+        iconType: "success"
+    },
+    {
+        id: 3,
+        title: "Lancement sur le serveur",
+        text: "Le job a été lancé par le serveur",
+        step: 4,
+        icon: "history",
+        iconType: "info"
+    },
+    {
+        id: 4,
+        title: "Fin du job",
+        text: "Interrompu par l'utilisateur",
+        step: 5,
+        icon: "puzzle-piece",
+        iconType: "danger"
+    }
+]
+};
