@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Component
 public class UserService {
 
-    private List<Role> userAuthorities;
+    private final List<Role> userAuthorities;
     private UserDetails userDetails;
 
     public UserService() {
@@ -30,10 +30,12 @@ public class UserService {
     private void init() {
         userDetails = currentUserDetails();
         if (userDetails != null) {
-            List<String> authorities = userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
-            for (String s : authorities) {
-                userAuthorities.add(Role.fromName(s));
-            }
+            List<String> authorities = userDetails.getAuthorities()
+                    .stream()
+                    .map(GrantedAuthority::getAuthority)
+                    .collect(Collectors.toList());
+            authorities.forEach(s1 -> userAuthorities.add(Role.fromName(s1)));
+
         }
     }
 
