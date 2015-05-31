@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -20,20 +21,24 @@ import java.util.stream.Collectors;
 @Component
 public class UserService {
 
-    private final List<Role> userAuthorities;
+    private List<Role> userAuthorities;
     private UserDetails userDetails;
-
+    private Logger log = Logger.getLogger(UserService.class.getName());
     public UserService() {
         userAuthorities = new ArrayList();
     }
 
     private void init() {
         userDetails = currentUserDetails();
+        userAuthorities.clear();
         if (userDetails != null) {
+
             List<String> authorities = userDetails.getAuthorities()
                     .stream()
                     .map(GrantedAuthority::getAuthority)
                     .collect(Collectors.toList());
+
+
             authorities.forEach(s1 -> userAuthorities.add(Role.fromName(s1)));
 
         }
