@@ -8,18 +8,18 @@ var sideNavData = [
     {
         title: "Jobs", icon: "fa-wrench", path: "#",
         childs: [
-            {title: "Voir les jobs", icon: "fa-tasks"},
-            {title: "Creer un job", icon: "fa-plus"},
-            {title: "Lancer un job", icon: "fa-play"}
+            {title: "Voir les jobs", icon: "fa-tasks", path: "job/list"},
+            {title: "Creer un job", icon: "fa-plus", path: "#"},
+            {title: "Lancer un job", icon: "fa-play", path: "#"}
         ]
     },
     {
         title: "Developpement purpose", icon: "fa-linux", path: "#",
         childs: [
-            {title: "Login page", icon: "fa-users"},
-            {title: "Registration page", icon: "fa-users"},
-            {title: "Forgotten password page", icon: "fa-users"},
-            {title: "Switch to admin view", icon: "fa-users"}
+            {title: "Login page", icon: "fa-users", path: "#"},
+            {title: "Registration page", icon: "fa-users", path: "#"},
+            {title: "Forgotten password page", icon: "fa-users", path: "#"},
+            {title: "Switch to admin view", icon: "fa-users", path: "#"}
         ]
     }
 ];
@@ -103,3 +103,35 @@ var widgetTimelineData =
     }
 ]
 };
+
+
+var widgetGridHeader = {
+    title: "Visualiser les jobs",
+    headers: [
+        {text: "Nom"},
+        {text: "Crée le"},
+        {text: "Visualiser"}
+    ]
+};
+
+var widgetGridData = [
+    {id: 0, title: "Compter les poules", date: "10/02/2003", path: "#"},
+    {id: 1, title: "Vitesse moyenne de Superman", date: "10/02/2005", path: "#"},
+    {id: 2, title: "Production moyenne de toile par Spiderman", date: "10/02/2003", path: "#"},
+    {id: 3, title: "Nombre PI", date: "10/02/2003", path: "#"},
+    {id: 4, title: "Dechiffrage enigma ", date: "10/02/1941", path: "#"},
+    {id: 5, title: "Chiffrage Titan", date: "10/02/1942", path: "#"},
+    {id: 8, title: "Compter les poules", date: "10/02/2003", path: "#"},
+    {id: 9, title: "Vitesse moyenne de Superman", date: "10/02/2005", path: "#"},
+    {id: 21, title: "Production moyenne de toile par Spiderman", date: "10/02/2003", path: "#"},
+    {id: 32, title: "Nombre PI", date: "10/02/2003", path: "#"},
+    {id: 43, title: "Dechiffrage enigma ", date: "10/02/1941", path: "#"},
+    {id: 54, title: "Chiffrage Titan", date: "10/02/1942", path: "#"},
+    {id: 123, title: "Compter les poules", date: "10/02/2003", path: "#"},
+    {id: 15, title: "Vitesse moyenne de Superman", date: "10/02/2005", path: "#"},
+    {id: 23, title: "Production moyenne de toile par Spiderman", date: "10/02/2003", path: "#"},
+    {id: 323, title: "Nombre PI", date: "10/02/2003", path: "#"},
+    {id: 489, title: "Dechiffrage enigma ", date: "10/02/1941", path: "#"},
+    {id: 5435, title: "Chiffrage Titan", date: "10/02/1942", path: "#"},
+    {id: 612, title: "Nombre de naissance par seconde", date: "10/02/2011", path: "#"}
+];

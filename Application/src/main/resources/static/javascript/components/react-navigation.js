@@ -195,11 +195,11 @@ var NavBarLinks = React.createClass({
 var TopNav = React.createClass({
     render: function () {
         return (
-            <nav className="navbar navbar-default navbar-static-top" role="navigation">
+            <div >
                 <NavBarHeader />
                 <NavBarLinks />
 
-            </nav>
+            </div>
         );
     }
 });
@@ -259,7 +259,7 @@ var SideItemChild = React.createClass({
         var classString = "fa fa-fw " + item.icon;
         return (
             <li>
-                <a className="" href="index.html"><i className={classString}></i>{item.title}</a>
+                <a className="" href={item.path}><i className={classString}></i>{item.title}</a>
             </li>
         );
     }
@@ -302,13 +302,13 @@ var NavigationMenu = React.createClass({
     render: function () {
         return (
 
-            <div className="Navigation">
+            <nav className="navbar navbar-default navbar-static-top" role="navigation">
                 <TopNav />
 
-                <div style={{display: "none"}}>
+                <div>
                     <SideNav />
                 </div>
-            </div>
+            </nav>
         );
     }
 });
