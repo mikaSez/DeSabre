@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="fr">
-    <meta charset="UTF-8">
-    </meta>
-    <title>Home page</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Page principale"/>
+    <meta name="description" content="Page principale utilisateur"/>
     <meta name="author" content="MikaSez"/>
-
-    <title>DeSaBre : Création job</title>
-
+    <title>DeSaBre : home page</title>
     <link href="/CSS/bootstrap.min.css" rel="stylesheet"/>
     <link href="/CSS/plugins/metisMenu/metisMenu.min.css" rel="stylesheet"/>
     <link href="/CSS/plugins/dataTables.bootstrap.css" rel="stylesheet"/>
@@ -34,30 +29,27 @@
 
 </head>
 <body>
-<div th:include="fragments/navigation :: navigation"></div>
-<div class="page-wrapper">
-    <div th:include="fragments/widget :: widgetBox"></div>
-    <div th:include="fragments/widget :: widgetNews"></div>
-    <div th:include="fragments/widget :: widgetTimeline"></div>
+
+<div id="wrapper">
+    <div th:include="fragments/navigation :: navigation"></div>
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Accueil</h1>
+            </div>
+        </div>
+        <div th:include="fragments/widget :: widgetBox"></div>
+        <div th:include="fragments/widget :: widgetNews"></div>
+        <div th:include="fragments/widget :: widgetTimeline"></div>
+    </div>
 </div>
 
-
-<!-- jQuery -->
 <script src="/javascript/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
 <script src="/javascript/bootstrap.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
 <script src="/javascript/plugins/metisMenu/metisMenu.min.js"></script>
-
-
 <script src="/javascript/plugins/dataTables/jquery.dataTables.js"></script>
 <script src="/javascript/plugins/dataTables/dataTables.bootstrap.js"></script>
-
-<!-- Custom Theme JavaScript -->
 <script src="/javascript/sb-admin-2.js"></script>
-
 <script type="text/jsx">
     $(document).ready(function () {
         $('#dataTables-viewJobs').dataTable();
