@@ -27,7 +27,7 @@ var sideNavData = [
 var userOptionsData = [
     {title: "Profil utilisateur", icon: "fa-user", path: "#"},
     {title: "Parametrages", icon: "fa-gear", path: "#"},
-    {title: "Déconnexion", icon: "fa-sign-out", path: "#"}
+    {title: "Déconnexion", icon: "fa-sign-out", path: "/logout"}
 ];
 
 var taskData = [
