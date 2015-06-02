@@ -24,11 +24,13 @@
         <processorPath useClasspath="true" />
         <module name="application" />
         <module name="database-init" />
+        <module name="database-models" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="application" target="1.8" />
       <module name="database-init" target="1.8" />
+      <module name="database-models" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
