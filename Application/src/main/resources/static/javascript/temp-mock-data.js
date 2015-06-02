@@ -9,24 +9,25 @@ var sideNavData = [
         title: "Jobs", icon: "fa-wrench", path: "#",
         childs: [
             {title: "Voir les jobs", icon: "fa-tasks", path: "job/list"},
-            {title: "Creer un job", icon: "fa-plus", path: "#"},
-            {title: "Lancer un job", icon: "fa-play", path: "#"}
+            {title: "Creer un job", icon: "fa-plus", path: "job/create"},
+            {title: "Lancer un job", icon: "fa-play", path: "job/launch"}
         ]
     },
     {
         title: "Developpement purpose", icon: "fa-linux", path: "#",
         childs: [
-            {title: "Login page", icon: "fa-users", path: "#"},
-            {title: "Registration page", icon: "fa-users", path: "#"},
-            {title: "Forgotten password page", icon: "fa-users", path: "#"},
-            {title: "Switch to admin view", icon: "fa-users", path: "#"}
+            {title: "Login page", icon: "fa-users", path: "/login"},
+            {title: "Registration page", icon: "fa-users", path: "/register"},
+            {title: "Forgotten password page", icon: "fa-users", path: "/restore"},
+            {title: "Switch to admin view", icon: "fa-users", path: "/admin/home"},
+            {title: "Switch to user view", icon: "fa-users", path: "/user/home"}
         ]
     }
 ];
 
 var userOptionsData = [
-    {title: "Profil utilisateur", icon: "fa-user", path: "#"},
-    {title: "Parametrages", icon: "fa-gear", path: "#"},
+    {title: "Profil utilisateur", icon: "fa-user", path: "/profil"},
+    {title: "Parametrages", icon: "fa-gear", path: "/settings"},
     {title: "Déconnexion", icon: "fa-sign-out", path: "/logout"}
 ];
 
