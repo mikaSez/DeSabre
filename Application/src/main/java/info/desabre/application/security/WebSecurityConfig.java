@@ -39,6 +39,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser(Role.USER.getRoleName()).password("password").roles(Role.USER.getRoleName()).and()
                 .withUser(Role.ADMIN.getRoleName()).password("password").roles(Role.ADMIN.getRoleName()).and()
                 .withUser("dorian").password("toto").roles(Role.USER.getRoleName(), Role.ADMIN.getRoleName()).and()
-                .withUser("maxime").password("toto").roles(Role.USER.getRoleName(), Role.ADMIN.getRoleName());
+                .withUser("maxime").password("tennis123").roles(Role.USER.getRoleName(), Role.ADMIN.getRoleName());
     }
 }

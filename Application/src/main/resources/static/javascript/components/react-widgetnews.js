@@ -16,7 +16,7 @@ var WidgetNewsList = React.createClass({
             dataType: 'json',
             cache: false,
             success: function (data) {
-                console.info("got news data");
+                console.info("got widgetbox data");
                 this.setState({data: data});
             }.bind(this),
             error: function (xhr, status, err) {
