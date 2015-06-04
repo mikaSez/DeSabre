@@ -3,8 +3,35 @@
  */
 
 var WidgetNewsList = React.createClass({
-    render: function () {
+    getInitialState: function () {
+        console.info("initializing widget news");
+        console.info(this.props);
+        return {data: []};
+    },
 
+
+    loadNewsFromServer: function () {
+        $.ajax({
+            url: this.props.url,
+            dataType: 'json',
+            cache: false,
+            success: function (data) {
+                console.info("got news data");
+                this.setState({data: data});
+            }.bind(this),
+            error: function (xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+    },
+
+    componentDidMount: function () {
+        console.info("managed get the component");
+        this.loadNewsFromServer();
+        setInterval(this.loadNewsFromServer, this.props.pollInterval);
+    },
+
+    render: function () {
         var WidgetNewsItem = React.createClass({
             render: function () {
                 var item = this.props.item;
@@ -18,7 +45,10 @@ var WidgetNewsList = React.createClass({
                 );
             }
         });
-        var newsWidgetItem = this.props.data.map(function (item) {
+
+
+        var data = this.state.data;
+        var newsWidgetItem = data.map(function (item) {
             var key = item.id;
 
             return (
@@ -45,6 +75,6 @@ var WidgetNewsList = React.createClass({
 
 });
 React.render(
-    <WidgetNewsList data={widgetNewsData}/>,
+    <WidgetNewsList url="/news" pollInterval={10000}/>,
     document.getElementById('widgetNews')
 );

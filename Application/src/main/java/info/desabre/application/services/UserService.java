@@ -28,6 +28,11 @@ public class UserService {
         userAuthorities = new ArrayList();
     }
 
+
+    public boolean isAdmin() {
+        return userAuthorities.contains(Role.ADMIN);
+    }
+
     private void init() {
         userDetails = currentUserDetails();
         userAuthorities.clear();

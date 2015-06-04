@@ -59,12 +59,6 @@ var widgetBoxData = [
 ];
 
 
-var widgetNewsData = [
-    {id: 1, title: "Job en erreur !", time: "20/10/2015", icon: "tasks", path: "#"},
-    {id: 2, title: "Serveur redemarre.", time: "20/10/2015", icon: "database", path: "#"},
-    {id: 3, title: "En informer le monde", time: "5/10/2015", icon: "twitter", path: "#"},
-    {id: 4, title: "Verifier le status", time: "20/10/2016", icon: "facebook", path: "#"}
-];
 
 var widgetTimelineData =
 {
@@ -81,7 +75,7 @@ var widgetTimelineData =
     {
         id: 2,
         title: "Chargement sur le serveur",
-        text: "Le job a été cahrgé sur le serveur le 12.04.15",
+        text: "Le job a été chargé sur le serveur le 12.04.15 par Jerome ",
         step: 3,
         icon: "upload",
         iconType: "success"
