@@ -1,4 +1,6 @@
-package desabre.models.information;
+package info.desabre.database.models.information;
+
+import info.desabre.UserConstants;
 
 import java.sql.Timestamp;
 
@@ -8,6 +10,7 @@ public class News {
     private Timestamp time;
     private String icon;
     private String path;
+    private int groupId;
 
     public News(int id, String title, Timestamp time, String icon, String path) {
         this.id = id;
@@ -15,6 +18,16 @@ public class News {
         this.time = time;
         this.icon = icon;
         this.path = path;
+        this.groupId = UserConstants.GLOBAL_GROUPEID.getGroupeId();
+    }
+
+    public News(int id, String title, Timestamp time, String icon, String path, int groupeId) {
+        this.id = id;
+        this.title = title;
+        this.time = time;
+        this.icon = icon;
+        this.path = path;
+        this.groupId = groupeId;
     }
 
     public int getId() {
@@ -55,5 +68,13 @@ public class News {
 
     public void setPath(String path) {
         this.path = path;
+    }
+
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupeId) {
+        this.groupId = groupeId;
     }
 }

@@ -1,4 +1,4 @@
-package desabre.models.job;
+package info.desabre.database.models.job;
 
 
 import org.springframework.data.annotation.Id;

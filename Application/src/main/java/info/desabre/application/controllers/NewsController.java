@@ -1,7 +1,8 @@
 package info.desabre.application.controllers;
 
-import desabre.models.information.News;
 import info.desabre.application.services.UserService;
+import info.desabre.database.information.NewsRepository;
+import info.desabre.database.models.information.News;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,9 @@ public class NewsController {
 
     @Autowired
     private UserService user;
+
+    @Autowired
+    private NewsRepository repository;
 
     @RequestMapping("/news")
     public

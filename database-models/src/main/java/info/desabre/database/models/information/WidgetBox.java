@@ -1,4 +1,4 @@
-package desabre.models.information;
+package info.desabre.database.models.information;
 
 /**
  * Created by MikaSez on 06/06/2015.

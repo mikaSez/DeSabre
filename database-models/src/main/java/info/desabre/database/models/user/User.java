@@ -1,4 +1,4 @@
-package desabre.models.user;
+package info.desabre.database.models.user;
 
 import org.springframework.data.annotation.Id;
 
