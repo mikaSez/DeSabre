@@ -83,6 +83,7 @@ var WidgetParams = React.createClass({
 
 
 React.render(
+
     <WidgetParams header={widgetParamsHeader} data={widgetParamsData}/>,
-    document.getElementById('widgetParams')
+    document.getElementById(widgetParamsHeader.id)
 );

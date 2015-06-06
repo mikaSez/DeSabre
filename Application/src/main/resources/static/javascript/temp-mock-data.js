@@ -135,6 +135,7 @@ var widgetGridData = [
 var widgetParamsHeader =
 {
     title: "Scripts",
+    id: "widgetScript",
     headers: [
         {text: "#"}, {text: "Nom"}, {text: "Taille"}, {text: " "}
     ]
@@ -148,4 +149,14 @@ var widgetParamsData = [
     {id: 4, text: "Dechiffrage enigma ", size: "12MB"}
 ];
 
+
+var widgetLicencesData = {
+    title: "Licences nécessaires",
+    items: [
+        {text: "Matematika"},
+        {text: "Wolfram"},
+        {text: "R"},
+        {text: "Wilson"}
+    ]
+};
 
