@@ -38,7 +38,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>info.info.desabre</groupId>
+            <groupId>info.desabre</groupId>
             <artifactId>database-models</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

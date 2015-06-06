@@ -5,7 +5,7 @@ package info.desabre;
  */
 public enum UserConstants {
     //deplacer dans le parametrage ?
-    STARTING_GROUPEID(100), GLOBAL_GROUPEID(1);
+    STARTING_GROUPEID(100), GLOBAL_GROUPEID(1), ADMIN_GROUPEID(2);
 
     private final int groupeId;
 

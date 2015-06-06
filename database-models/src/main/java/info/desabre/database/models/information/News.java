@@ -1,18 +1,25 @@
 package info.desabre.database.models.information;
 
 import info.desabre.UserConstants;
+import org.springframework.data.annotation.Id;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class News {
-    private int id;
+    @Id
+    private String id;
     private String title;
-    private Timestamp time;
+    private Date time;
     private String icon;
     private String path;
     private int groupId;
 
-    public News(int id, String title, Timestamp time, String icon, String path) {
+    public News() {
+
+    }
+
+    public News(String id, String title, Date time, String icon, String path) {
         this.id = id;
         this.title = title;
         this.time = time;
@@ -21,7 +28,7 @@ public class News {
         this.groupId = UserConstants.GLOBAL_GROUPEID.getGroupeId();
     }
 
-    public News(int id, String title, Timestamp time, String icon, String path, int groupeId) {
+    public News(String id, String title, Date time, String icon, String path, int groupeId) {
         this.id = id;
         this.title = title;
         this.time = time;
@@ -30,11 +37,19 @@ public class News {
         this.groupId = groupeId;
     }
 
-    public int getId() {
+    public News(String title, Date time, String icon, String path, int groupeId) {
+        this.title = title;
+        this.time = time;
+        this.icon = icon;
+        this.path = path;
+        this.groupId = groupeId;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -46,7 +61,7 @@ public class News {
         this.title = title;
     }
 
-    public Timestamp getTime() {
+    public Date getTime() {
         return time;
     }
 
