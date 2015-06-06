@@ -1,5 +1,6 @@
 package info.desabre.application.controllers;
 
+import desabre.models.information.News;
 import info.desabre.application.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +33,6 @@ public class NewsController {
         log.info("news requested");
         List<News> news = new ArrayList<>();
 
-
         if (!user.isAdmin()) {
             news.add(new News(1, "Job en erreur", new Timestamp(new Calendar.Builder().setDate(2015, 10, 20).build().getTimeInMillis()), "tasks", "#"));
             news.add(new News(2, "Serveur redemarre", new Timestamp(new Calendar.Builder().setDate(2015, 10, 20).build().getTimeInMillis()), "database", "#"));
@@ -54,59 +54,4 @@ public class NewsController {
     }
 
 
-    private class News {
-        private int id;
-        private String title;
-        private Timestamp time;
-        private String icon;
-        private String path;
-
-        public News(int id, String title, Timestamp time, String icon, String path) {
-            this.id = id;
-            this.title = title;
-            this.time = time;
-            this.icon = icon;
-            this.path = path;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        public void setTitle(String title) {
-            this.title = title;
-        }
-
-        public Timestamp getTime() {
-            return time;
-        }
-
-        public void setTime(Timestamp time) {
-            this.time = time;
-        }
-
-        public String getIcon() {
-            return icon;
-        }
-
-        public void setIcon(String icon) {
-            this.icon = icon;
-        }
-
-        public String getPath() {
-            return path;
-        }
-
-        public void setPath(String path) {
-            this.path = path;
-        }
-    }
 }
