@@ -8,9 +8,17 @@ var sideNavData = [
     {
         title: "Jobs", icon: "fa-wrench", path: "#",
         childs: [
-            {title: "Voir les jobs", icon: "fa-tasks", path: "job/list"},
-            {title: "Creer un job", icon: "fa-plus", path: "job/create"},
-            {title: "Lancer un job", icon: "fa-play", path: "job/launch"}
+            {title: "Voir les jobs", icon: "fa-tasks", path: "/job/list"},
+            {title: "Creer un job", icon: "fa-plus", path: "/job/create"},
+            {title: "Lancer un job", icon: "fa-play", path: "/job/launch"}
+        ]
+    },
+    {
+        title: "Serveurs", icon: "fa-wrench", path: "#",
+        childs: [
+            {title: "Voir les serveurs", icon: "fa-tasks", path: "/server/list"},
+            {title: "Creer un serveur", icon: "fa-plus", path: "/server/create"},
+            {title: "Lancer un serveur", icon: "fa-play", path: "/server/launch"}
         ]
     },
     {
