@@ -26,6 +26,19 @@
     <script src="/javascript/JSXTransformer.js"></script>
     <script src="/javascript/temp-mock-data.js"></script>
 
+    <script src="/javascript/jquery.js"></script>
+    <script src="/javascript/dataLoader.js"></script>
+    <script>
+        urls = [{from: "/javascript/data/server/header.json", to: "widgetGridHeader"}, {
+            from: "/server/data",
+            to: "widgetGridData"
+        }];
+        console.info(window);
+        var widgetGridHeader;
+        var widgetGridData;
+        dataLoader(window);
+
+    </script>
 </head>
 <body>
 
@@ -41,7 +54,6 @@
     </div>
 </div>
 
-<script src="/javascript/jquery.js"></script>
 <script src="/javascript/bootstrap.js"></script>
 <script src="/javascript/plugins/metisMenu/metisMenu.min.js"></script>
 <script src="/javascript/plugins/dataTables/jquery.dataTables.js"></script>

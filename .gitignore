@@ -69,3 +69,14 @@ local.properties
  
 # PDT-specific
 .buildpath
+
+
+#################
+# IDEAS
+
+#########
+
+idea/**
+.idea/**
+.idea
+

@@ -10,15 +10,38 @@ var WidgetGridHeader = React.createClass({
     }
 });
 
+
+var WidgetGridDataItem = React.createClass({
+    render: function () {
+        var item = this.props.item;
+        return (
+            <td >{item}</td>
+        );
+    }
+
+});
+
 var WidgetGridBodyItem = React.createClass({
     render: function () {
         var item = this.props.item;
 
+        //FIXME seems too ugly to be right
+        var list = [];
+        for (var a in item) {
+            if (a !== "path")
+                list.push(a);
+        }
+
+        var widgetGridDataItems = list.map(function (intern) {
+            return (
+                <WidgetGridDataItem key={intern} item={item[intern]}/>
+            );
+        });
+
         return (
             <tr className="gradeX">
-                <td>{item.title}</td>
-                <td><i className="fa fa-calendar fa-fw"></i>{item.date}</td>
-                <td><a className="" href={item.path}><i className="fa fa-eye fa-fw"></i>Visualiser</a></td>
+                {widgetGridDataItems}
+                <td ><i className="fa fa-eye fa-fw"></i>Visualiser</td>
             </tr>
         );
     }
@@ -33,11 +56,13 @@ var WidgetGrid = React.createClass({
         var widgetGridHeaderItems = header.map(function (item) {
             var key = item.text;
             return (
-                <WidgetGridHeader key={item.text} item={header}/>
+                <WidgetGridHeader key={item.text} item={item}/>
             );
 
         });
-
+        if (data === undefined) {
+            data = [];
+        }
         var widgetGridBodyItems = data.map(function (item) {
             var key = item.id;
             return (

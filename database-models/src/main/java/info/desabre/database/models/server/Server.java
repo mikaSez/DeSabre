@@ -11,7 +11,7 @@ import java.util.List;
 public class Server {
 
     @Id
-    private int id;
+    private String id;
 
     private String name;
     private int coreCount;
@@ -21,11 +21,22 @@ public class Server {
     private boolean deleted;
     private List<Licence> licences;
 
-    public int getId() {
+
+    public Server() {
+    }
+
+    public Server(String id, String name, int machineCount, int coreCount) {
+        this.id = id;
+        this.name = name;
+        this.machineCount = machineCount;
+        this.coreCount = coreCount;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
