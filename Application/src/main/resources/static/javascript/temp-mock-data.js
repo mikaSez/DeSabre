@@ -138,3 +138,33 @@ var widgetGridData = [
     {id: 5435, title: "Chiffrage Titan", date: "10/02/1942", path: "#"},
     {id: 612, title: "Nombre de naissance par seconde", date: "10/02/2011", path: "#"}
 ];
+
+
+var widgetParamsHeader =
+{
+    title: "Scripts",
+    id: "widgetScript",
+    headers: [
+        {text: "#"}, {text: "Nom"}, {text: "Taille"}, {text: " "}
+    ]
+};
+
+var widgetParamsData = [
+    {id: 0, text: "Compter les poules", size: "12KB"},
+    {id: 1, text: "Vitesse moyenne de Superman", size: "13TB"},
+    {id: 2, text: "Production moyenne de toile par Spiderman", size: "2B"},
+    {id: 3, text: "Nombre PI", size: "22TB"},
+    {id: 4, text: "Dechiffrage enigma ", size: "12MB"}
+];
+
+
+var widgetLicencesData = {
+    title: "Licences nécessaires",
+    items: [
+        {text: "Matematika"},
+        {text: "Wolfram"},
+        {text: "R"},
+        {text: "Wilson"}
+    ]
+};
+

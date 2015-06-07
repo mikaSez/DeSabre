@@ -1,8 +1,8 @@
-package desabre.models.job;
+package info.desabre.database.models.job;
 
 
-import desabre.models.server.Licence;
-import desabre.models.server.Server;
+import info.desabre.database.models.server.Licence;
+import info.desabre.database.models.server.Server;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;

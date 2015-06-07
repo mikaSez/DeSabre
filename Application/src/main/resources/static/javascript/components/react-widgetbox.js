@@ -34,8 +34,38 @@ var WidgetBoxItem = React.createClass({
     }
 });
 var WidgetBox = React.createClass({
+
+    getInitialState: function () {
+        console.info("initializing widget box");
+        console.info(this.props);
+        return {data: []};
+    },
+
+
+    loadWidgetFromServer: function () {
+        $.ajax({
+            url: this.props.url,
+            dataType: 'json',
+            cache: false,
+            success: function (data) {
+                console.info("got box data");
+                this.setState({data: data});
+            }.bind(this),
+            error: function (xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+    },
+
+    componentDidMount: function () {
+        console.info("managed get the component");
+        this.loadWidgetFromServer();
+        setInterval(this.loadWidgetFromServer, this.props.pollInterval);
+    },
+
     render: function () {
-        var widgetBoxItem = this.props.data.map(function (item) {
+        var data = this.state.data;
+        var widgetBoxItem = data.map(function (item) {
             var key = item.id;
 
             return (
@@ -50,6 +80,6 @@ var WidgetBox = React.createClass({
     }
 });
 React.render(
-    <WidgetBox data={widgetBoxData}/>,
+    <WidgetBox url="/widgetBox" pollInterval={30000}/>,
     document.getElementById('widgetBox')
 );
