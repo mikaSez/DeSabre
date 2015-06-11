@@ -1,11 +1,8 @@
 {
-  "title": "Visualiser les serveurs",
+  "title": "Visualiser les notificiations",
   "headers": [
     {
       "text": "Nom"
-    },
-    {
-      "text": "Nombre de noyaux"
     },
     {
       "text": "Visualiser"

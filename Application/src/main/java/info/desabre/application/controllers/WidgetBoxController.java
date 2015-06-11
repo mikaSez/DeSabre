@@ -32,7 +32,7 @@ public class WidgetBoxController {
         List<WidgetBox> widgets = new ArrayList<>();
         if (user.isAdmin()) {
 
-            widgets.add(new WidgetBox(1, "primary", "bell", 5, "#", "Notification(s)."));
+            widgets.add(new WidgetBox(1, "primary", "bell", 5, "/notification/list", "Notification(s)."));
             widgets.add(new WidgetBox(2, "red", "database", 3, "#", "Job(s) en cours."));
             widgets.add(new WidgetBox(3, "green", "tasks", 124, "#", "Messages."));
             widgets.add(new WidgetBox(4, "primary", "users", 4000, "#", "Utilisateurs."));
@@ -43,7 +43,6 @@ public class WidgetBoxController {
             widgets.add(new WidgetBox(1, "primary", "bell", 5, "#", "Notification(s)."));
             widgets.add(new WidgetBox(2, "red", "database", 3, "#", "Job(s) en cours."));
             widgets.add(new WidgetBox(3, "green", "tasks", 124, "#", "Messages."));
-            widgets.add(new WidgetBox(4, "blue", "users", 3, "#", "Totos."));
         }
 
         return Collections.unmodifiableList(widgets);

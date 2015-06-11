@@ -233,15 +233,16 @@ var SideItemFather = React.createClass({
         var sidebarChildNodes = item.childs.map(function (item) {
             var key = item.title + "-SideItemChildId";
             return (
-                <SideItemChild key={key} item={item}/>
-
+                <SideItemChild key={key} item={item}>
+                
+                </SideItemChild>
             );
         });
 
         var classString = "fa fa-dashboard fa-fw " + item.icon;
         return (
             <li>
-                <a className="active" href={item.path}><i className={classString}></i>{item.title}</a>
+                <a href={item.path}><i className={classString}></i>{item.title}</a>
                 <ul className="nav nav-second-level">
                     {sidebarChildNodes}
                 </ul>
@@ -259,7 +260,7 @@ var SideItemChild = React.createClass({
         var classString = "fa fa-fw " + item.icon;
         return (
             <li>
-                <a className="" href={item.path}><i className={classString}></i>{item.title}</a>
+                <a href={item.path}><i className={classString}></i>{item.title}</a>
             </li>
         );
     }

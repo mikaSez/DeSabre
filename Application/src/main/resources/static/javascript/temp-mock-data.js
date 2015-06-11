@@ -4,7 +4,7 @@
 
 
 var sideNavData = [
-    {title: "Accueil", icon: "fa-dashboard", path: "/index.html", childs: []},
+    {title: "Accueil", icon: "fa-dashboard", path: "/index", childs: []},
     {
         title: "Jobs", icon: "fa-wrench", path: "#",
         childs: [
