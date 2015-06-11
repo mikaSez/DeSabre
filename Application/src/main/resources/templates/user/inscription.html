@@ -4,10 +4,10 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Page de connexion"/>
+    <meta name="description" content="Page d'inscription "/>
     <meta name="author" content="MikaSez"/>
 
-    <title>DeSaBre : connexion</title>
+    <title>DeSaBre : inscription </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/CSS/bootstrap.min.css" rel="stylesheet"/>
@@ -34,39 +34,33 @@
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">DeSaBre
-                        <small>: se connecter.</small>
+                        <small>: s'inscrire</small>
                     </h3>
                 </div>
                 <div class="panel-body">
-                    <div th:if="${inscribed}" class="alert alert-info">
-                        La demande d'inscription a bien été enregistré. Le compte sera validé par un administrateur sous
-                        peu.
-                    </div>
                     <div th:if="${param.error}" class="alert alert-danger">
-                        Le nom d'utilisateur ou le mot de passe est incorrect.
+                        L'utilisateur avec cet e-mail est déjà inscrit en base.
                     </div>
-                    <div th:if="${param.logout}" class="alert alert-info">
-                        Vous avez été déconnecté.
-                    </div>
-                    <form role="form" th:action="@{/login}" method="post">
+
+                    <form role="form" th:action="@{/inscription/validate}" method="post">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" name="username" type="text"
+                                <input class="form-control" placeholder="E-mail" name="email" type="email"
                                        autofocus="true"/>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Mot de passe" name="password" type="password"
-                                       value=""/>
+                                <input class="form-control" placeholder="Nom" name="name" type="text"
+                                       autofocus="true"/>
                             </div>
-                            <!-- div class="checkbox">
-                                <label>
-                                    <input name="remember" type="checkbox" value="Remember Me"/>Se souvenir de moi
-                                </label>
-                            </div -->
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Prenom" name="forname" type="text"
+                                       autofocus="true"/>
+                            </div>
+
                             <!-- Change this to a button or input when using this as a form -->
                             <input type="submit" class="btn btn-lg btn-info btn-block"/>
                             <a href="/forgottenPassword" class="btn btn-link">Mot de passe oublié?</a>
-                            <a href="/inscription" class="btn btn-link">S'inscrire</a>
+                            <a href="/" class="btn btn-link">Se connecter</a>
                         </fieldset>
                     </form>
                 </div>
