@@ -1,6 +1,6 @@
 package info.desabre;
 
-import info.desabre.database.information.NewsRepository;
+import info.desabre.repositories.information.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

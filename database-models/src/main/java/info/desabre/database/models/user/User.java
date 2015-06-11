@@ -14,12 +14,23 @@ public class User {
     private String id;
     private String firstName;
     private String lastName;
+
     private String login;
     private String password;
     private String mail;
     private Boolean admin;
     private Boolean deleted;
     private String groupeId;
+
+    public User(String firstName, String lastName, String password, String login, String mail, Boolean admin, String groupeId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.login = login;
+        this.mail = mail;
+        this.admin = admin;
+        this.groupeId = groupeId;
+    }
 
     private List<UserPreferences> preferences;
 

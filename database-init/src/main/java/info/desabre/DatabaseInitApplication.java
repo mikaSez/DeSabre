@@ -1,12 +1,16 @@
 package info.desabre;
 
-import info.desabre.database.information.NewsRepository;
 import info.desabre.database.models.information.News;
+import info.desabre.database.models.user.User;
+import info.desabre.repositories.information.NewsRepository;
+import info.desabre.repositories.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -21,12 +25,15 @@ public class DatabaseInitApplication implements CommandLineRunner {
 
     @Autowired
     private NewsRepository newsRepository;
+    @Autowired
+    private UserRepository usersRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(DatabaseInitApplication.class, args);
     }
 
 
+    private static PasswordEncoder encoder = new BCryptPasswordEncoder();
     @Override
     public void run(String... strings) throws Exception {
 
@@ -35,16 +42,33 @@ public class DatabaseInitApplication implements CommandLineRunner {
         }
 
         System.out.println("Encore du travail ?");
+        userMockData();
+        newsMockData();
+        System.out.println("My work here is done");
 
+
+    }
+
+    private void userMockData() {
+        System.out.println("Ajout d'utilisateurs :)");
+        usersRepository.deleteAll();
+
+        List<User> users = new ArrayList();
+        users.add(new User("User", "WithLastName", encoder.encode("user"), "user", "user@desabre.info", false, "100"));
+        users.add(new User("Admin", "WithLastName", encoder.encode("admin"), "admin", "admin@desabre.info", true, "100"));
+        System.out.println(users.size() + " utilisateurs créés ");
+        users.forEach(s -> System.out.println("leurs mails sont : " + s.getMail()));
+        usersRepository.save(users);
+
+    }
+
+    private void newsMockData() {
         System.out.println("Saving news");
         newsRepository.deleteAll();
         initNewsForUser();
         System.out.println("User news saved");
         initNewsForAdministration();
         System.out.println("Admin news saved");
-        System.out.println("My work here is done");
-
-
     }
 
     private void initNewsForAdministration() {

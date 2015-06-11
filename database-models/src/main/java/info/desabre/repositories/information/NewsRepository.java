@@ -1,4 +1,4 @@
-package info.desabre.database.information;
+package info.desabre.repositories.information;
 
 import info.desabre.database.models.information.News;
 import org.springframework.data.mongodb.repository.MongoRepository;

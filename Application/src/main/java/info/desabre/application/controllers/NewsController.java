@@ -2,8 +2,8 @@ package info.desabre.application.controllers;
 
 import info.desabre.UserConstants;
 import info.desabre.application.services.UserService;
-import info.desabre.database.information.NewsRepository;
 import info.desabre.database.models.information.News;
+import info.desabre.repositories.information.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
