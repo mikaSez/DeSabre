@@ -230,22 +230,24 @@ var SideItemFather = React.createClass({
 
     render: function () {
         var item = this.props.item;
-        var sidebarChildNodes = item.childs.map(function (item) {
-            var key = item.title + "-SideItemChildId";
-            return (
-                <SideItemChild key={key} item={item}>
-                
-                </SideItemChild>
-            );
-        });
+        if(item.childs.length === 0)
+        	var sidebarChildNodes = "";
+        else
+	        var sidebarChildNodes = item.childs.map(function (item) {
+	            var key = item.title + "-SideItemChildId";
+	            return (
+	            	<ul className="nav nav-second-level">
+	            		<SideItemChild key={key} item={item}/>
+	                </ul>
+	            );
+	        });
 
         var classString = "fa fa-dashboard fa-fw " + item.icon;
         return (
             <li>
                 <a href={item.path}><i className={classString}></i>{item.title}</a>
-                <ul className="nav nav-second-level">
-                    {sidebarChildNodes}
-                </ul>
+                {sidebarChildNodes}
+                
             </li>
         );
 
@@ -272,9 +274,7 @@ var SidebarItems = React.createClass({
             var key = item.title + "-SideItemFatherId";
             return (
 
-                <SideItemFather key={key} item={item}>
-
-                </SideItemFather>
+                <SideItemFather key={key} item={item}/>
             );
         });
         return (
