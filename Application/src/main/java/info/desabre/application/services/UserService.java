@@ -1,6 +1,9 @@
 package info.desabre.application.services;
 
 import info.desabre.application.security.Role;
+import info.desabre.database.models.user.User;
+import info.desabre.repositories.user.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
@@ -24,9 +27,16 @@ public class UserService {
     private List<Role> userAuthorities;
     private UserDetails userDetails;
     private Logger log = Logger.getLogger(UserService.class.getName());
+
+
+    private User user;
+    @Autowired
+    private UserRepository repository;
+
     public UserService() {
         userAuthorities = new ArrayList();
     }
+
 
 
     public boolean isAdmin() {
@@ -36,19 +46,23 @@ public class UserService {
     private void init() {
         userDetails = currentUserDetails();
         userAuthorities.clear();
+        user = null;
+
         if (userDetails != null) {
 
             List<String> authorities = userDetails.getAuthorities()
                     .stream()
                     .map(GrantedAuthority::getAuthority)
                     .collect(Collectors.toList());
-
-
             authorities.forEach(s1 -> userAuthorities.add(Role.fromName(s1)));
-
+            user = repository.findByMail(userDetails.getUsername());
         }
     }
 
+
+    public User getUser() {
+        return user;
+    }
 
     public List<Role> getUserAuthorities() {
         init();

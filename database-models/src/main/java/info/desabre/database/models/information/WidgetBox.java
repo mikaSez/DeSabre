@@ -1,17 +1,36 @@
 package info.desabre.database.models.information;
 
+import org.springframework.data.annotation.Id;
+
 /**
  * Created by MikaSez on 06/06/2015.
  */
 public class WidgetBox {
-    private int id;
+
+    @Id
+    private String id;
     private String color;
     private String icon;
     private int number;
     private String path;
     private String text;
+    private int groupeId;
 
-    public WidgetBox(int id, String color, String icon, int number, String path, String text) {
+
+    public WidgetBox() {
+
+    }
+
+    public WidgetBox(String color, String icon, int number, String path, String text, int groupeId) {
+        this.color = color;
+        this.icon = icon;
+        this.number = number;
+        this.path = path;
+        this.text = text;
+        this.groupeId = groupeId;
+    }
+
+    public WidgetBox(String id, String color, String icon, int number, String path, String text) {
         this.id = id;
         this.color = color;
         this.icon = icon;
@@ -20,11 +39,11 @@ public class WidgetBox {
         this.text = text;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -66,5 +85,13 @@ public class WidgetBox {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public int getGroupeId() {
+        return groupeId;
+    }
+
+    public void setGroupeId(int groupeId) {
+        this.groupeId = groupeId;
     }
 }

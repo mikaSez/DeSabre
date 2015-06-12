@@ -1,13 +1,14 @@
 package info.desabre.application.controllers;
 
+import info.desabre.UserConstants;
 import info.desabre.application.services.UserService;
 import info.desabre.database.models.information.WidgetBox;
+import info.desabre.repositories.information.WidgetBoxRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
@@ -23,28 +24,25 @@ public class WidgetBoxController {
     private UserService user;
 
 
+    @Autowired
+    private WidgetBoxRepository repository;
+
+
     @RequestMapping("/widgetBox")
     public
     @ResponseBody
     List<WidgetBox> allBox() {
 
         log.info("Widget box information is updating");
-        List<WidgetBox> widgets = new ArrayList<>();
+        List<WidgetBox> widgets = null;
         if (user.isAdmin()) {
-
-            widgets.add(new WidgetBox(1, "primary", "bell", 5, "/notification/list", "Notification(s)."));
-            widgets.add(new WidgetBox(2, "red", "database", 3, "#", "Job(s) en cours."));
-            widgets.add(new WidgetBox(3, "green", "tasks", 124, "#", "Messages."));
-            widgets.add(new WidgetBox(4, "primary", "users", 4000, "#", "Utilisateurs."));
-            widgets.add(new WidgetBox(5, "red", "database", 3, "#", "Serveurs."));
-
+            widgets = repository.findByGroupeId(UserConstants.ADMIN_GROUPEID.getGroupeId());
         } else {
-
-            widgets.add(new WidgetBox(1, "primary", "bell", 5, "#", "Notification(s)."));
-            widgets.add(new WidgetBox(2, "red", "database", 3, "#", "Job(s) en cours."));
-            widgets.add(new WidgetBox(3, "green", "tasks", 124, "#", "Messages."));
+            widgets = repository.findByGroupeId(user.getUser().getGroupeId());
+            if (widgets == null || widgets.isEmpty()) {
+                widgets = repository.findByGroupeId(UserConstants.GLOBAL_GROUPEID.getGroupeId());
+            }
         }
-
         return Collections.unmodifiableList(widgets);
     }
 

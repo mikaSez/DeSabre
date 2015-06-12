@@ -10,7 +10,6 @@ import java.util.List;
  */
 public interface NewsRepository extends MongoRepository<News, String> {
     News findById(int id);
-
     List<News> findByGroupId(int groupeId);
 
 }

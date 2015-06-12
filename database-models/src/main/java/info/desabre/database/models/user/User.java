@@ -20,9 +20,9 @@ public class User {
     private String mail;
     private Boolean admin;
     private Boolean deleted;
-    private String groupeId;
+    private Integer groupeId;
 
-    public User(String firstName, String lastName, String password, String login, String mail, Boolean admin, String groupeId) {
+    public User(String firstName, String lastName, String password, String login, String mail, Boolean admin, Integer groupeId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
@@ -90,11 +90,11 @@ public class User {
         this.deleted = deleted;
     }
 
-    public String getGroupeId() {
+    public Integer getGroupeId() {
         return groupeId;
     }
 
-    public void setGroupeId(String groupeId) {
+    public void setGroupeId(Integer groupeId) {
         this.groupeId = groupeId;
     }
 

@@ -42,6 +42,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         log.info("Trying to connect : " + mail);
         info.desabre.database.models.user.User user = userRepository.findByMail(mail);
         if (user == null) {
+            //FIXME enlever l'erreur
             return new User("Anonyme", "Anonyme", Collections.<GrantedAuthority>emptyList());
         }
         List<GrantedAuthority> authorities = getGrantedAuthorities(user);
@@ -67,7 +68,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     private User buildUserForAuthentication(info.desabre.database.models.user.User user,
                                             List<GrantedAuthority> authorities) {
-        return new User(user.getLogin(), user.getPassword(), authorities);
+        return new User(user.getMail(), user.getPassword(), authorities);
     }
 
 
