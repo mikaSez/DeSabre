@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="fr">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Liste des serveurs"/>
+    <meta name="author" content="MikaSez"/>
+    <title>DeSaBre : server list</title>
+    <link href="/CSS/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/CSS/plugins/metisMenu/metisMenu.min.css" rel="stylesheet"/>
+    <link href="/CSS/plugins/dataTables.bootstrap.css" rel="stylesheet"/>
+    <link href="/CSS/sb-admin-2.css" rel="stylesheet"/>
+    <link href="/CSS/plugins/morris.css" rel="stylesheet"/>
+    <link href="/CSS/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/CSS/global.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- we need that before page loading -->
+    <script src="/javascript/react-with-addons.js"></script>
+    <script src="/javascript/JSXTransformer.js"></script>
+    <script src="/javascript/temp-mock-data.js"></script>
+
+    <script src="/javascript/jquery.js"></script>
+    <script src="/javascript/dataLoader.js"></script>
+    <script>
+        urls = [{from: "/javascript/data/user/header.json", to: "widgetGridHeader"}, {
+            from: "/users/all",
+            to: "widgetGridData"
+        }];
+        console.info(window);
+        var widgetGridHeader;
+        var widgetGridData;
+        dataLoader(window);
+
+    </script>
+</head>
+<body>
+
+<div id="wrapper">
+    <div th:include="fragments/navigation :: navigation"></div>
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Liste des utilisateurs</h1>
+            </div>
+        </div>
+        <div th:include="fragments/widget :: widgetGrid"></div>
+    </div>
+</div>
+
+<script src="/javascript/bootstrap.js"></script>
+<script src="/javascript/plugins/metisMenu/metisMenu.min.js"></script>
+<script src="/javascript/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="/javascript/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script src="/javascript/sb-admin-2.js"></script>
+<script type="text/jsx">
+    $(document).ready(function () {
+        $('.datatable').dataTable();
+    });
+</script>
+</body>
+</html>

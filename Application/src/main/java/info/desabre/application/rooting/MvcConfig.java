@@ -40,6 +40,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter implements EmbeddedServle
         registry.addViewController("/profil").setViewName("user/profil");
         registry.addViewController("/inscription").setViewName("user/inscription");
         registry.addViewController("/index").setViewName("index");
+        registry.addViewController("/admin/users").setViewName("admin/userList");
 
     }
 

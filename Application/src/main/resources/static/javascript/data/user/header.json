@@ -1,0 +1,26 @@
+{
+  "title": "Visualiser les utilisateurs",
+  "headers": [
+    {
+      "text": "Prénom"
+    },
+    {
+      "text": "Nom"
+    },
+    {
+      "text": "Email"
+    },
+    {
+      "text": "Est admin"
+    },
+    {
+      "text": "Est supprimé"
+    },
+    {
+      "text": "groupeId"
+    },
+    {
+      "text": "Visualiser"
+    }
+  ]
+}

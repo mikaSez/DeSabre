@@ -14,8 +14,22 @@ var WidgetGridHeader = React.createClass({
 var WidgetGridDataItem = React.createClass({
     render: function () {
         var item = this.props.item;
+        var print;
+        var classString = "";
+        if (item !== null && item !== true && item !== false) {
+            print = {item};
+
+
+        } else if (item !== true) {
+            print = "Non";
+            classString = "danger";
+        } else {
+            print = "Oui";
+            classString = "success";
+        }
+        console.info(print);
         return (
-            <td >{item}</td>
+            <td className={classString}>{print}</td>
         );
     }
 
