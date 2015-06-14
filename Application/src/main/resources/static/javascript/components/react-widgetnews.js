@@ -79,6 +79,6 @@ var WidgetNewsList = React.createClass({
 
 });
 React.render(
-    <WidgetNewsList url="/news" pollInterval={10000}/>,
+    <WidgetNewsList url="/news" pollInterval={100000}/>,
     document.getElementById('widgetNews')
 );

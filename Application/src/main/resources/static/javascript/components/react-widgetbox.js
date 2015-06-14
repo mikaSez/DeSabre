@@ -80,6 +80,6 @@ var WidgetBox = React.createClass({
     }
 });
 React.render(
-    <WidgetBox url="/widgetBox" pollInterval={30000}/>,
+    <WidgetBox url="/widgetBox" pollInterval={1000000}/>,
     document.getElementById('widgetBox')
 );

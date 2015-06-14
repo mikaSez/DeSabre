@@ -4,7 +4,7 @@
 
 
 var sideNavData = [
-    {title: "Accueil", icon: "fa-dashboard", path: "/index", childs: []},
+    {title: "Accueil", icon: "fa-dashboard", path: "/", childs: []},
     {
         title: "Jobs", icon: "fa-wrench", path: "#",
         childs: [
@@ -60,13 +60,6 @@ var messageData = [
     }
 ];
 
-var widgetBoxData = [
-    {id: 1, color: "primary", icon: "bell", number: 5, path: "#", text: "Nouvelle(s) notification(s)."},
-    {id: 2, color: "red", icon: "database", number: 3, path: "#", text: "Job(s) en cours."},
-    {id: 3, color: "green", icon: "tasks", number: 12, path: "#", text: "Messages."}
-];
-
-
 
 var widgetTimelineData =
 {
@@ -107,25 +100,6 @@ var widgetTimelineData =
 ]
 };
 
-
-
-
-var widgetParamsHeader =
-{
-    title: "Scripts",
-    id: "widgetScript",
-    headers: [
-        {text: "#"}, {text: "Nom"}, {text: "Taille"}, {text: " "}
-    ]
-};
-
-var widgetParamsData = [
-    {id: 0, text: "Compter les poules", size: "12KB"},
-    {id: 1, text: "Vitesse moyenne de Superman", size: "13TB"},
-    {id: 2, text: "Production moyenne de toile par Spiderman", size: "2B"},
-    {id: 3, text: "Nombre PI", size: "22TB"},
-    {id: 4, text: "Dechiffrage enigma ", size: "12MB"}
-];
 
 
 var widgetLicencesData = {
