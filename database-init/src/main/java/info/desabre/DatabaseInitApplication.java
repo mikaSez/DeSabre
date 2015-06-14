@@ -14,8 +14,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -28,7 +26,6 @@ import java.util.List;
 public class DatabaseInitApplication implements CommandLineRunner {
 
 
-    static PasswordEncoder encoder = new BCryptPasswordEncoder();
     private final DatabaseNewsFiller databaseNewsFiller = new DatabaseNewsFiller();
     private final DatabaseUserFiller databaseUserFiller = new DatabaseUserFiller();
     private final DatabaseWidgetBoxFiller databaseWidgetBoxFiller = new DatabaseWidgetBoxFiller();
@@ -62,10 +59,13 @@ public class DatabaseInitApplication implements CommandLineRunner {
         usersRepository.deleteAll();
 
         List<User> users = new ArrayList();
-        users.add(new User("User", "WithLastName", encoder.encode("user"), "user", "user@desabre.info", false, 100));
-        users.add(new User("Admin", "WithLastName", encoder.encode("admin"), "admin", "admin@desabre.info", true, UserConstants.ADMIN_GROUPEID.getGroupeId()));
+        users.add(new User("User", "WithLastName", "$2a$10$vk0FcVaLvmTyQ4YrkVt.S.utmqkk9t8jJpgsHv0w2hRq.gdFAg/3i", false, false, true, 100, "user@desabre.info"));
+        users.add(new User("Admin", "WithLastName", "$2a$10$pQHctBMeOxseJCt3TVWLEuzfVD3yX5KFYfHRmH8a3wIQuo0dYxzwG", true, false, true, UserConstants.ADMIN_GROUPEID.getGroupeId(), "admin@desabre.info"));
+
+
+
         System.out.println(users.size() + " utilisateurs créés ");
-        users.forEach(s -> System.out.println("leurs mails sont : " + s.getMail()));
+        users.forEach(s -> System.out.println("leurs identifiants sont : " + s.getMail() + " | " + s.getPassword()));
         usersRepository.save(users);
 
     }
@@ -94,7 +94,7 @@ public class DatabaseInitApplication implements CommandLineRunner {
         widgets.add(new WidgetBox("primary", "bell", 5, "/notification/list", "Notification(s).", UserConstants.ADMIN_GROUPEID.getGroupeId()));
         widgets.add(new WidgetBox("red", "database", 3, "#", "Job(s) en cours.", UserConstants.ADMIN_GROUPEID.getGroupeId()));
         widgets.add(new WidgetBox("green", "tasks", 124, "#", "Messages.", UserConstants.ADMIN_GROUPEID.getGroupeId()));
-        widgets.add(new WidgetBox("primary", "users", 4000, "#", "Utilisateurs.", UserConstants.ADMIN_GROUPEID.getGroupeId()));
+        widgets.add(new WidgetBox("primary", "users", 4000, "/admin/users", "Utilisateurs.", UserConstants.ADMIN_GROUPEID.getGroupeId()));
         widgets.add(new WidgetBox("red", "database", 3, "#", "Serveurs.", UserConstants.ADMIN_GROUPEID.getGroupeId()));
     }
 
