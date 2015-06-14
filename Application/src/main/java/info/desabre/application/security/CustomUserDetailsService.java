@@ -68,7 +68,9 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     private User buildUserForAuthentication(info.desabre.database.models.user.User user,
                                             List<GrantedAuthority> authorities) {
-        return new User(user.getMail(), user.getPassword(), authorities);
+        User springUser = new User(user.getMail(), user.getPassword(), user.getValidated(), false, false, user.getDeleted(), authorities);
+
+        return springUser;
     }
 
 

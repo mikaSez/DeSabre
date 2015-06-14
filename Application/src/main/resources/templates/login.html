@@ -43,12 +43,13 @@
                         peu.
                     </div>
                     <div th:if="${param.error}" class="alert alert-danger">
-                        Le nom d'utilisateur ou le mot de passe est incorrect.
+                        Le nom d'utilisateur ou le mot de passe est incorrect. Peut être votre compte est en cours de
+                        validation.
                     </div>
                     <div th:if="${param.logout}" class="alert alert-info">
                         Vous avez été déconnecté.
-                    </div>
-                    <form role="form" th:action="@{/login}" method="post">
+
+                        <form role="form" th:action="@{/login}" method="post">
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="E-mail" name="username" type="email"

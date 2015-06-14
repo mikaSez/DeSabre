@@ -20,6 +20,7 @@ public class User {
     private String mail;
     private Boolean admin;
     private Boolean deleted;
+    private Boolean validated;
     private Integer groupeId;
 
     public User(String firstName, String lastName, String password, String login, String mail, Boolean admin, Integer groupeId) {
@@ -33,6 +34,28 @@ public class User {
     }
 
     private List<UserPreferences> preferences;
+
+    public User(String firstName, String lastName, String password, Boolean admin, Boolean deleted, Boolean validated, Integer groupeId, String mail) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.admin = admin;
+        this.deleted = deleted;
+        this.validated = validated;
+        this.groupeId = groupeId;
+        this.mail = mail;
+    }
+
+    public User(String mail, String lastName, String firstName) {
+        this.mail = mail;
+        this.lastName = lastName;
+        this.firstName = firstName;
+
+        //TODO maybe delete the groupe id ?
+        // Doesn't make sense to keep it. We don't have or ever have a distributed architecture. And id is pretty much unique.
+        this.groupeId = 100;
+
+    }
 
     public String getFirstName() {
         return firstName;
@@ -106,6 +129,13 @@ public class User {
         this.id = id;
     }
 
+    public Boolean getValidated() {
+        return validated;
+    }
+
+    public void setValidated(Boolean validated) {
+        this.validated = validated;
+    }
 
     public List<UserPreferences> getPreferences() {
         return preferences;

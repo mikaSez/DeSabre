@@ -41,7 +41,7 @@ public class DatabaseWidgetBoxFiller {
         widgets.add(new WidgetBox("primary", "bell", 5, "/notification/list", "Notification(s).", UserConstants.ADMIN_GROUPEID.getGroupeId()));
         widgets.add(new WidgetBox("red", "database", 3, "#", "Job(s) en cours.", UserConstants.ADMIN_GROUPEID.getGroupeId()));
         widgets.add(new WidgetBox("green", "tasks", 124, "#", "Messages.", UserConstants.ADMIN_GROUPEID.getGroupeId()));
-        widgets.add(new WidgetBox("primary", "users", 4000, "#", "Utilisateurs.", UserConstants.ADMIN_GROUPEID.getGroupeId()));
+        widgets.add(new WidgetBox("primary", "users", 4000, "/admin/users", "Utilisateurs.", UserConstants.ADMIN_GROUPEID.getGroupeId()));
         widgets.add(new WidgetBox("red", "database", 3, "#", "Serveurs.", UserConstants.ADMIN_GROUPEID.getGroupeId()));
     }
 }
