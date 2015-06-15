@@ -14,15 +14,17 @@ public class JobGridView {
 
     private String name;
     private int id;
+    private String date;
 
-    public JobGridView(int id, String name) {
+    public JobGridView(int id, String name, String date) {
         this.name = name;
         this.id = id;
+        this.date = date;
     }
 
 
     public static JobGridView map(Job job) {
-        return new JobGridView(job.getId(), job.getName());
+        return new JobGridView(job.getId(), job.getName(), job.getDate());
     }
 
     public static List<JobGridView> map(List<Job> jobs) {
@@ -44,5 +46,13 @@ public class JobGridView {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

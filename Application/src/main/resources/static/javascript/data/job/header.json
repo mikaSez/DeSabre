@@ -1,11 +1,14 @@
 {
-  "title": "Visualiser les serveurs",
+  "title": "Visualiser les jobs",
   "headers": [
     {
       "text": "id"
     },
     {
       "text": "Nom"
+    },
+    {
+      "text": "Créé le"
     },
     {
       "text": "Visualiser"
