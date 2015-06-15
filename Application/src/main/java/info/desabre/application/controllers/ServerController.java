@@ -2,6 +2,7 @@ package info.desabre.application.controllers;
 
 import info.desabre.application.views.ServerGridView;
 import info.desabre.database.models.server.Server;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +29,12 @@ public class ServerController {
         return "server/serverList";
     }
 
+    @RequestMapping("/create")
+    public String create(Model model) {
 
+        return "server/serverCreate";
+    }
+    
     @RequestMapping("data")
     public
     @ResponseBody
