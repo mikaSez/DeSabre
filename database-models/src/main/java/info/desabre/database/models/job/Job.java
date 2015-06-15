@@ -3,6 +3,7 @@ package info.desabre.database.models.job;
 
 import info.desabre.database.models.server.Licence;
 import info.desabre.database.models.server.Server;
+
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
@@ -17,10 +18,21 @@ public class Job {
     private String name;
     private String groupeid;
     private Server executionServer;
+    private String date;
 
     private Script mainScript;
     private List<Script> scripts;
     private List<Licence> requiredLicences;
+    
+    public Job(){
+    	
+    }
+    
+    public Job(int id, String name, String date){
+    	this.id = id;
+    	this.name = name;
+    	this.date = date;
+    }
 
     public Script getMainScript() {
         return mainScript;
@@ -70,6 +82,14 @@ public class Job {
         this.executionServer = executionServer;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+    
     public List<Licence> getRequiredLicences() {
         return requiredLicences;
     }

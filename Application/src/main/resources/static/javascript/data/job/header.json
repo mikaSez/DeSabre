@@ -1,0 +1,14 @@
+{
+  "title": "Visualiser les serveurs",
+  "headers": [
+    {
+      "text": "id"
+    },
+    {
+      "text": "Nom"
+    },
+    {
+      "text": "Visualiser"
+    }
+  ]
+}
