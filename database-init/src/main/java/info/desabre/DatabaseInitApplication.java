@@ -62,8 +62,6 @@ public class DatabaseInitApplication implements CommandLineRunner {
         users.add(new User("User", "WithLastName", "$2a$10$vk0FcVaLvmTyQ4YrkVt.S.utmqkk9t8jJpgsHv0w2hRq.gdFAg/3i", false, false, true, 100, "user@desabre.info"));
         users.add(new User("Admin", "WithLastName", "$2a$10$pQHctBMeOxseJCt3TVWLEuzfVD3yX5KFYfHRmH8a3wIQuo0dYxzwG", true, false, true, UserConstants.ADMIN_GROUPEID.getGroupeId(), "admin@desabre.info"));
 
-
-
         System.out.println(users.size() + " utilisateurs créés ");
         users.forEach(s -> System.out.println("leurs identifiants sont : " + s.getMail() + " | " + s.getPassword()));
         usersRepository.save(users);
