@@ -46,19 +46,19 @@ public class CustomUserDetailsService implements UserDetailsService {
             return new User("Anonyme", "Anonyme", Collections.<GrantedAuthority>emptyList());
         }
         List<GrantedAuthority> authorities = getGrantedAuthorities(user);
-
+        
         return buildUserForAuthentication(user, authorities);
 
     }
 
 
     /**
-     * While we have only two roles we dont realy need any fancy systems with role in database.
+     * While we have only two roles we don't really need any fancy systems with role in database.
      * But we shouldn't stick with it if roles > 2
      */
     private List<GrantedAuthority> getGrantedAuthorities(info.desabre.database.models.user.User user) {
         List<GrantedAuthority> authorities = new ArrayList();
-        if (user.getAdmin()) {
+        if (user.getAdmin()!= null && user.getAdmin()) {
             authorities.add(new SimpleGrantedAuthority(Role.ADMIN.toString()));
         } else {
             authorities.add(new SimpleGrantedAuthority(Role.USER.toString()));
@@ -68,10 +68,10 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     private User buildUserForAuthentication(info.desabre.database.models.user.User user,
                                             List<GrantedAuthority> authorities) {
-        User springUser = new User(user.getMail(), user.getPassword(), user.getValidated(), false, false, user.getDeleted(), authorities);
-
+    	
+        User springUser = new User(user.getMail(), user.getPassword(), user.getValidated(), true, true, !user.getDeleted(), authorities);
         return springUser;
-    }
+    } 
 
 
 }

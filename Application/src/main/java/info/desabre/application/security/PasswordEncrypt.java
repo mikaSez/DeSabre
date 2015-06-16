@@ -2,6 +2,7 @@ package info.desabre.application.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by MikaSez on 11/06/2015.
