@@ -3,13 +3,15 @@ package info.desabre.fillers;
 import info.desabre.UserConstants;
 import info.desabre.database.models.information.News;
 import info.desabre.repositories.information.NewsRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
+@Service
 public class DatabaseNewsFiller {
     @Autowired
     NewsRepository newsRepository;
