@@ -14,13 +14,26 @@ public class UserGridView {
     private String firstName;
     private String lastName;
     private String mail;
-    private Boolean admin;
-    private Boolean deleted;
-    private Integer groupeId;
+    private String status;
 
 
     public static UserGridView map(User user) {
-        return new UserGridView(user.getFirstName(), user.getLastName(), user.getMail(), user.getAdmin(), user.getDeleted(), user.getGroupeId());
+    	
+    	UserGridView view =new UserGridView(user.getFirstName(), user.getLastName(), user.getMail());
+    	
+    	if(user.getDeleted() && user.getValidated()){
+    		view.status = "deleted";
+    	} else if(user.getDeleted() && !user.getValidated()) {
+    		view.status = "rejected";
+    	} else if(!user.getValidated()){
+    		view.status = "validation";
+    	} else if(user.getAdmin()){
+    		view.status = "admin";
+    	} else {
+    		view.status = "user";
+    	}
+    	
+        return view;
     }
 
     public static List<UserGridView> map(List<User> users) {
@@ -28,13 +41,10 @@ public class UserGridView {
     }
 
 
-    public UserGridView(String firstName, String lastName, String mail, Boolean admin, Boolean deleted, Integer groupeId) {
+    public UserGridView(String firstName, String lastName, String mail) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.mail = mail;
-        this.admin = admin;
-        this.deleted = deleted;
-        this.groupeId = groupeId;
     }
 
 
@@ -62,27 +72,13 @@ public class UserGridView {
         this.mail = mail;
     }
 
-    public Boolean getAdmin() {
-        return admin;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public void setAdmin(Boolean admin) {
-        this.admin = admin;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-    public Boolean getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Boolean deleted) {
-        this.deleted = deleted;
-    }
-
-    public Integer getGroupeId() {
-        return groupeId;
-    }
-
-    public void setGroupeId(Integer groupeId) {
-        this.groupeId = groupeId;
-    }
+   
 }

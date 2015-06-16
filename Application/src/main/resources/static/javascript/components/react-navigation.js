@@ -16,7 +16,7 @@ var NavBarHeader = React.createClass({
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="main.html">DeSaBre</a>
+                <a className="navbar-brand" href="/">DeSaBre</a>
             </div>
         );
     }
