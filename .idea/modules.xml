@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/Application/application.iml" filepath="$PROJECT_DIR$/Application/application.iml" />
       <module fileurl="file://$PROJECT_DIR$/database-init/database-init.iml" filepath="$PROJECT_DIR$/database-init/database-init.iml" />
       <module fileurl="file://$PROJECT_DIR$/database-models/database-models.iml" filepath="$PROJECT_DIR$/database-models/database-models.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DeSabre/src/main/main.iml" filepath="$PROJECT_DIR$/DeSabre/src/main/main.iml" />
     </modules>
   </component>
 </project>
