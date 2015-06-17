@@ -29,12 +29,10 @@
     <script src="/javascript/jquery.js"></script>
     <script src="/javascript/dataLoader.js"></script>
     <script>
-        urls = [{from: "/javascript/data/server/header.json", to: "widgetGridHeader"}, {
+        urls = [{
             from: "/server/data",
             to: "widgetGridData"
         }];
-        console.info(window);
-        var widgetGridHeader;
         var widgetGridData;
         dataLoader(window);
 

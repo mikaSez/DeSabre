@@ -2,6 +2,8 @@ package info.desabre.application.views;
 
 import info.desabre.database.models.user.User;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,7 +17,13 @@ public class UserGridView {
     private String lastName;
     private String mail;
     private String status;
-
+    private String path;
+    private static List<String> header;
+    
+    static {
+    	header = new ArrayList<>();
+    	header.addAll(Arrays.asList("Prenom", "Nom", "Email", "Etat", "Visualiser"));
+    }
 
     public static UserGridView map(User user) {
     	
@@ -32,6 +40,8 @@ public class UserGridView {
     	} else {
     		view.status = "user";
     	}
+    	
+    	view.path = "/admin/users/" + user.getMail();
     	
         return view;
     }
@@ -80,5 +90,16 @@ public class UserGridView {
 		this.status = status;
 	}
 
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+   
+	public List<String> getHeaders(){
+		return header;
+	}
    
 }

@@ -2,6 +2,8 @@ package info.desabre.application.views;
 
 import info.desabre.database.models.server.Server;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,7 +16,14 @@ public class ServerGridView {
 
     private String name;
     private int cores;
-
+    private static List<String> headers;
+    
+    static {
+    	headers = new ArrayList<>();
+    	headers.addAll(Arrays.asList("Nom", "Nombre de coeurs", "Visualiser"));
+    }
+    
+    
     public ServerGridView(String name, int cores) {
         this.name = name;
         this.cores = cores;
@@ -45,4 +54,8 @@ public class ServerGridView {
     public void setCores(int cores) {
         this.cores = cores;
     }
+    
+    public List<String> getHeaders(){
+		return headers;
+	}
 }

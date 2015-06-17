@@ -2,6 +2,8 @@ package info.desabre.application.views;
 
 import info.desabre.database.models.notification.Notification;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,6 +15,15 @@ import java.util.stream.Collectors;
 public class NotificationGridView {
     private String name;
 
+    private static List<String> headers;
+    
+    static {
+    	headers = new ArrayList<>();
+    	headers.addAll(Arrays.asList("Nom", "Visualiser"));
+    }
+    
+    
+    
     public NotificationGridView(String name) {
         this.name = name;
     }
@@ -34,5 +45,10 @@ public class NotificationGridView {
     public void setName(String name) {
         this.name = name;
     }
+    
+
+    public List<String> getHeaders(){
+		return headers;
+	}
 
 }

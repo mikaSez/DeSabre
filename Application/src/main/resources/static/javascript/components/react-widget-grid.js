@@ -5,7 +5,7 @@ var WidgetGridHeader = React.createClass({
     render: function () {
         var item = this.props.item;
         return (
-            <th> {item.text}</th>
+            <th> {item}</th>
         );
     }
 });
@@ -18,8 +18,6 @@ var WidgetGridDataItem = React.createClass({
         var classString = "";
         if (item !== null && item !== true && item !== false) {
             print = {item};
-
-
         } else if (item !== true) {
             print = "Non";
             classString = "danger";
@@ -27,7 +25,6 @@ var WidgetGridDataItem = React.createClass({
             print = "Oui";
             classString = "success";
         }
-        console.info(print);
         return (
             <td className={classString}>{print}</td>
         );
@@ -38,12 +35,15 @@ var WidgetGridDataItem = React.createClass({
 var WidgetGridBodyItem = React.createClass({
     render: function () {
         var item = this.props.item;
-
+        var path = "#";
         //FIXME seems too ugly to be right
         var list = [];
         for (var a in item) {
-            if (a !== "path")
+            if (a !== "path" && a !== "headers"){
                 list.push(a);
+            } else if(a !== "headers"){
+            	path = item[a];
+            }
         }
 
         var widgetGridDataItems = list.map(function (intern) {
@@ -55,7 +55,7 @@ var WidgetGridBodyItem = React.createClass({
         return (
             <tr className="gradeX">
                 {widgetGridDataItems}
-                <td ><i className="fa fa-eye fa-fw"></i>Visualiser</td>
+                <td ><a href={path}><i className="fa fa-eye fa-fw"></i>Visualiser</a></td>
             </tr>
         );
     }
@@ -65,32 +65,44 @@ var WidgetGridBodyItem = React.createClass({
 var WidgetGrid = React.createClass({
     render: function () {
         var data = this.props.data;
-        var header = this.props.header.headers;
 
-        var widgetGridHeaderItems = header.map(function (item) {
-            var key = item.text;
-            return (
-                <WidgetGridHeader key={item.text} item={item}/>
-            );
-
-        });
         if (data === undefined) {
             data = [];
         }
-        var widgetGridBodyItems = data.map(function (item) {
-            var key = item.id;
-            return (
-                <WidgetGridBodyItem key={key} item={item}/>
-            );
-        });
+        var widgetGridBodyItems;
+        if(data.length !== 0){
+        	var header = data[0].headers; 
+        	
+            
+            var widgetGridHeaderItems = header.map(function (item) {
+                var key = item;
+                return (
+                    <WidgetGridHeader key={item} item={item}/>
+                );
 
+            });
+        	
+        	 widgetGridBodyItems = data.map(function (item) {
+                var key = item.id;
+                return (
+                    <WidgetGridBodyItem key={key} item={item}/>
+                );
+            });
+        } else {
+            widgetGridBodyItems  = <tr><td>Aucune donnée disponible pour le moment</td></tr>
+            widgetGridHeaderItems = <th> Nous sommes désolés. </th>
+        }
+        
+        
+        
+        
 
         return (
             <div className="row">
                 <div className="col-lg-12">
                     <div className="panel panel-default">
                         <div className="panel-heading">
-                            {this.props.header.title}
+                            
                         </div>
                         <div className="panel-body">
                             <div className="table-responsive">
@@ -115,6 +127,6 @@ var WidgetGrid = React.createClass({
 });
 
 React.render(
-    <WidgetGrid data={widgetGridData} header={widgetGridHeader}/>,
+    <WidgetGrid data={widgetGridData}/>,
     document.getElementById('widgetGrid')
 );

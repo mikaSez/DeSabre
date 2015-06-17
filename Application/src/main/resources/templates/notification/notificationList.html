@@ -30,12 +30,10 @@
     <script src="/javascript/dataLoader.js"></script>
 
     <script>
-        urls = [{from: "/javascript/data/notification/header.json", to: "widgetGridHeader"}, {
+        urls = [{
             from: "/notification/data",
             to: "widgetGridData"
         }];
-        console.info(window);
-        var widgetGridHeader;
         var widgetGridData;
         dataLoader(window);
 

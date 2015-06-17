@@ -2,6 +2,8 @@ package info.desabre.application.views;
 
 import info.desabre.database.models.job.Job;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,6 +18,17 @@ public class JobGridView {
     private int id;
     private String date;
 
+
+    private static List<String> headers;
+    
+    static {
+    	headers = new ArrayList<>();
+    	headers.addAll(Arrays.asList("id", "Nom", "Date", "Visualiser"));
+    }
+    
+    
+    
+    
     public JobGridView(int id, String name, String date) {
         this.name = name;
         this.id = id;
@@ -55,4 +68,10 @@ public class JobGridView {
     public void setDate(String date) {
         this.date = date;
     }
+    
+
+
+    public List<String> getHeaders(){
+		return headers;
+	}
 }
