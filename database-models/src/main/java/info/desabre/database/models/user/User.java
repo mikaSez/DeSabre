@@ -50,9 +50,9 @@ public class User {
         this.mail = mail;
         this.lastName = lastName;
         this.firstName = firstName;
-        this.setValidated(true);
+        this.setValidated(false);
         this.setAdmin(false);
-        this.setDeleted(true);
+        this.setDeleted(false);
         //TODO maybe delete the groupe id ?
         // Doesn't make sense to keep it. We don't have or ever have a distributed architecture. And id is pretty much unique.
         this.groupeId = 100;
