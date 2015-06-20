@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+        http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/user/*").hasAnyRole(Role.USER.getRoleName())
                 .antMatchers("/job/*").hasAnyRole(Role.USER.getRoleName(), Role.ADMIN.getRoleName())
@@ -54,7 +54,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public synchronized PasswordEncoder passwordEncoder() {
-
         return encoder;
     }
 

@@ -155,4 +155,20 @@ public class User {
         this.lastName = lastName;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", mail='" + mail + '\'' +
+                ", admin=" + admin +
+                ", deleted=" + deleted +
+                ", validated=" + validated +
+                ", groupeId=" + groupeId +
+                ", preferences=" + preferences +
+                '}';
+    }
 }

@@ -1,4 +1,4 @@
-package info.desabre.application.views;
+package info.desabre.application.views.grid;
 
 import info.desabre.database.models.server.Server;
 

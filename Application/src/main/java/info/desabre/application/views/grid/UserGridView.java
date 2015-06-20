@@ -1,4 +1,4 @@
-package info.desabre.application.views;
+package info.desabre.application.views.grid;
 
 import info.desabre.database.models.user.User;
 
@@ -40,9 +40,9 @@ public class UserGridView {
     	} else {
     		view.status = "user";
     	}
-    	
-    	view.path = "/admin/users/" + user.getMail();
-    	
+
+        view.path = "/admin/users/detail/user?mail=" + user.getMail();
+
         return view;
     }
 

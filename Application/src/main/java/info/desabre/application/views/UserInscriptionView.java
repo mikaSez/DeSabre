@@ -1,10 +1,8 @@
 package info.desabre.application.views;
 
-import info.desabre.application.security.PasswordEncrypt;
 import info.desabre.database.models.user.User;
 import org.hibernate.validator.constraints.Email;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.validation.constraints.NotNull;
@@ -15,9 +13,8 @@ import javax.validation.constraints.Size;
  */
 public class UserInscriptionView {
 
+    private static PasswordEncoder encoder = new BCryptPasswordEncoder();
 
-    @Autowired
-    private PasswordEncrypt userService;
     //FIXME hybernate seems to not mix with javax
     //replace with custom annotation ?
     @NotNull(message = "Le mail doit être obligatoire")
@@ -64,7 +61,8 @@ public class UserInscriptionView {
 
     public User mapToUser() {
         User user =  new User(mail, lastName, firstName);
-        user.setPassword(password);
+        String pass = encoder.encode(password);
+        user.setPassword(pass);
         return user;
     }
 

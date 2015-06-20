@@ -440,7 +440,7 @@ var WidgetForm = React.createClass({
 
         return (
             <div className="panel-body">
-                <form role="form" method="post" action={data.path}>
+                <form role="form" method="POST" action={data.path}>
                     {contenu}
                     {controls}
                 </form>

@@ -1,17 +1,16 @@
 package info.desabre.application.controllers;
 
-import info.desabre.application.views.NotificationGridView;
+import info.desabre.application.views.grid.NotificationGridView;
 import info.desabre.database.models.notification.Notification;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by Naiirod on 07/06/2015.

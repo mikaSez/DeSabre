@@ -1,8 +1,7 @@
 package info.desabre.application.controllers;
 
-import info.desabre.application.views.ServerGridView;
+import info.desabre.application.views.grid.ServerGridView;
 import info.desabre.database.models.server.Server;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
