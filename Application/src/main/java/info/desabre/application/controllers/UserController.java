@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
@@ -72,5 +73,10 @@ public class UserController {
         return Collections.unmodifiableList(UserGridView.map(users));
     }
 
+
+    @RequestMapping("users/detail/{mail}")
+    public String userDetails(@PathParam("mail") String mail, Model model) {
+        return "";
+    }
 
 }
