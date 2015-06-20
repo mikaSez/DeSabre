@@ -24,8 +24,10 @@ public class Job {
     private List<Script> scripts;
     private List<Licence> requiredLicences;
     
-    public Job(String name){
+    public Job(String name, List<Script> scripts, List<Licence> licences){
     	this.name = name;
+    	this.scripts = scripts;
+    	this.requiredLicences = licences;
     }
     
     public Job(String id, String name, String date){

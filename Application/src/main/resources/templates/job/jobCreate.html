@@ -56,6 +56,16 @@
 									        <input class="form-control" id="TaskName" name="taskName" type="text" placeholder="Nom de la tâche"
 									         	autofocus="true" th:field="*{name}"></input>
 									    </div>
+                                        <div class="form-group">
+                                            <label for="LicencesList">Licences necessaires</label>
+                                            <select id="LicencesList" th:field="*{licences}" multiple="multiple" class="form-control">
+                                                <option th:each="licence : ${licences}"
+														th:value="${licence.id}"
+														th:text="${licence.name}">
+													Toto
+												</option>
+                                            </select>
+                                        </div>
 									</div>
 									<!-- /.col-lg-6 (nested) -->
 									<div class="col-lg-6">
