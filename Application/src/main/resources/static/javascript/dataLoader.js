@@ -11,7 +11,7 @@ var dataLoader = function (global) {
             url: from,
             dataType: 'json',
             async: false,
-            cache: false,
+            cache: true,
             success: function (data) {
                 global[variable] = data;
 
