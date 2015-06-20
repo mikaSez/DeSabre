@@ -14,7 +14,7 @@ import java.util.List;
 public class Job {
 
     @Id
-    private int id;
+    private String id;
     private String name;
     private String groupeid;
     private Server executionServer;
@@ -24,11 +24,13 @@ public class Job {
     private List<Script> scripts;
     private List<Licence> requiredLicences;
     
-    public Job(){
-    	
+    public Job(String name, List<Script> scripts, List<Licence> licences){
+    	this.name = name;
+    	this.scripts = scripts;
+    	this.requiredLicences = licences;
     }
     
-    public Job(int id, String name, String date){
+    public Job(String id, String name, String date){
     	this.id = id;
     	this.name = name;
     	this.date = date;
@@ -50,11 +52,11 @@ public class Job {
         this.scripts = scripts;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

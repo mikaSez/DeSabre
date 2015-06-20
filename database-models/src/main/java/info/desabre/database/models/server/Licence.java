@@ -1,9 +1,11 @@
 package info.desabre.database.models.server;
 
 
-import org.springframework.data.annotation.Id;
-
 import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Date;
+
+import org.springframework.data.annotation.Id;
 
 /**
  * Created by MikaSez on 02/06/2015.
@@ -11,17 +13,23 @@ import java.sql.Timestamp;
 public class Licence {
 
     @Id
-    private int id;
+    private String id;
 
     private String name;
-    private Timestamp expiration;
+    private Calendar expiration;
     private int count;
+    
+    public Licence(String name, int count){
+    	this.name = name;
+    	this.expiration = Calendar.getInstance();
+    	this.count = count;
+    }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -33,11 +41,11 @@ public class Licence {
         this.name = name;
     }
 
-    public Timestamp getExpiration() {
+    public Calendar getExpiration() {
         return expiration;
     }
 
-    public void setExpiration(Timestamp expiration) {
+    public void setExpiration(Calendar expiration) {
         this.expiration = expiration;
     }
 
