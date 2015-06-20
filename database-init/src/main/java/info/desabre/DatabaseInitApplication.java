@@ -1,24 +1,19 @@
 package info.desabre;
 
-import info.desabre.database.models.information.News;
-import info.desabre.database.models.information.WidgetBox;
-import info.desabre.database.models.user.User;
+import info.desabre.fillers.DatabaseLicenceFiller;
 import info.desabre.fillers.DatabaseNewsFiller;
 import info.desabre.fillers.DatabaseUserFiller;
 import info.desabre.fillers.DatabaseWidgetBoxFiller;
 import info.desabre.repositories.information.NewsRepository;
 import info.desabre.repositories.information.WidgetBoxRepository;
+import info.desabre.repositories.licence.LicenceRepository;
 import info.desabre.repositories.user.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
 
 @SpringBootApplication
@@ -32,11 +27,15 @@ public class DatabaseInitApplication implements CommandLineRunner {
     @Autowired
     private  DatabaseWidgetBoxFiller databaseWidgetBoxFiller;
     @Autowired
+    private  DatabaseLicenceFiller databaseLicenceFiller;
+    @Autowired
     UserRepository usersRepository;
     @Autowired
     WidgetBoxRepository widgetBoxRepository;
     @Autowired
     NewsRepository newsRepository;
+    @Autowired
+    LicenceRepository licenceRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(DatabaseInitApplication.class, args);
@@ -50,6 +49,7 @@ public class DatabaseInitApplication implements CommandLineRunner {
         databaseUserFiller.userMockData();
         databaseNewsFiller.newsMockData();
         databaseWidgetBoxFiller.widgetBoxMockData();
+        databaseLicenceFiller.licenceMockData();
         System.out.println("My work here is done");
 
 
