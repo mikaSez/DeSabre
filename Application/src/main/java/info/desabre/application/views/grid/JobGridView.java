@@ -14,8 +14,9 @@ import java.util.stream.Collectors;
  */
 public class JobGridView {
 
-    private String name;
+
     private String id;
+    private String name;
     private String date;
 
 
@@ -45,6 +46,14 @@ public class JobGridView {
     }
 
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -53,13 +62,6 @@ public class JobGridView {
         this.name = name;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     
     public String getDate() {
         return date;
