@@ -279,7 +279,6 @@ var SidebarItems = React.createClass({
         });
         return (
             <ul className="nav" id="side-menu">
-                <SidebarSearch />
                 {sidebarItemNodes}
             </ul>
         );
