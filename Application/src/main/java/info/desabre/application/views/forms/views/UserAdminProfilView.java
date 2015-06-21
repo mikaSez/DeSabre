@@ -2,6 +2,7 @@ package info.desabre.application.views.forms.views;
 
 import info.desabre.application.views.generator.annotations.*;
 import info.desabre.application.views.generator.annotations.types.CheckBox;
+import info.desabre.application.views.generator.annotations.types.Mail;
 import info.desabre.database.models.user.User;
 
 /**
@@ -22,11 +23,13 @@ public class UserAdminProfilView {
     public String lastName;
 
     @Field(name = "login", column = 1)
+    @Optional
     @Label(text = "Login de l'utilisateur")
     public String login;
 
     @Field(name = "mail", column = 2)
     @Placeholder(text = "Entrez un e-mail")
+    @Mail
     @Label(text = "Email de l'utilisateur")
     public String mail;
 
@@ -42,7 +45,7 @@ public class UserAdminProfilView {
     @Label(text = "L'utilisateur est supprimé ? ")
     public Boolean deleted;
 
-    @Field(name = "valide", column = 3)
+    @Field(name = "validated", column = 3)
     @CheckBox
     @Optional
     @Label(text = "L'utilisateur est validé ? ")

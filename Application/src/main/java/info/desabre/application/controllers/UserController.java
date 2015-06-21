@@ -1,8 +1,10 @@
 package info.desabre.application.controllers;
 
+import info.desabre.application.services.UserService;
 import info.desabre.application.views.UserInscriptionView;
 import info.desabre.application.views.forms.UserAdminProfilForm;
 import info.desabre.application.views.forms.views.UserAdminProfilView;
+import info.desabre.application.views.forms.views.UserProfilView;
 import info.desabre.application.views.generator.FormProcessor;
 import info.desabre.application.views.grid.UserGridView;
 import info.desabre.application.views.inputs.form.Form;
@@ -35,6 +37,9 @@ public class UserController {
     private UserRepository repository;
     UserAdminProfilForm form;
 
+    @Autowired
+    private UserService service;
+
     @RequestMapping("/inscription")
     public String inscription(@ModelAttribute UserInscriptionView user, Model model) {
         model.addAttribute("user", user);
@@ -66,6 +71,24 @@ public class UserController {
     }
 
 
+    @RequestMapping(value = {"/user/profil", "/profil"}, method = RequestMethod.GET)
+    public String userProfil(Model model) {
+        User user = service.getUser();
+        Form<UserProfilView> f = FormProcessor.getInstance().processView(UserProfilView.fromUser(user));
+        model.addAttribute("form", f);
+        return "user/profil";
+    }
+
+    @RequestMapping(value = {"/user/profil", "/profil"}, method = RequestMethod.POST)
+    public String userProfilChanged(@RequestParam Map<String, String> view, Model model) {
+        User user = service.getUser();
+        Form<UserProfilView> f = FormProcessor.getInstance().processView(new UserProfilView());
+        UserProfilView vv = f.mapToObject(view, UserProfilView.fromUser(user));
+        repository.save(vv.mergeIntoUser(user));
+        model.addAttribute("form", FormProcessor.getInstance().processView(vv));
+        return "user/profil";
+    }
+
     @RequestMapping("users/all")
     public
     @ResponseBody
@@ -78,15 +101,8 @@ public class UserController {
 
     @RequestMapping("/admin/users/detail/user")
     public String userDetails(@RequestParam("mail") String mail, Model model) {
-        System.err.println(mail);
         User user = repository.findByMail(mail);
-
-
-        //form = new UserAdminProfilForm("userProfil");
-        //form.parseUser(user);
-        //form.setPath("/admin/users/detail/update");
         Form<UserAdminProfilView> f = FormProcessor.getInstance().processView(UserAdminProfilView.fromUser(user));
-
 
         model.addAttribute("form", f);
         return "user/profil";
@@ -96,9 +112,6 @@ public class UserController {
     public String userUpdate(@RequestParam Map<String, String> view, Model model) {
         User u = repository.findByMail(view.get("mail"));
         form = new UserAdminProfilForm("userProfil");
-
-        //Form<UserAdminProfilView> f =  FormProcessor.getInstance().processView(UserAdminProfilView.fromUser(u));
-
         repository.save(form.mapToObject(view, u));
         return "admin/userList";
     }

@@ -48,6 +48,7 @@ public class UserService {
         userAuthorities.clear();
         user = null;
 
+
         if (userDetails != null) {
 
             List<String> authorities = userDetails.getAuthorities()
@@ -57,10 +58,16 @@ public class UserService {
             authorities.forEach(s1 -> userAuthorities.add(Role.fromName(s1)));
             user = repository.findByMail(userDetails.getUsername());
         }
+
+
+        log.info(userDetails.getUsername() + " logged in");
     }
 
 
     public User getUser() {
+        if (user == null) {
+            init();
+        }
         return user;
     }
 
