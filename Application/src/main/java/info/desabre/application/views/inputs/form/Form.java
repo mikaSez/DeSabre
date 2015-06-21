@@ -4,7 +4,6 @@ import info.desabre.application.views.inputs.Input;
 import info.desabre.application.views.inputs.SpecialInput;
 import info.desabre.application.views.inputs.impl.SpecialField;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +23,7 @@ public class Form<T> {
     private List<Input> inputs;
     private boolean readOnly = true;
     private String path;
+
 
     public String getPath() {
         return path;
@@ -121,44 +121,14 @@ public class Form<T> {
 
 
     public T mapToObject(Map<String, String> map, T object) {
-
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            Method[] methods = object.getClass().getMethods();
-            for (Method m : methods) {
-                try {
-                    if (m.getName().substring(0, 2).equals("is")) {
-                        if (m.getName().substring(2).compareToIgnoreCase(entry.getKey()) == 0) {
-                            m.invoke(object, true);
-                        } else {
-                            m.invoke(object, false);
-                        }
-                    }
-                    if (m.getName().substring(0, 3).equals("set") && m.getName().substring(3).compareToIgnoreCase(entry.getKey()) == 0) {
-
-                        Class t = m.getParameterTypes()[0];
-
-                        if (t.equals(Boolean.class)) {
-                            m.invoke(object, true);
-
-                        } else if (t.equals(Integer.class)) {
-                            m.invoke(object, Integer.parseInt(entry.getValue()));
-                        } else {
-                            m.invoke(object, entry.getValue());
-                        }
-
-                    } else if (m.getName().substring(0, 3).equals("set") && m.getParameterTypes()[0].equals(Boolean.class)) {
-                        m.invoke(object, false);
-
-                    }
-
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        log.info("final object : " + object);
+        log.info("processing : " + map);
+        FormProcessor<T> processor = new FormProcessor(map, object);
+        object = processor.process();
         return object;
+    }
+
+    private void mapBooleans(List<Method> is, T object) {
+
+
     }
 }

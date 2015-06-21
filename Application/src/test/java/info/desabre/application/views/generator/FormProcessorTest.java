@@ -7,6 +7,7 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+
 /**
  * Created by MikaSez on 21/06/2015.
  */
@@ -14,7 +15,6 @@ public class FormProcessorTest {
 
     private FormProcessor tested = FormProcessor.getInstance();
     private TestedView view;
-
     @Before
     public void setUp() {
         view = new TestedView();
@@ -29,14 +29,32 @@ public class FormProcessorTest {
         Assert.assertEquals(TextField.class, f.getInputs().get(0).getClass());
         Assert.assertEquals("lol", f.getInputs().get(0).getName());
         Assert.assertEquals("petitId", f.getInputs().get(0).getValue());
+
+
     }
+
 }
 
 
 @Form(id = "lol", path = "/view/test")
 class TestedView {
     @Field(name = "lol", column = 1)
-    String id = "petitId";
+    private String id = "petitId";
+    Boolean trucMuch = true;
 
 
+    public void getChose() {
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setTrucMuch(Boolean trucMuch) {
+        this.trucMuch = trucMuch;
+    }
 }
