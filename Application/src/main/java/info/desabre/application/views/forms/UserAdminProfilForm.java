@@ -16,6 +16,7 @@ public class UserAdminProfilForm extends Form<User> {
     public UserAdminProfilForm(String id) {
         super(id);
         this.setNbColumn(3);
+        this.setReadOnly(true);
     }
 
 

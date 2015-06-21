@@ -16,6 +16,7 @@ public class CheckBoxField extends Field {
         super(name, label, placeholder);
     }
 
+
     @Override
     public String getType() {
         return "checkbox";

@@ -2,7 +2,10 @@ package info.desabre.application.controllers;
 
 import info.desabre.application.views.UserInscriptionView;
 import info.desabre.application.views.forms.UserAdminProfilForm;
+import info.desabre.application.views.forms.views.UserAdminProfilView;
+import info.desabre.application.views.generator.FormProcessor;
 import info.desabre.application.views.grid.UserGridView;
+import info.desabre.application.views.inputs.form.Form;
 import info.desabre.database.models.user.User;
 import info.desabre.repositories.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,11 +80,15 @@ public class UserController {
     public String userDetails(@RequestParam("mail") String mail, Model model) {
         System.err.println(mail);
         User user = repository.findByMail(mail);
-        form = new UserAdminProfilForm("userProfil");
-        form.parseUser(user);
-        form.setPath("/admin/users/detail/update");
 
-        model.addAttribute("form", form);
+
+        //form = new UserAdminProfilForm("userProfil");
+        //form.parseUser(user);
+        //form.setPath("/admin/users/detail/update");
+        Form<UserAdminProfilView> f = FormProcessor.getInstance().processView(UserAdminProfilView.fromUser(user));
+
+
+        model.addAttribute("form", f);
         return "user/profil";
     }
 
@@ -89,6 +96,9 @@ public class UserController {
     public String userUpdate(@RequestParam Map<String, String> view, Model model) {
         User u = repository.findByMail(view.get("mail"));
         form = new UserAdminProfilForm("userProfil");
+
+        //Form<UserAdminProfilView> f =  FormProcessor.getInstance().processView(UserAdminProfilView.fromUser(u));
+
         repository.save(form.mapToObject(view, u));
         return "admin/userList";
     }
