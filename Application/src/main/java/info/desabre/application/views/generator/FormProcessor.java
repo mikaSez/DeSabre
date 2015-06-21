@@ -30,8 +30,7 @@ public class FormProcessor {
     public <T> Form<T> processView(T view) {
         System.out.println("begins");
         check(view);
-        Form<T> form = createForm(view);
-        return form;
+        return createForm(view);
     }
 
     private <T> Form<T> createForm(T view) {

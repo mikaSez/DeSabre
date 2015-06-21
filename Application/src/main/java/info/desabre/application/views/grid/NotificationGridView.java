@@ -34,7 +34,7 @@ public class NotificationGridView {
     }
 
     public static List<NotificationGridView> map(List<Notification> notifications) {
-        return notifications.stream().map(notification -> map(notification)).collect(Collectors.toList());
+        return notifications.stream().map(NotificationGridView::map).collect(Collectors.toList());
     }
 
 

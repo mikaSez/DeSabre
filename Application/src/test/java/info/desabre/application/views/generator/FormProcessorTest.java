@@ -43,9 +43,6 @@ class TestedView {
     Boolean trucMuch = true;
 
 
-    public void getChose() {
-    }
-
     public void setId(String id) {
         this.id = id;
     }

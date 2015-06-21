@@ -42,7 +42,7 @@ public class JobGridView {
     }
 
     public static List<JobGridView> map(List<Job> jobs) {
-        return jobs.stream().map(job -> map(job)).collect(Collectors.toList());
+        return jobs.stream().map(JobGridView::map).collect(Collectors.toList());
     }
 
 

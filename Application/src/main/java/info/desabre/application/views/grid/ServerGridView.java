@@ -35,7 +35,7 @@ public class ServerGridView {
     }
 
     public static List<ServerGridView> map(List<Server> servers) {
-        return servers.stream().map(server -> map(server)).collect(Collectors.toList());
+        return servers.stream().map(ServerGridView::map).collect(Collectors.toList());
     }
 
 

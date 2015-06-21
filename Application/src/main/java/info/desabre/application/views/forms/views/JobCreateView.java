@@ -19,7 +19,7 @@ public class JobCreateView {
 	private String name;
 	
 	private List<Licence> licences;
-	private List<Script> scripts = new ArrayList<Script>();
+	private List<Script> scripts = new ArrayList<>();
 	
 	public String getName(){
 		return name;
@@ -55,9 +55,8 @@ public class JobCreateView {
 	}
 	
     public Job mapToJob() {
-        Job job =  new Job(name, scripts, licences);
-        return job;
-    }
+		return new Job(name, scripts, licences);
+	}
     
     @Override
     public String toString() {

@@ -4,7 +4,6 @@ import info.desabre.application.views.inputs.Input;
 import info.desabre.application.views.inputs.SpecialInput;
 import info.desabre.application.views.inputs.impl.SpecialField;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -127,8 +126,4 @@ public class Form<T> {
         return object;
     }
 
-    private void mapBooleans(List<Method> is, T object) {
-
-
-    }
 }

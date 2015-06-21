@@ -31,8 +31,8 @@ public class UserGridView {
     	
     	if(user.getDeleted() && user.getValidated()){
     		view.status = "deleted";
-    	} else if(user.getDeleted() && !user.getValidated()) {
-    		view.status = "rejected";
+        } else if (user.getDeleted()) {
+            view.status = "rejected";
     	} else if(!user.getValidated()){
     		view.status = "validation";
     	} else if(user.getAdmin()){
@@ -47,7 +47,7 @@ public class UserGridView {
     }
 
     public static List<UserGridView> map(List<User> users) {
-        return users.stream().map(user -> map(user)).collect(Collectors.toList());
+        return users.stream().map(UserGridView::map).collect(Collectors.toList());
     }
 
 
