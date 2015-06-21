@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head lang="fr">
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Page principale utilisateur"/>
-    <meta name="author" content="DeSaBre"/>
+    <meta name="description" content="Accès interdit"/>
+    <meta name="author" content="MikaSez"/>
+    <link href="/CSS/error.css" rel="stylesheet" type="text/css"/>
     <title>DeSaBre : 403 page</title>
 </head>
 <body>
+<script type="text/javascript" src="/javascript/jquery.js"></script>
+<script type="text/javascript" src="/javascript/error.js"></script>
+<div id="bg-fullscreen"></div>
+<div id="content">
+    <h1>403</h1>
 
-	<h1>Error 403</h1>
+    <h3> Vous n'avez pas les droits pour consulter cette page. </h3>
 
+    <div class="link">
+        <a href="/" class="home">&larr; Page d'accueil</a>
+    </div>
+</div>
 
 </body>
 </html>
