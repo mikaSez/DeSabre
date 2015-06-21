@@ -62,7 +62,7 @@ var WidgetNewsList = React.createClass({
 
 			});
         return (
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-6 hidden-sm hidden-xs">
                 <div className="panel panel-default">
                     <div className="panel-heading">
                         <i className="fa fa-rss fa-fw"></i> Informations
@@ -80,6 +80,6 @@ var WidgetNewsList = React.createClass({
 
 });
 React.render(
-    <WidgetNewsList url="/news" pollInterval={100000}/>,
+    <WidgetNewsList url="/news" pollInterval={1000000}/>,
     document.getElementById('widgetNews')
 );
