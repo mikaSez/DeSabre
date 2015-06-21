@@ -411,7 +411,6 @@ var WidgetForm = React.createClass({
         var data = this.props.data;
         var nbColumn = data.nbColumn || 1;
 
-
         var controls = <SubmitControls />;
 
 
@@ -434,7 +433,6 @@ var WidgetForm = React.createClass({
         }
 
         var formContent = columnFilter["col" + nbColumn];
-        console.log(data.specialInputs);
         var contenu = React.createElement(formContent, {items: data.inputs, special: data.specialInputs});
 
 

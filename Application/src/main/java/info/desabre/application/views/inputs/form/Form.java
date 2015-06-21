@@ -80,7 +80,7 @@ public class Form<T> {
     }
 
 
-    public boolean isReadOnly() {
+    public boolean isReadonly() {
         return readOnly;
     }
 
