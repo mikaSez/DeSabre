@@ -300,6 +300,7 @@ var SideNav = React.createClass({
 
 var NavigationMenu = React.createClass({
     render: function () {
+
         return (
 
             <nav className="navbar navbar-default navbar-static-top" role="navigation">
@@ -312,7 +313,15 @@ var NavigationMenu = React.createClass({
         );
     }
 });
+
+var applyMetisMenu = function () {
+    $(function () {
+        $('#side-menu').metisMenu();
+    });
+};
+
 React.render(
     <NavigationMenu />,
-    document.getElementById('navigation')
+    document.getElementById('navigation'),
+    applyMetisMenu
 );
