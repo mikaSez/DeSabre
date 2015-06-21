@@ -6,25 +6,23 @@ Interface web pour des serveurs de calcul
 Faire un pull request / copier le zip. 
 Importer dans Eclipse/IntelliJ en tant que projet Maven. 
 
-Le lancement se fait par la classe Application.
+Le lancement se fait par la classe Application dans le projet Application.
 
 Le serveur sera déployé sur localhost:8080
-Les accès de test sont disponibles dans la classe security. 
-
+Les accès de test sont disponibles dans le projet database-init, la partie fillUser. 
+(user@desabre.info et admin@desabre.info)
 
 ## Composition 
-3 modules 
+3 modules + les visuels (Prototype interactif)
 
 Technologies utilisées : 
 Web: 
-ReactJS / Bootstrap / Thymeleaf
+ReactJS / Bootstrap / Thymeleaf / jQuery
 
 Server : 
-Spring / MongoDB 
+SpringBoot / MongoDB 
 
 Niveau JDK : 8 
-
-
 
 ### Application 
 
@@ -39,9 +37,9 @@ Sous src/main/ressources/static/javascript/components se trouvent les widgets re
 
 ### database-init
 
-Application pour initialiser la base de données avec les tests.
+Application pour initialiser la base de données avec les données de test et les données minimaux nécessaires au démarrage de l'application.
 
 ### database-model
 
-Application containant les models et les repositories permettant d'y acceder.
+Application contenant les models et les repositories permettant d'intéragir avec la base de données.
 
