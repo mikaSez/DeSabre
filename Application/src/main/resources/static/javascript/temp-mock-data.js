@@ -17,8 +17,7 @@ var sideNavData = [
         title: "Serveurs", icon: "fa-wrench", path: "#",
         childs: [
             {title: "Voir les serveurs", icon: "fa-tasks", path: "/server/list"},
-            {title: "Creer un serveur", icon: "fa-plus", path: "/server/create"},
-            {title: "Lancer un serveur", icon: "fa-play", path: "/server/launch"}
+            {title: "Creer un serveur", icon: "fa-plus", path: "/server/create"}
         ]
     },
     {
