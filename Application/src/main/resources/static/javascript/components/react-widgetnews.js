@@ -51,7 +51,9 @@ var WidgetNewsList = React.createClass({
 
         var data = this.state.data;
 		if(data.length===0)
-			var newsWidgetItem = <p>Aucune news</p>;
+            var newsWidgetItem = <h2 className="text-center">
+                <small> Aucune information disponible pour le moment...</small>
+            </h2>;
 		else
 			var newsWidgetItem = data.map(function (item) {
 	            var key = item.id;
