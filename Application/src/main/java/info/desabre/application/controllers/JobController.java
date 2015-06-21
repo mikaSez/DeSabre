@@ -1,6 +1,6 @@
 package info.desabre.application.controllers;
 
-import info.desabre.application.views.JobCreateView;
+import info.desabre.application.views.forms.views.JobCreateView;
 import info.desabre.application.views.grid.JobGridView;
 import info.desabre.database.models.job.Job;
 import info.desabre.repositories.job.JobRepository;
