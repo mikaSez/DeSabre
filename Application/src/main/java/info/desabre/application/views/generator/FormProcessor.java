@@ -74,7 +74,7 @@ public class FormProcessor {
                         i.setPlaceholder(p.text());
                     }
                     if (an.annotationType().equals(Optional.class)) {
-                        i.mandatory();
+                        i.optional();
                     }
                 }
                 form.addInput(i, fieldAn.column());

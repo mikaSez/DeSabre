@@ -198,6 +198,7 @@ var WidgetFormInput = React.createClass({
         var value = this.state.value;
         var specialInputs = this.props.special;
 
+        console.info(item);
         console.log(specialInputs);
 
         var input;
@@ -205,11 +206,22 @@ var WidgetFormInput = React.createClass({
             if (item.readonly) {
                 input = <span className="form-control">{value}</span>
             } else {
-                input = <input className="form-control" placeholder={item.placeholder} value={value} type={item.type}
+                if (item.required) {
+                    input =
+                        <input className="form-control" placeholder={item.placeholder} value={value} type={item.type}
                                id={item.name} name={item.name}
-                               readOnly={item.readonly} required={item.required} hidden={item.hidden}
+                               readOnly={item.readonly} required="true" hidden={item.hidden}
                                autoComplete={item.autocomplete} autoSave=
                                    {item.autosave} onChange={this.handleChange}/>;
+                } else {
+                    input =
+                        <input className="form-control" placeholder={item.placeholder} value={value} type={item.type}
+                               id={item.name} name={item.name}
+                               readOnly={item.readonly} hidden={item.hidden}
+                               autoComplete={item.autocomplete} autoSave=
+                                   {item.autosave} onChange={this.handleChange}/>;
+                }
+
             }
         } else {
 
