@@ -64,7 +64,7 @@ var WidgetNewsList = React.createClass({
 
 			});
         return (
-            <div className="col-lg-4 col-md-6 hidden-sm hidden-xs">
+            <div className="col-lg-5 col-md-6 hidden-sm hidden-xs">
                 <div className="panel panel-default">
                     <div className="panel-heading">
                         <i className="fa fa-rss fa-fw"></i> Informations
