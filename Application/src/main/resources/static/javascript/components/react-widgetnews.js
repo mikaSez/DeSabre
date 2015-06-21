@@ -28,6 +28,7 @@ var WidgetNewsList = React.createClass({
     componentDidMount: function () {
         console.info("managed get the component");
         this.loadNewsFromServer();
+        moment.locale("fr");
         setInterval(this.loadNewsFromServer, this.props.pollInterval);
     },
 
@@ -40,7 +41,7 @@ var WidgetNewsList = React.createClass({
                 return (
                 		<a href={item.path} className="list-group-item">
                         <i className={iconString}></i> {item.title}
-                        <span className="pull-right text-muted small"><em>{item.time}</em>
+                        <span className="pull-right text-muted small"><em>{moment(item.time).fromNow()}</em>
                         </span>
                         </a>
                 );

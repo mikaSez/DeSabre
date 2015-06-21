@@ -32,12 +32,6 @@ var WidgetModalListWindow = React.createClass({
         return {key: "", value: "", id: 1};
     },
     mixins: [React.addons.LinkedStateMixin],
-    onChangeKey: function (e) {
-        this.setState({key: e.target.value});
-    },
-    onChangeValue: function (e) {
-        this.setState({value: e.target.value});
-    },
 
     onClick: function (e) {
         var item = {};
