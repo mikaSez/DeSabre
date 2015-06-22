@@ -21,6 +21,13 @@ var sideNavData = [
         ]
     },
     {
+        title: "Utilisateurs", icon: "fa-users", path: "#",
+        childs: [
+            {title: "Voir les utilisateurs", icon: "fa-list", path: "/admin/users"},
+            {title: "Ecrire un message", icon: "fa-send-o", path: "/admin/message"}
+        ]
+    },
+    {
         title: "Developpement purpose", icon: "fa-linux", path: "#",
         childs: [
             {title: "Login page", icon: "fa-users", path: "/login"},
