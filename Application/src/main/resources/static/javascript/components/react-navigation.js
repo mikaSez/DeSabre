@@ -230,22 +230,27 @@ var SideItemFather = React.createClass({
 
     render: function () {
         var item = this.props.item;
-        if(item.childs.length === 0)
-        	var sidebarChildNodes = "";
-        else
-	        var sidebarChildNodes = item.childs.map(function (item) {
-	            var key = item.title + "-SideItemChildId";
-	            return (
-	            	<ul className="nav nav-second-level">
-	            		<SideItemChild key={key} item={item}/>
-	                </ul>
-	            );
-	        });
+        var folderClass = "fa fa-cog fa-spin pull-right fa-lg";
+
+        if (item.childs.length === 0) {
+            var sidebarChildNodes = "";
+            folderClass = "";
+        }
+        else {
+            var sidebarChildNodes = item.childs.map(function (item) {
+                var key = item.title + "-SideItemChildId";
+                return (
+                    <ul className="nav nav-second-level">
+                        <SideItemChild key={key} item={item}/>
+                    </ul>
+                );
+            });
+        }
 
         var classString = "fa fa-dashboard fa-fw " + item.icon;
         return (
             <li>
-                <a href={item.path}><i className={classString}></i>{item.title}</a>
+                <a href={item.path}><i className={classString}></i>{item.title} <i className={folderClass}/></a>
                 {sidebarChildNodes}
                 
             </li>
