@@ -1,9 +1,7 @@
 package info.desabre.database.models.server;
 
 
-import java.sql.Timestamp;
 import java.util.Calendar;
-import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 

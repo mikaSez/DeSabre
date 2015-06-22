@@ -24,6 +24,9 @@ public class Job {
     private List<Script> scripts;
     private List<Licence> requiredLicences;
     
+    public Job(){
+    }
+    
     public Job(String name, List<Script> scripts, List<Licence> licences){
     	this.name = name;
     	this.scripts = scripts;

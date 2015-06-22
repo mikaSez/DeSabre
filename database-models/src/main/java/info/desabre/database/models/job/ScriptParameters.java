@@ -7,15 +7,15 @@ import org.springframework.data.annotation.Id;
  */
 public class ScriptParameters {
     @Id
-    private int id;
-    private String key;
+    private String id;
+    public String key;
     private String value;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

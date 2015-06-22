@@ -6,6 +6,7 @@ import info.desabre.fillers.DatabaseUserFiller;
 import info.desabre.fillers.DatabaseWidgetBoxFiller;
 import info.desabre.repositories.information.NewsRepository;
 import info.desabre.repositories.information.WidgetBoxRepository;
+import info.desabre.repositories.job.JobRepository;
 import info.desabre.repositories.licence.LicenceRepository;
 import info.desabre.repositories.user.UserRepository;
 
@@ -36,6 +37,8 @@ public class DatabaseInitApplication implements CommandLineRunner {
     NewsRepository newsRepository;
     @Autowired
     LicenceRepository licenceRepository;
+    @Autowired
+    JobRepository jobRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(DatabaseInitApplication.class, args);
