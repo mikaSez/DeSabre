@@ -26,16 +26,6 @@ var sideNavData = [
             {title: "Voir les utilisateurs", icon: "fa-list", path: "/admin/users"},
             {title: "Ecrire un message", icon: "fa-send-o", path: "/admin/message"}
         ]
-    },
-    {
-        title: "Developpement purpose", icon: "fa-linux", path: "#",
-        childs: [
-            {title: "Login page", icon: "fa-users", path: "/login"},
-            {title: "Registration page", icon: "fa-users", path: "/register"},
-            {title: "Forgotten password page", icon: "fa-users", path: "/restore"},
-            {title: "Switch to admin view", icon: "fa-users", path: "/admin/home"},
-            {title: "Switch to user view", icon: "fa-users", path: "/user/home"}
-        ]
     }
 ];
 
