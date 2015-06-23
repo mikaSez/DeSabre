@@ -14,17 +14,28 @@ var WidgetGridHeader = React.createClass({
 var WidgetGridDataItem = React.createClass({
     render: function () {
         var item = this.props.item;
+
+
         var print;
         var classString = "";
-        if (item !== null && item !== true && item !== false) {
-            print = {item};
-        } else if (item !== true) {
-            print = "Non";
-            classString = "danger";
+        console.info(item);
+        if (item.type !== undefined) {
+            if (item.type === "date") {
+                print = moment(item.value).calendar();
+            }
         } else {
-            print = "Oui";
-            classString = "success";
+            if (item !== null && item !== true && item !== false) {
+                print = {item};
+            } else if (item !== true) {
+                print = "Non";
+                classString = "danger";
+            } else {
+                print = "Oui";
+                classString = "success";
+            }
         }
+
+
         return (
             <td className={classString}>{print}</td>
         );
@@ -35,14 +46,15 @@ var WidgetGridDataItem = React.createClass({
 var WidgetGridBodyItem = React.createClass({
     render: function () {
         var item = this.props.item;
-        var path = "#";
+        var visualiser = "";
+
         //FIXME seems too ugly to be right
         var list = [];
         for (var a in item) {
             if (a !== "path" && a !== "headers"){
                 list.push(a);
-            } else if(a !== "headers"){
-            	path = item[a];
+            } else if (a !== "headers") {
+                visualiser = <td ><a href={item[a]}><i className="fa fa-eye fa-fw"></i>Visualiser</a></td>
             }
         }
 
@@ -55,7 +67,7 @@ var WidgetGridBodyItem = React.createClass({
         return (
             <tr className="gradeX">
                 {widgetGridDataItems}
-                <td ><a href={path}><i className="fa fa-eye fa-fw"></i>Visualiser</a></td>
+                {visualiser}
             </tr>
         );
     }
@@ -89,7 +101,9 @@ var WidgetGrid = React.createClass({
                 );
             });
         } else {
-            widgetGridBodyItems  = <tr><td>Aucune donnée disponible pour le moment</td></tr>
+            widgetGridBodyItems = <tr>
+                <td>Aucune donnée disponible pour le moment</td>
+            </tr>;
             widgetGridHeaderItems = <th> Nous sommes désolés. </th>
         }
         

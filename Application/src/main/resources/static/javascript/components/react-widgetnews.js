@@ -73,6 +73,8 @@ var WidgetNewsList = React.createClass({
                         <div className="list-group">
                             {newsWidgetItem}
                         </div>
+
+                        <a href="/news/list" className="btn btn-default btn-block">Voir toutes les informations</a>
                     </div>
                 </div>
             </div>
