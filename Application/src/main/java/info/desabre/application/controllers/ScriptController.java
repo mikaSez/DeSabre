@@ -1,5 +1,6 @@
 package info.desabre.application.controllers;
 
+import info.desabre.application.services.ScriptTypes;
 import info.desabre.application.services.UserService;
 import info.desabre.application.views.grid.ScriptGridView;
 import info.desabre.database.models.job.Script;
@@ -20,6 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
@@ -34,6 +36,7 @@ public class ScriptController {
 
     private static final Logger log = Logger.getLogger(ScriptController.class.getName());
 
+
     @Autowired
     private UserService user;
 
@@ -47,9 +50,13 @@ public class ScriptController {
     }
 
     @RequestMapping("/create")
-    public String create(Model model) {
-
-        return "server/serverCreate";
+    public String create(Model model) throws IOException {
+        List<String> modes = new ArrayList<>();
+        for (ScriptTypes type : ScriptTypes.values()) {
+            modes.add(type.getName());
+        }
+        model.addAttribute("modes", modes);
+        return "script/scriptCreate";
     }
 
     @RequestMapping("data")

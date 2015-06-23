@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="fr">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Liste des scripts écrits par l'utilisateur"/>
+    <meta name="author" content="MikaSez"/>
+    <title>DeSaBre : script list</title>
+    <link href="/CSS/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/CSS/plugins/metisMenu/metisMenu.min.css" rel="stylesheet"/>
+    <link href="/CSS/sb-admin-2.css" rel="stylesheet"/>
+    <link href="/CSS/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/CSS/codemirror.css" rel="stylesheet" type="text/css"/>
+    <link href="/CSS/global.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- we need that before page loading -->
+    <script src="/javascript/moment.min.js"></script>
+    <script src="/javascript/react-with-addons.js"></script>
+    <script src="/javascript/JSXTransformer.js"></script>
+    <script src="/javascript/temp-mock-data.js"></script>
+
+    <script src="/javascript/jquery.js"></script>
+    <script src="/javascript/codemirror.js"></script>
+    <script src="/javascript/dataLoader.js"></script>
+    <script th:each="mode : ${modes}" th:src="'/javascript/cm-modes/' + ${mode} + '.js'"></script>
+</head>
+<body>
+
+<div id="wrapper">
+    <div th:include="fragments/navigation :: navigation"></div>
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Liste des scripts de l'utilisateur</h1>
+            </div>
+        </div>
+        <div class="row">
+            <form>
+                <select id="language" class="form-control">
+                    <option th:each="mode : ${modes}" th:value="${mode}" th:text="${mode}"></option>
+                </select>
+                <textarea id="editor" name="editor"> </textarea>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+        lineNumbers: true
+    });
+    $("#language").change(function () {
+        var str = "";
+        $("select option:selected").each(function () {
+            str = $(this).text();
+        });
+        editor.setOption("mode", str);
+        console.log(str + " selected");
+    });
+</script>
+
+<script src="/javascript/bootstrap.js"></script>
+<script src="/javascript/plugins/metisMenu/metisMenu.min.js"></script>
+<script src="/javascript/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="/javascript/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script src="/javascript/sb-admin-2.js"></script>
+
+</body>
+</html>
