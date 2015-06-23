@@ -12,6 +12,11 @@ import java.util.stream.Collectors;
 public class ScriptGridView {
 
     private String name;
+
+    public InputWithType<Boolean> getMainScript() {
+        return mainScript;
+    }
+
     private InputWithType<Boolean> mainScript;
     // private String path;
 

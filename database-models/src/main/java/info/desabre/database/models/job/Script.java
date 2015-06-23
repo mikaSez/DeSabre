@@ -73,4 +73,16 @@ public class Script {
     public void setParameters(List<ScriptParameters> parameters) {
         this.parameters = parameters;
     }
+
+
+    @Override
+    public String toString() {
+        return "Script{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", mainScript=" + mainScript +
+                ", content='" + content + '\'' +
+                '}';
+    }
 }
+

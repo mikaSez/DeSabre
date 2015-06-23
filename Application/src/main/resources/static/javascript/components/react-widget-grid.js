@@ -22,17 +22,17 @@ var WidgetGridDataItem = React.createClass({
         if (item.type !== undefined) {
             if (item.type === "date") {
                 print = moment(item.value).calendar();
+            } else if (item.type === "boolean") {
+                if (item.value !== true) {
+                    print = "Non";
+                    classString = "danger";
+                } else {
+                    print = "Oui";
+                    classString = "success";
+                }
             }
         } else {
-            if (item !== null && item !== true && item !== false) {
                 print = {item};
-            } else if (item !== true) {
-                print = "Non";
-                classString = "danger";
-            } else {
-                print = "Oui";
-                classString = "success";
-            }
         }
 
 
@@ -83,9 +83,9 @@ var WidgetGrid = React.createClass({
         }
         var widgetGridBodyItems;
         if(data.length !== 0){
-        	var header = data[0].headers; 
-        	
-            
+        	var header = data[0].headers;
+
+
             var widgetGridHeaderItems = header.map(function (item) {
                 var key = item;
                 return (

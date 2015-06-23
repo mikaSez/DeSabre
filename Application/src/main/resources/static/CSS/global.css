@@ -5,3 +5,11 @@
 .navbar {
     margin-bottom: 0px;
 }
+
+.upload {
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    background: url("../img/placeholder.png") no-repeat center;
+
+}
