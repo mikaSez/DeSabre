@@ -140,7 +140,14 @@ var WidgetGrid = React.createClass({
 
 });
 
+var showGrid = function () {
+    $(document).ready(function () {
+        $('.datatable').dataTable();
+    });
+};
+
 React.render(
     <WidgetGrid data={widgetGridData}/>,
-    document.getElementById('widgetGrid')
+    document.getElementById('widgetGrid'),
+    showGrid
 );
