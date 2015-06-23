@@ -3,20 +3,9 @@ package info.desabre.application.controllers;
 import info.desabre.application.views.forms.views.JobCreateView;
 import info.desabre.application.views.grid.JobGridView;
 import info.desabre.database.models.job.Job;
-import info.desabre.database.models.job.Script;
-import info.desabre.database.models.job.ScriptParameters;
 import info.desabre.repositories.job.JobRepository;
 import info.desabre.repositories.job.ScriptRepository;
 import info.desabre.repositories.licence.LicenceRepository;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.logging.Logger;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +15,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by MikaSez on 01/06/2015.
@@ -89,7 +85,6 @@ public class JobController {
     public String addRow(@ModelAttribute("job") JobCreateView job, BindingResult bindingResult, Model model) {
     	this.index++;
     	job.setLicences(repositoryL.findAll());
-        job.getScripts().add(new Script(this.index));
     	model.addAttribute("job", job);
     	model.addAttribute("licences", job.getLicences());
     	model.addAttribute("scripts", job.getScripts());

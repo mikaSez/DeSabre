@@ -50,9 +50,6 @@ public class WidgetBoxController {
                 widgets = repository.findByGroupeId(UserConstants.GLOBAL_GROUPEID.getGroupeId());
             }
         }
-
-        widgets.stream().forEach(w -> w.getText());
-
         return Collections.unmodifiableList(widgets);
     }
 

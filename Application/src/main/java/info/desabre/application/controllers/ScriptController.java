@@ -20,11 +20,11 @@ import java.util.logging.Logger;
 @RequestMapping("/script/**")
 public class ScriptController {
 
-    private static final Logger log = Logger.getLogger(ServerController.class.getName());
+    private static final Logger log = Logger.getLogger(ScriptController.class.getName());
 
     @RequestMapping("list")
     public String list(Model model) {
-
+        log.info("Asked for list");
         return "script/scriptList";
     }
 
