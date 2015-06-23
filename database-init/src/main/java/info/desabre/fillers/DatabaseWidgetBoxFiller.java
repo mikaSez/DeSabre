@@ -34,6 +34,7 @@ public class DatabaseWidgetBoxFiller {
     void initGlobalWidgetBox(List<WidgetBox> widgets) {
         widgets.add(new WidgetBox("primary", "bell", 5, "#", "Notification(s).", UserConstants.GLOBAL_GROUPEID.getGroupeId()));
         widgets.add(new WidgetBox("red", "database", 3, "#", "Job(s) en cours.", UserConstants.GLOBAL_GROUPEID.getGroupeId()));
+        widgets.add(new WidgetBox("green", "superscript", 0, "/script/list", "Scripts créés.", UserConstants.GLOBAL_GROUPEID.getGroupeId()));
     }
 
     void initAdminWidget(List<WidgetBox> widgets) {

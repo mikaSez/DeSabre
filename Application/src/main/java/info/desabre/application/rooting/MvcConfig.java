@@ -48,6 +48,13 @@ public class MvcConfig extends WebMvcConfigurerAdapter implements EmbeddedServle
 
     }
 
+    private void scriptRegistry(ViewControllerRegistry registry) {
+        registry.addViewController("/script/list").setViewName("script/scriptList");
+        registry.addViewController("/script/view").setViewName("script/scriptCreate");
+        registry.addViewController("/script/create").setViewName("script/scriptCreate");
+    }
+
+
     private void jobRegistry(ViewControllerRegistry registry) {
         registry.addViewController("/job/list").setViewName("job/jobList");
         registry.addViewController("/job/create").setViewName("job/jobCreate");

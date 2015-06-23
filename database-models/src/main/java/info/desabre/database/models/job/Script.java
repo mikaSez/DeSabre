@@ -1,8 +1,9 @@
 package info.desabre.database.models.job;
 
-import java.util.List;
-
+import info.desabre.database.models.user.User;
 import org.springframework.data.annotation.Id;
+
+import java.util.List;
 
 /**
  * Created by MikaSez on 02/06/2015.
@@ -12,17 +13,14 @@ public class Script {
     @Id
     private String id;
     private String name;
+    private Boolean mainScript;
     private String content;
-    private String groupeId;
-    
-    private int index;
+    private User user;
+
 
     private List<ScriptParameters> parameters;
 
-    public Script(int index){
-    	this.index = index;
-    }
-    
+
     public Script(String name, String content){
     	this.name = name;
     	this.content = content;
@@ -52,20 +50,20 @@ public class Script {
         this.content = content;
     }
 
-    public String getGroupeId() {
-        return groupeId;
+    public User getUser() {
+        return user;
     }
 
-    public void setGroupeId(String groupeId) {
-        this.groupeId = groupeId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public int getIndex() {
-        return index;
+    public Boolean getMainScript() {
+        return mainScript;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public void setMainScript(Boolean mainScript) {
+        this.mainScript = mainScript;
     }
 
     public List<ScriptParameters> getParameters() {

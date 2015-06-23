@@ -5,6 +5,7 @@ package info.desabre.application.views.inputs;
  */
 public class InputWithType<T> {
     public static final String DATE = "date";
+    public static final String BOOLEAN = "boolean";
     private String type;
     private T value;
 
