@@ -25,7 +25,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter implements EmbeddedServle
     public void addViewControllers(ViewControllerRegistry registry) {
         userRegistry(registry);
         jobRegistry(registry);
-        registry.addViewController("/server/list").setViewName("server/serverList");
+        serverRegistry(registry);
         registry.addViewController("/notification/list").setViewName("notification/notificationList");
         registry.addViewController("/news/list").setViewName("notification/newsList");
         registry.addViewController("/admin/message").setViewName("notification/newsWrite");
@@ -55,6 +55,12 @@ public class MvcConfig extends WebMvcConfigurerAdapter implements EmbeddedServle
         registry.addViewController("/job/launch/config").setViewName("job/jobLaunchConfig");
     }
 
+    private void serverRegistry(ViewControllerRegistry registry) {
+    	registry.addViewController("/server/list").setViewName("server/serverList");
+    	registry.addViewController("/server/create").setViewName("server/serverCreate");  	
+    }
+    
+    
     @Override
     public void customize(ConfigurableEmbeddedServletContainer container) {
 		container.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/error/404"));

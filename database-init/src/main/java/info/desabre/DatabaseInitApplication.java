@@ -8,6 +8,7 @@ import info.desabre.repositories.information.NewsRepository;
 import info.desabre.repositories.information.WidgetBoxRepository;
 import info.desabre.repositories.job.JobRepository;
 import info.desabre.repositories.licence.LicenceRepository;
+import info.desabre.repositories.server.ServerRepository;
 import info.desabre.repositories.user.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,10 @@ public class DatabaseInitApplication implements CommandLineRunner {
     LicenceRepository licenceRepository;
     @Autowired
     JobRepository jobRepository;
+    @Autowired
+    ServerRepository serverRepository;
 
+    
     public static void main(String[] args) {
         SpringApplication.run(DatabaseInitApplication.class, args);
     }
