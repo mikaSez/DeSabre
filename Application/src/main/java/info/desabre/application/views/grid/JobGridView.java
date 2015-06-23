@@ -14,31 +14,27 @@ import java.util.stream.Collectors;
  */
 public class JobGridView {
 
-
     private String id;
     private String name;
-    private String date;
-
 
     private static List<String> headers;
     
     static {
     	headers = new ArrayList<>();
-    	headers.addAll(Arrays.asList("id", "Nom", "Date", "Visualiser"));
+    	headers.addAll(Arrays.asList("Id", "Nom", "Visualiser"));
     }
     
     
     
     
-    public JobGridView(String id, String name, String date) {
-        this.name = name;
+    public JobGridView(String id, String name) {
         this.id = id;
-        this.date = date;
+        this.name = name;
     }
 
 
     public static JobGridView map(Job job) {
-        return new JobGridView(job.getId(), job.getName(), job.getDate());
+        return new JobGridView(job.getId(), job.getName());
     }
 
     public static List<JobGridView> map(List<Job> jobs) {
@@ -61,16 +57,6 @@ public class JobGridView {
     public void setName(String name) {
         this.name = name;
     }
-
-    
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-    
 
 
     public List<String> getHeaders(){

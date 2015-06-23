@@ -21,6 +21,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- we need that before page loading -->
+    <script src="/javascript/moment.min.js"></script>
     <script src="/javascript/react-with-addons.js"></script>
     <script src="/javascript/JSXTransformer.js"></script>
     <script src="/javascript/temp-mock-data.js"></script>
@@ -46,23 +47,23 @@
                             	<div th:if="${saved}" class="alert alert-info">
 			                        La job a été créé correctement.
 			                    </div>
-								<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="alert alert-danger">
+								<div th:if="${#fields.hasErrors('name')}" 
+								th:errors="*{name}" class="alert alert-danger">
 		                            Ce nom n'est pas valide.
 		                        </div>
                                 <div class="row">
 									<div class="col-lg-6">
 									    <div class="form-group">
 									        <label for="TaskName">Nom de la tâche</label>
-									        <input class="form-control" id="TaskName" name="taskName" type="text" placeholder="Nom de la tâche"
+									        <input class="form-control" id="name" name="name" type="text" placeholder="Nom de la tâche"
 									         	autofocus="true" th:field="*{name}"></input>
 									    </div>
                                         <div class="form-group">
                                             <label for="LicencesList">Licences necessaires</label>
                                             <select id="LicencesList" th:field="*{licences}" multiple="multiple" class="form-control">
-                                                <option th:each="licence : ${licences}"
+                                                <option th:each="licence : *{licences}"
 														th:value="${licence.id}"
 														th:text="${licence.name}">
-													Toto
 												</option>
                                             </select>
                                         </div>
@@ -70,8 +71,43 @@
 									<!-- /.col-lg-6 (nested) -->
 									<div class="col-lg-6">
 									
-										
-									    
+										<div class="panel panel-default">
+							                <div class="panel-heading">
+							                    Scripts
+							                </div>
+							                <div class="panel-body">
+							                    <div class="table-responsive">
+							                        <table class="table" id="scriptList">
+							                            <thead>
+								                            <tr>
+								                                <th> Nom</th>
+								                                <th> Contenu</th>
+								                                <th> </th>
+								                            </tr>
+							                            </thead>
+							                            <tbody>
+							                            	<tr th:each="script : ${scripts}">
+							                            		<td><input type="text" th:field="*{scripts[__${script.index}__].name}" /></td>
+							                            		<td><input type="text" th:field="*{scripts[__${script.index}__].content}" /></td>
+												                <td>
+												                     <button type="button" name="removeRow" th:value="${script.index}"
+												                     class="fa fa-times btn btn-outline btn-danger btn-xs btn-delete">
+                														Remove row
+                													</button>
+												                </td>
+															</tr>
+							                            </tbody>
+							                        </table>
+							                    </div>
+							                    <div>
+									                <hr/>
+									                <button type="submit" name="addRow" class="btn btn-outline btn-success btn-params">
+									                	<i class="fa fa-plus"></i> Ajouter
+									                </button>
+									            </div>
+							                </div>
+							             </div>
+							             
 									</div>
 									<!-- /.col-lg-6 (nested) -->
 								</div>

@@ -4,22 +4,24 @@ import info.desabre.database.models.job.Job;
 import info.desabre.database.models.job.Script;
 import info.desabre.database.models.server.Licence;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Created by Naiirod on 17/06/2015.
  */
+
 public class JobCreateView {
 
 	@NotNull(message = "Le nom doit être renseigné")
     @Size(min = 2, message = "Le nom doit comporter au moins deux caractères")
 	private String name;
-	
+
 	private List<Licence> licences;
-	private List<Script> scripts = new ArrayList<>();
+	private List<Script> scripts = new ArrayList<Script>();
 	
 	public String getName(){
 		return name;
@@ -55,8 +57,9 @@ public class JobCreateView {
 	}
 	
     public Job mapToJob() {
-		return new Job(name, scripts, licences);
-	}
+        Job job =  new Job(name, scripts, licences);
+        return job;
+    }  
     
     @Override
     public String toString() {

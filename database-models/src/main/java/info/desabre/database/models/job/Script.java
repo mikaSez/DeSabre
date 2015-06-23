@@ -1,8 +1,8 @@
 package info.desabre.database.models.job;
 
-import org.springframework.data.annotation.Id;
-
 import java.util.List;
+
+import org.springframework.data.annotation.Id;
 
 /**
  * Created by MikaSez on 02/06/2015.
@@ -10,18 +10,29 @@ import java.util.List;
 public class Script {
 
     @Id
-    private int id;
+    private String id;
     private String name;
     private String content;
     private String groupeId;
+    
+    private int index;
 
     private List<ScriptParameters> parameters;
 
-    public int getId() {
+    public Script(int index){
+    	this.index = index;
+    }
+    
+    public Script(String name, String content){
+    	this.name = name;
+    	this.content = content;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -47,6 +58,14 @@ public class Script {
 
     public void setGroupeId(String groupeId) {
         this.groupeId = groupeId;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     public List<ScriptParameters> getParameters() {
