@@ -47,15 +47,18 @@ var WidgetGridBodyItem = React.createClass({
     render: function () {
         var item = this.props.item;
         var type = this.props.type;
-        var path = "#";
-        var visualiser = "";
+        var widgetGridType = "";
         //FIXME seems too ugly to be right
         var list = [];
         for (var a in item) {
             if (a !== "path" && a !== "headers"){
                 list.push(a);
             } else if (a !== "headers") {
-                visualiser = <td ><a href={item[a]}><i className="fa fa-eye fa-fw"></i>Visualiser</a></td>
+                if(type === "list") {
+                	widgetGridType = <td ><a href={item[a]}><i className="fa fa-eye fa-fw"></i> Visualiser</a></td>;
+                } else if(type === "launch") {
+                	widgetGridType = <td ><a href={item[a]}><i className="fa fa-play fa-fw"></i> Lancer</a></td>;
+                }
             }
         }
 
@@ -67,17 +70,12 @@ var WidgetGridBodyItem = React.createClass({
         
         var widgetGridType;
         
-        if(type === "list") {
-        	widgetGridType = <td ><a href={path}><i className="fa fa-eye fa-fw"></i> Visualiser</a></td>;
-        } else if(type === "launch") {
-        	widgetGridType = <td ><a href={path}><i className="fa fa-play fa-fw"></i> Lancer</a></td>;
-        }
+        
 
         return (
             <tr className="gradeX">
                 {widgetGridDataItems}
                 {widgetGridType}
-                {visualiser}
             </tr>
         );
     }
