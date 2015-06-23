@@ -2,6 +2,8 @@ package info.desabre.application.controllers;
 
 import info.desabre.application.views.grid.NotificationGridView;
 import info.desabre.database.models.notification.Notification;
+import info.desabre.repositories.information.NewsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,10 @@ import java.util.logging.Logger;
 public class NotificationController {
 	private static final Logger log = Logger.getLogger(NotificationController.class.getName());
 
+
+    @Autowired
+    private NewsRepository repository;
+
     @RequestMapping("list")
     public String list(Model model) {
 
@@ -37,5 +43,6 @@ public class NotificationController {
         notifications.add(new Notification("lzefze", "Une pettite notif"));
         return Collections.unmodifiableList(NotificationGridView.map(notifications));
     }
+
 
 }
