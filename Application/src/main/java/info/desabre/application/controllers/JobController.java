@@ -112,17 +112,27 @@ public class JobController {
     }
     
     
-    @RequestMapping("data")
+    @RequestMapping("dataLaunch")
     public
     @ResponseBody
-    List<JobGridView> data(Model model) {
+    List<JobGridView> dataL(Model model) {
         log.info("data requested");
         List<Job> jobs = new ArrayList();
         jobs.addAll(repositoryJ.findAll());
-        return Collections.unmodifiableList(JobGridView.map(jobs));
+        return Collections.unmodifiableList(JobGridView.mapL(jobs));
     }
     
+    @RequestMapping("dataView")
+    public
+    @ResponseBody
+    List<JobGridView> dataV(Model model) {
+        log.info("data requested");
+        List<Job> jobs = new ArrayList();
+        jobs.addAll(repositoryJ.findAll());
+        return Collections.unmodifiableList(JobGridView.mapV(jobs));
+    }
     
+/*------------NOT USED YET------------
     @RequestMapping("paramdata")
     public
     @ResponseBody
@@ -138,7 +148,8 @@ public class JobController {
         jobs.add(new Job("6", "Vitesse moyenne de Superman", "10/02/2003"));
         return Collections.unmodifiableList(JobGridView.map(jobs));
     }
-
+------------/NOT USED YET------------*/
+    
     @RequestMapping(value="/job/launch/config", method=RequestMethod.GET)
     public String lauchConfig(@RequestParam("id") String id, Model model) {
         Job job = repositoryJ.findById(id);
@@ -153,6 +164,7 @@ public class JobController {
     	Job j = repositoryJ.findByName(job.getName());
     	
     	// serialiser j
+    	
     	model.addAttribute("launched", true);
     	
         return "job/launch";
