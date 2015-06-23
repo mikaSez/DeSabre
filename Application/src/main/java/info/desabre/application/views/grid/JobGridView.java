@@ -16,6 +16,7 @@ public class JobGridView {
 
     private String id;
     private String name;
+    private String path;
 
     private static List<String> headers;
     
@@ -25,8 +26,6 @@ public class JobGridView {
     }
     
     
-    
-    
     public JobGridView(String id, String name) {
         this.id = id;
         this.name = name;
@@ -34,7 +33,10 @@ public class JobGridView {
 
 
     public static JobGridView map(Job job) {
-        return new JobGridView(job.getId(), job.getName());
+    	JobGridView view =new JobGridView(job.getId(), job.getName());
+    	view.path = "/job/launch/config?id=" + job.getId();
+    	
+        return view;
     }
 
     public static List<JobGridView> map(List<Job> jobs) {
@@ -56,6 +58,14 @@ public class JobGridView {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
 

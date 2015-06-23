@@ -8,7 +8,10 @@ $.extend(true, $.fn.dataTable.defaults, {
         "sNext": "Suivant",
         "sPrevious": "Precedent",
         "sFirst": "Premiere",
-        "sLast": "Dernière"
+        "sLast": "Dernière",
+        "sInfo": "Affichage de _START_ à _END_ pour un total de _TOTAL_ données",
+        "sInfoEmpty": "Pas de données disponibles",
+        "sInfoFiltered": "(sur un total de _MAX_ données)"
     }
 });
 

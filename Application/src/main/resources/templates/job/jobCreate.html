@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Creation d'un job"/>
-    <meta name="author" content="MikaSez"/>
+    <meta name="author" content="Naiirod"/>
     <title>DeSaBre : create job</title>
     <link href="/CSS/bootstrap.min.css" rel="stylesheet"/>
     <link href="/CSS/plugins/metisMenu/metisMenu.min.css" rel="stylesheet"/>
@@ -54,7 +54,7 @@
                                 <div class="row">
 									<div class="col-lg-6">
 									    <div class="form-group">
-									        <label for="TaskName">Nom de la tâche</label>
+									        <label for="name">Nom de la tâche</label>
 									        <input class="form-control" id="name" name="name" type="text" placeholder="Nom de la tâche"
 									         	autofocus="true" th:field="*{name}"></input>
 									    </div>
@@ -86,7 +86,7 @@
 								                            </tr>
 							                            </thead>
 							                            <tbody>
-							                            	<tr th:each="script : ${scripts}">
+							                            	<tr th:each="script : *{scripts}">
 							                            		<td><input type="text" th:field="*{scripts[__${script.index}__].name}" /></td>
 							                            		<td><input type="text" th:field="*{scripts[__${script.index}__].content}" /></td>
 												                <td>

@@ -3,7 +3,9 @@ package info.desabre.application.controllers;
 import info.desabre.UserConstants;
 import info.desabre.application.services.UserService;
 import info.desabre.database.models.information.WidgetBox;
+import info.desabre.repositories.information.NewsRepository;
 import info.desabre.repositories.information.WidgetBoxRepository;
+import info.desabre.repositories.job.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +24,12 @@ public class WidgetBoxController {
 
     @Autowired
     private UserService user;
-
+    @Autowired
+    private NewsRepository newsRepository;
+    @Autowired
+    private NewsRepository userRepository;
+    @Autowired
+    private JobRepository jobRepository;
 
     @Autowired
     private WidgetBoxRepository repository;
@@ -43,9 +50,24 @@ public class WidgetBoxController {
                 widgets = repository.findByGroupeId(UserConstants.GLOBAL_GROUPEID.getGroupeId());
             }
         }
+
+        widgets.stream().forEach(w -> w.getText());
+
         return Collections.unmodifiableList(widgets);
     }
 
+
+    private long getServerCount() {
+        return 0l;
+    }
+
+    private long getUserCount() {
+        return userRepository.count();
+    }
+
+    private long getMessageCount() {
+        return newsRepository.count();
+    }
 
 
 }

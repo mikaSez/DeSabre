@@ -1,13 +1,14 @@
 package info.desabre.application.controllers;
 
 import info.desabre.application.views.forms.views.JobCreateView;
+import info.desabre.application.views.forms.views.JobLaunchView;
 import info.desabre.application.views.grid.JobGridView;
 import info.desabre.database.models.job.Job;
 import info.desabre.database.models.job.Script;
-import info.desabre.database.models.job.ScriptParameters;
 import info.desabre.repositories.job.JobRepository;
 import info.desabre.repositories.job.ScriptRepository;
 import info.desabre.repositories.licence.LicenceRepository;
+import info.desabre.repositories.server.ServerRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,6 +26,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -42,6 +44,8 @@ public class JobController {
     private LicenceRepository repositoryL;
     @Autowired
     private ScriptRepository repositoryS;
+    @Autowired
+    private ServerRepository repositoryServ;
     
     private int index = 0;
 
@@ -133,6 +137,25 @@ public class JobController {
         jobs.add(new Job("5", "Compter les poules", "10/02/2003"));
         jobs.add(new Job("6", "Vitesse moyenne de Superman", "10/02/2003"));
         return Collections.unmodifiableList(JobGridView.map(jobs));
+    }
+
+    @RequestMapping(value="/job/launch/config", method=RequestMethod.GET)
+    public String lauchConfig(@RequestParam("id") String id, Model model) {
+        Job job = repositoryJ.findById(id);
+
+        model.addAttribute("job", job);
+        model.addAttribute("servers", repositoryServ.findAll());
+        return "job/jobLaunchConfig";
+    }
+    
+    @RequestMapping(value="/job/launch/config", method=RequestMethod.POST)
+    public String lauchConfig(@RequestParam("job") JobLaunchView job, Model model) {
+    	Job j = repositoryJ.findByName(job.getName());
+    	
+    	// serialiser j
+    	model.addAttribute("launched", true);
+    	
+        return "job/launch";
     }
 }
 
