@@ -46,13 +46,9 @@ var WidgetGridDataItem = React.createClass({
 var WidgetGridBodyItem = React.createClass({
     render: function () {
         var item = this.props.item;
-<<<<<<< HEAD
         var type = this.props.type;
         var path = "#";
-=======
         var visualiser = "";
-
->>>>>>> origin/master
         //FIXME seems too ugly to be right
         var list = [];
         for (var a in item) {
@@ -80,11 +76,8 @@ var WidgetGridBodyItem = React.createClass({
         return (
             <tr className="gradeX">
                 {widgetGridDataItems}
-<<<<<<< HEAD
                 {widgetGridType}
-=======
                 {visualiser}
->>>>>>> origin/master
             </tr>
         );
     }
@@ -167,12 +160,7 @@ var showGrid = function () {
 };
 
 React.render(
-<<<<<<< HEAD
     <WidgetGrid data={widgetGridData} type={widgetGridType}/>,
-    document.getElementById('widgetGrid')
-=======
-    <WidgetGrid data={widgetGridData}/>,
     document.getElementById('widgetGrid'),
     showGrid
->>>>>>> origin/master
 );
