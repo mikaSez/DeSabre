@@ -26,10 +26,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
-/**
- * Created by Naiirod on 07/06/2015.
- * Controleur responsable de la gestion des serveurs.
- */
 @Controller
 @RequestMapping("/script/**")
 public class ScriptController {
@@ -49,8 +45,8 @@ public class ScriptController {
         return "script/scriptList";
     }
 
-    @RequestMapping("/create")
-    public String create(Model model) throws IOException {
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    public String createView(Model model) throws IOException {
         List<String> modes = new ArrayList<>();
         for (ScriptTypes type : ScriptTypes.values()) {
             modes.add(type.getName());
@@ -58,6 +54,25 @@ public class ScriptController {
         model.addAttribute("modes", modes);
         return "script/scriptCreate";
     }
+
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public String createRequest(Model model, @RequestParam("name") String name,
+                                @RequestParam(value = "isMain", required = false) Boolean isMain, @RequestParam("script") String script) throws IOException {
+
+
+        Path path = createFile(name);
+        log.info(script.toString());
+        saveFile(path, script.getBytes());
+
+        Script s = new Script(name, path.toString());
+        s.setMainScript(isMain);
+        s.setUser(user.getUser());
+        repository.save(s);
+
+        return "script/scriptList";
+    }
+
 
     @RequestMapping("data")
     public
@@ -80,30 +95,44 @@ public class ScriptController {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public String uploadRequest(@RequestParam("name") String name, @RequestParam(value = "isMain", required = false) Boolean isMain, @RequestParam("file") MultipartFile file) throws IOException {
         log.info("file uploading");
-        String pathToFile = "files/" + user.getUser().getId() + "/scripts/";
-        Path path = Paths.get(pathToFile + name);
+
+
         if (isMain == null) {
             isMain = false;
         }
 
+        Path path = createFile(name);
+
+
+        saveFile(path, file.getBytes());
+
+        Script script = new Script(name, path.toString());
+        script.setMainScript(isMain);
+        script.setUser(user.getUser());
+        repository.save(script);
+
+        return "script/scriptList";
+
+    }
+
+
+    private Path createFile(String fileName) throws IOException {
+        String pathToFile = "files/" + user.getUser().getId() + "/scripts/";
+        Path path = Paths.get(pathToFile + fileName);
         if (!Files.isDirectory(Paths.get(pathToFile))) {
             Files.createDirectories(Paths.get(pathToFile));
         }
         if (Files.notExists(path)) {
             Files.createFile(path);
         }
+        return path;
+    }
+
+    private void saveFile(Path path, byte[] bytes) throws IOException {
         FileChannel channel = FileChannel.open(path, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
 
-        channel.write(ByteBuffer.wrap(file.getBytes()));
+        channel.write(ByteBuffer.wrap(bytes));
         channel.close();
-
-
-        Script script = new Script(name, path.toString());
-
-        script.setMainScript(isMain);
-        repository.save(script);
-        return "script/scriptList";
-
     }
 
 }

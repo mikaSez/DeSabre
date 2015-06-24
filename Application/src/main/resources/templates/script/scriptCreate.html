@@ -42,11 +42,27 @@
             </div>
         </div>
         <div class="row">
-            <form>
-                <select id="language" class="form-control">
+            <form method="post">
+                <select id="language" class="btn">
                     <option th:each="mode : ${modes}" th:value="${mode}" th:text="${mode}"></option>
                 </select>
-                <textarea id="editor" name="editor"> </textarea>
+
+
+                <hr/>
+
+                <div class="form-group">
+                    <input type="text" maxlength="50" id="name" name="name" placeholder="Entrer le nom du script"/>
+                </div>
+                <div class="form-group">
+                    <label> Script principal <input type="checkbox"/> </label>
+                </div>
+
+
+                <textarea id="editor" name="script"> </textarea>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-block btn-success" value="Envoyer"/>
+                </div>
             </form>
         </div>
 

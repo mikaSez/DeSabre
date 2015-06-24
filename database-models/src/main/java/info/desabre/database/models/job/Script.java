@@ -59,6 +59,9 @@ public class Script {
     }
 
     public Boolean getMainScript() {
+        if (mainScript == null) {
+            return false;
+        }
         return mainScript;
     }
 
