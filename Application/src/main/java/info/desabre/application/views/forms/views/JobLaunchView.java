@@ -2,9 +2,10 @@ package info.desabre.application.views.forms.views;
 
 import info.desabre.database.models.server.Server;
 
+import java.util.List;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 /**
  * Created by Naiirod on 17/06/2015.

@@ -1,12 +1,26 @@
 package info.desabre.application.controllers;
 
 import info.desabre.application.views.forms.views.JobCreateView;
+import info.desabre.application.views.forms.views.JobLaunchView;
 import info.desabre.application.views.grid.JobGridView;
 import info.desabre.database.models.job.Job;
+import info.desabre.database.models.job.Script;
 import info.desabre.repositories.job.JobRepository;
 import info.desabre.repositories.job.ScriptRepository;
 import info.desabre.repositories.licence.LicenceRepository;
 import info.desabre.repositories.server.ServerRepository;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.logging.Logger;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +29,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -88,6 +103,7 @@ public class JobController {
     public String addRow(@ModelAttribute("job") JobCreateView job, BindingResult bindingResult, Model model) {
     	this.index++;
     	job.setLicences(repositoryL.findAll());
+        job.getScripts().add(new Script(this.index));
     	model.addAttribute("job", job);
     	model.addAttribute("licences", job.getLicences());
     	model.addAttribute("scripts", job.getScripts());
@@ -104,8 +120,8 @@ public class JobController {
     	
         return "job/jobCreate";
     }
-
-
+    
+    
     @RequestMapping("dataLaunch")
     public
     @ResponseBody
@@ -115,7 +131,7 @@ public class JobController {
         jobs.addAll(repositoryJ.findAll());
         return Collections.unmodifiableList(JobGridView.mapL(jobs));
     }
-
+    
     @RequestMapping("dataView")
     public
     @ResponseBody
@@ -125,6 +141,44 @@ public class JobController {
         jobs.addAll(repositoryJ.findAll());
         return Collections.unmodifiableList(JobGridView.mapV(jobs));
     }
+    
+    
+    @RequestMapping(value="/job/launch/config", method=RequestMethod.GET)
+    public String lauchConfig(@RequestParam("id") String id, Model model) {
+        Job job = repositoryJ.findById(id);
 
+        model.addAttribute("job", job);
+        model.addAttribute("servers", repositoryServ.findAll());
+        return "job/jobLaunchConfig";
+    }
+    
+    @RequestMapping(value="/job/launch/config", method=RequestMethod.POST)
+    public String lauchConfig(@ModelAttribute("job") @Valid JobLaunchView job, Model model) {
+    	Job j = repositoryJ.findByName(job.getName());
+    	
+    	ObjectOutputStream oos = null;
+    	System.out.println(System.getProperties().get("user.dir") );
+        try {
+          final FileOutputStream fichier = new FileOutputStream("./distant/job"+j.getId()+".ser");
+          oos = new ObjectOutputStream(fichier);
+          oos.writeObject(j);
+          oos.flush();
+        } catch (final java.io.IOException e) {
+          e.printStackTrace();
+      	model.addAttribute("launched", true);
+        } finally {
+          try {
+            if (oos != null) {
+              oos.flush();
+              oos.close();
+            }
+        	model.addAttribute("launched", true);
+          } catch (final IOException ex) {
+            ex.printStackTrace();
+          }
+        }
+    	
+        return "job/jobLaunch";
+    }
 }
 
