@@ -167,7 +167,7 @@ public class JobController {
     	Job j = repositoryJ.findByName(job.getName());
     	
     	ObjectOutputStream oos = null;
-    	System.out.println(System.getProperties().get("user.dir") );
+    	
         try {
           final FileOutputStream fichier = new FileOutputStream("./distant/job"+j.getId()+".ser");
           oos = new ObjectOutputStream(fichier);
@@ -175,7 +175,7 @@ public class JobController {
           oos.flush();
         } catch (final java.io.IOException e) {
           e.printStackTrace();
-      	model.addAttribute("launched", true);
+      		model.addAttribute("errlaunched", true);
         } finally {
           try {
             if (oos != null) {
@@ -183,6 +183,7 @@ public class JobController {
               oos.close();
             }
         	model.addAttribute("launched", true);
+        	System.out.println("Job "+j.getId()+" bien lancé !");
           } catch (final IOException ex) {
             ex.printStackTrace();
           }

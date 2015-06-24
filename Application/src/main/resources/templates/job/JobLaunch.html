@@ -54,6 +54,9 @@
         <div th:if="${launched}" class="alert alert-info">
             La job a été lancé.
         </div>
+        <div th:if="${errlaunched}" class="alert alert-danger">
+            Le lancement a rencontré une erreur.
+        </div>
         <div th:include="fragments/widget :: widgetGrid"></div>
     </div>
 </div>
