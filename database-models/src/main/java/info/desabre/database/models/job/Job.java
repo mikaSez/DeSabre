@@ -6,14 +6,19 @@ import info.desabre.database.models.server.Server;
 
 import org.springframework.data.annotation.Id;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by MikaSez on 02/06/2015.
  */
-public class Job {
+public class Job implements Serializable {
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     private String id;
     private String name;
     private String groupeid;

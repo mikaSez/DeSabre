@@ -2,8 +2,6 @@ package info.desabre.application.views.forms.views;
 
 import info.desabre.database.models.server.Server;
 
-import java.util.List;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -17,7 +15,7 @@ public class JobLaunchView {
     @Size(min = 2, message = "Le nom doit comporter au moins deux caractères")
 	private String name;
 
-	private List<Server> servers;
+	private Server server;
 	
 	public String getName(){
 		return name;
@@ -27,19 +25,19 @@ public class JobLaunchView {
 		this.name = name;
 	}
 	
-	public List<Server> getServers(){
-		return servers;
+	public Server getServer(){
+		return server;
 	}
 	
-	public void setServers(List<Server> servers){
-		this.servers = servers;
+	public void setServer(Server server){
+		this.server = server;
 	} 
     
     @Override
     public String toString() {
         return "JobLaunchView{" +
 	                "name='" + name + "'" +
-	                "servers={'" + servers.toString() + "'}" +
+	                "server={'" + server.getName() + "'}" +
                 "}";
     }
 }

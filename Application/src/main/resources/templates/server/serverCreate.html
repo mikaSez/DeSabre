@@ -51,13 +51,16 @@
                             	<div th:if="${saved}" class="alert alert-info">
 			                        Le serveur a été créé correctement.
 			                    </div>
-		                        <div th:if="${#fields.hasErrors('name')}" class="alert alert-danger">
+		                        <div th:if="${#fields.hasErrors('name')}"
+		                        th:errors="*{name}" class="alert alert-danger">
 		                            Le nom n'est pas valide.
 		                        </div>
-		                        <div th:if="${#fields.hasErrors('address')}" class="alert alert-danger">
+		                        <div th:if="${#fields.hasErrors('address')}"
+		                        th:errors="*{address}" class="alert alert-danger">
 		                            L'adresse n'est pas valide.
 		                        </div>
-		                        <div th:if="${#fields.hasErrors('coreCount')}" class="alert alert-danger">
+		                        <div th:if="${#fields.hasErrors('coreCount')}"
+		                        th:errors="*{coreCount}" class="alert alert-danger">
 		                            Le nombre de coeur pour le serveur n'est pas valide.
 		                        </div>
                                 <div class="row">

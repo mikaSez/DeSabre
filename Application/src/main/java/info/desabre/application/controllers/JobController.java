@@ -10,6 +10,9 @@ import info.desabre.repositories.job.ScriptRepository;
 import info.desabre.repositories.licence.LicenceRepository;
 import info.desabre.repositories.server.ServerRepository;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -160,14 +163,32 @@ public class JobController {
     }
     
     @RequestMapping(value="/job/launch/config", method=RequestMethod.POST)
-    public String lauchConfig(@RequestParam("job") JobLaunchView job, Model model) {
+    public String lauchConfig(@ModelAttribute("job") @Valid JobLaunchView job, Model model) {
     	Job j = repositoryJ.findByName(job.getName());
     	
-    	// serialiser j
+    	ObjectOutputStream oos = null;
+    	System.out.println(System.getProperties().get("user.dir") );
+        try {
+          final FileOutputStream fichier = new FileOutputStream("./distant/job"+j.getId()+".ser");
+          oos = new ObjectOutputStream(fichier);
+          oos.writeObject(j);
+          oos.flush();
+        } catch (final java.io.IOException e) {
+          e.printStackTrace();
+      	model.addAttribute("launched", true);
+        } finally {
+          try {
+            if (oos != null) {
+              oos.flush();
+              oos.close();
+            }
+        	model.addAttribute("launched", true);
+          } catch (final IOException ex) {
+            ex.printStackTrace();
+          }
+        }
     	
-    	model.addAttribute("launched", true);
-    	
-        return "job/launch";
+        return "job/jobLaunch";
     }
 }
 
