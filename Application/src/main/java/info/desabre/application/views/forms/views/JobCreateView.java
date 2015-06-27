@@ -21,7 +21,6 @@ public class JobCreateView {
 	private String name;
 
 	private List<Licence> licences;
-	private List<Script> scripts = new ArrayList<Script>();
 	
 	public String getName(){
 		return name;
@@ -43,21 +42,9 @@ public class JobCreateView {
 	public void setLicences(List<Licence> licences){
 		this.licences = licences;
 	}
-
-	public void addScript(Script script){
-		scripts.add(script);
-	}
-	
-	public List<Script> getScripts(){
-		return scripts;
-	}
-	
-	public void setScripts(List<Script> scripts){
-		this.scripts = scripts;
-	}
 	
     public Job mapToJob() {
-        Job job =  new Job(name, scripts, licences);
+        Job job =  new Job(name, licences);
         return job;
     }  
     
@@ -66,7 +53,6 @@ public class JobCreateView {
         return "JobCreateView{" +
 	                "name='" + name + "'" +
 	                "licences={'" + licences.toString() + "'}" +
-	                "scripts={'" + scripts.toString() + "'}" +
                 "}";
     }
 }
