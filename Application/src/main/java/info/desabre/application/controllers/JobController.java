@@ -61,12 +61,8 @@ public class JobController {
     
     @RequestMapping(value="/create", method=RequestMethod.GET)
     public String create(@ModelAttribute JobCreateView job, Model model) {
-    	job.setScripts(repositoryS.findAll());
     	job.setLicences(repositoryL.findAll());
     	model.addAttribute("job", job);
-    	model.addAttribute("scripts", job.getScripts());
-    	if(job.getScripts().size() != 0) // si vide le html teste si scripts est declaré
-    		model.addAttribute("scripts", job.getScripts());
         return "job/jobCreate";
     }
     
@@ -85,31 +81,7 @@ public class JobController {
         }
 
     	job.setLicences(repositoryL.findAll());
-    	job.setScripts(repositoryS.findAll());
     	model.addAttribute("job", job);
-    	model.addAttribute("scripts", job.getScripts());
-    	
-        return "job/jobCreate";
-    }
-    
-    @RequestMapping(value="/create", params={"addRow"})
-    public String addRow(@ModelAttribute("job") JobCreateView job, BindingResult bindingResult, Model model) {
-    	this.index++;
-    	job.setLicences(repositoryL.findAll());
-        job.getScripts().add(new Script(this.index));
-    	model.addAttribute("job", job);
-    	model.addAttribute("licences", job.getLicences());
-    	model.addAttribute("scripts", job.getScripts());
-    	
-        return "job/jobCreate";
-    }
-
-    @RequestMapping(value="/create", params={"removeRow"})
-    public String removeRow(@ModelAttribute JobCreateView job, BindingResult bindingResult, final HttpServletRequest req, Model model) {
-        final Integer rowId = Integer.valueOf(req.getParameter("removeRow"));
-        job.getScripts().remove(rowId.intValue());
-    	model.addAttribute("job", job);
-    	model.addAttribute("licences", job.getLicences());
     	
         return "job/jobCreate";
     }
@@ -134,24 +106,6 @@ public class JobController {
         jobs.addAll(repositoryJ.findAll());
         return Collections.unmodifiableList(JobGridView.mapV(jobs));
     }
-    
-/*------------NOT USED YET------------
-    @RequestMapping("paramdata")
-    public
-    @ResponseBody
-    List<JobGridView> paramdata(Model model) {
-        log.info("data requested");
-        List<Job> jobs = new ArrayList();
-        jobs.add(new Job("0", "Compter les poules", "10/02/2003"));
-        jobs.add(new Job("1", "Vitesse moyenne de Superman", "10/02/2005"));
-        jobs.add(new Job("2", "Nombre PI", "10/02/2003"));
-        jobs.add(new Job("3", "Dechiffrage enigma", "10/02/1941"));
-        jobs.add(new Job("4", "Chiffrage Titan", "10/02/1942"));
-        jobs.add(new Job("5", "Compter les poules", "10/02/2003"));
-        jobs.add(new Job("6", "Vitesse moyenne de Superman", "10/02/2003"));
-        return Collections.unmodifiableList(JobGridView.map(jobs));
-    }
-------------/NOT USED YET------------*/
     
     @RequestMapping(value="/job/launch/config", method=RequestMethod.GET)
     public String lauchConfig(@RequestParam("id") String id, Model model) {

@@ -69,47 +69,7 @@
                                         </div>
 									</div>
 									<!-- /.col-lg-6 (nested) -->
-									<div class="col-lg-6">
 									
-										<div class="panel panel-default">
-							                <div class="panel-heading">
-							                    Scripts
-							                </div>
-							                <div class="panel-body">
-							                    <div class="table-responsive">
-							                        <table class="table" id="scriptList">
-							                            <thead>
-								                            <tr>
-								                                <th> Nom</th>
-								                                <th> Contenu</th>
-								                                <th> </th>
-								                            </tr>
-							                            </thead>
-							                            <tbody>
-							                            	<tr th:each="script : *{scripts}">
-							                            		<td><input type="text" th:field="*{scripts[__${script.index}__].name}" /></td>
-							                            		<td><input type="text" th:field="*{scripts[__${script.index}__].content}" /></td>
-												                <td>
-												                     <button type="button" name="removeRow" th:value="${script.index}"
-												                     class="fa fa-times btn btn-outline btn-danger btn-xs btn-delete">
-                														Remove row
-                													</button>
-												                </td>
-															</tr>
-							                            </tbody>
-							                        </table>
-							                    </div>
-							                    <div>
-									                <hr/>
-									                <button type="submit" name="addRow" class="btn btn-outline btn-success btn-params">
-									                	<i class="fa fa-plus"></i> Ajouter
-									                </button>
-									            </div>
-							                </div>
-							             </div>
-							             
-									</div>
-									<!-- /.col-lg-6 (nested) -->
 								</div>
                             	<!-- /.row (nested) -->
 	                    		<div>
