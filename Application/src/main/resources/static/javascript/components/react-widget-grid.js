@@ -55,10 +55,10 @@ var WidgetGridBodyItem = React.createClass({
             if (a !== "path" && a !== "headers"){
                 list.push(a);
             } else if (a !== "headers") {
-                if(type === "list") {
-                	widgetGridType = <td ><a href={item[a]}><i className="fa fa-eye fa-fw"></i> Visualiser</a></td>;
-                } else if(type === "launch") {
-                	widgetGridType = <td ><a href={item[a]}><i className="fa fa-play fa-fw"></i> Lancer</a></td>;
+                if (type === "list") {
+                    widgetGridType = <td ><a href={item[a]}><i className="fa fa-eye fa-fw"></i> Visualiser</a></td>;
+                } else if (type === "launch") {
+                    widgetGridType = <td ><a href={item[a]}><i className="fa fa-play fa-fw"></i> Lancer</a></td>;
                 }
             }
         }
@@ -68,7 +68,7 @@ var WidgetGridBodyItem = React.createClass({
                 <WidgetGridDataItem key={intern} item={item[intern]}/>
             );
         });
-        
+
         var widgetGridType;
         
         
@@ -106,16 +106,16 @@ var WidgetGrid = React.createClass({
                 );
 
             });
-        	
-        	 widgetGridBodyItems = (function(wtype) { //closure
-        		 return data.map(function (item) {
-	                var key = item.id;
-	                var type = wtype;
-	                return (
-	                    <WidgetGridBodyItem key={key} item={item} type={type}/>
-	                );
-        		 })
-        	 })(type);
+
+            widgetGridBodyItems = (function (wtype) { //closure
+                return data.map(function (item) {
+                    var key = item.id;
+                    var type = wtype;
+                    return (
+                        <WidgetGridBodyItem key={key} item={item} type={type}/>
+                    );
+                })
+            })(type);
         } else {
             widgetGridBodyItems = <tr>
                 <td>Aucune donnée disponible pour le moment</td>

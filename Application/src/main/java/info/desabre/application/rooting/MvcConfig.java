@@ -64,8 +64,8 @@ public class MvcConfig extends WebMvcConfigurerAdapter implements EmbeddedServle
     }
 
     private void serverRegistry(ViewControllerRegistry registry) {
-    	registry.addViewController("/server/list").setViewName("server/serverList");
-    	registry.addViewController("/server/create").setViewName("server/serverCreate");  	
+        registry.addViewController("/server/list").setViewName("server/serverList");
+        registry.addViewController("/server/create").setViewName("server/serverCreate");
     }
     
     

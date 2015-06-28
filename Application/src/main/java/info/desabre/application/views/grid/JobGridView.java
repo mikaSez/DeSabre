@@ -22,7 +22,7 @@ public class JobGridView {
     
     static {
     	headers = new ArrayList<>();
-    	headers.addAll(Arrays.asList("Id", "Nom", "Traitement"));
+        headers.addAll(Arrays.asList("Id", "Nom", "Traitement"));
     }
     
     
@@ -33,9 +33,9 @@ public class JobGridView {
 
 
     public static JobGridView mapL(Job job) {
-    	JobGridView view = new JobGridView(job.getId(), job.getName());
-    	view.path = "/job/launch/config?id=" + job.getId();
-    	
+        JobGridView view = new JobGridView(job.getId(), job.getName());
+        view.path = "/job/launch/config?id=" + job.getId();
+
         return view;
     }
 
@@ -44,9 +44,9 @@ public class JobGridView {
     }
 
     public static JobGridView mapV(Job job) {
-    	JobGridView view = new JobGridView(job.getId(), job.getName());
-    	view.path = "/job/details?id=" + job.getId();
-    	
+        JobGridView view = new JobGridView(job.getId(), job.getName());
+        view.path = "/job/details?id=" + job.getId();
+
         return view;
     }
 

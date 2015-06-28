@@ -1,13 +1,10 @@
 package info.desabre.application.controllers;
 
-import info.desabre.application.views.forms.views.JobCreateView;
 import info.desabre.application.views.forms.views.ServerCreateView;
 import info.desabre.application.views.grid.ServerGridView;
 import info.desabre.database.models.server.Server;
-import info.desabre.repositories.job.JobRepository;
 import info.desabre.repositories.licence.LicenceRepository;
 import info.desabre.repositories.server.ServerRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,12 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
-
-import javax.validation.Valid;
 
 /**
  * Created by DeSaBre on 07/06/2015.
@@ -46,37 +42,37 @@ public class ServerController {
 
         return "server/serverList";
     }
-    
-    @RequestMapping(value="/create", method=RequestMethod.GET)
+
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String create(@ModelAttribute ServerCreateView server, Model model) {
-    	server.setLicences(repositoryL.findAll());
-    	model.addAttribute("server", server);
-    	model.addAttribute("licences", server.getLicences());
+        server.setLicences(repositoryL.findAll());
+        model.addAttribute("server", server);
+        model.addAttribute("licences", server.getLicences());
         return "server/serverCreate";
     }
 
-    @RequestMapping(value="/create", method=RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String create(@ModelAttribute("server") @Valid ServerCreateView server, BindingResult bindingResult, Model model) {
-    	server.setLicences(repositoryL.findAll());
-    	model.addAttribute("server", server);
-    	model.addAttribute("licences", server.getLicences());
-    	
-    	if(!validateServerName(server.getName())) {
+        server.setLicences(repositoryL.findAll());
+        model.addAttribute("server", server);
+        model.addAttribute("licences", server.getLicences());
+
+        if (!validateServerName(server.getName())) {
             model.addAttribute("errorName", true);
-    		bindingResult.addError(new ObjectError("server", "le nom n'est pas valide"));
-            log.info("'"+server.getName()+"' n'est pas enregistrable");
-    	}
-    	
-    	if (!bindingResult.hasErrors()) {
-        	model.addAttribute("saved", true);
-        	repositoryS.save(server.mapToServer());
-            log.info("Vous avez ajouté le serveur '"+server.getName()+"'");
+            bindingResult.addError(new ObjectError("server", "le nom n'est pas valide"));
+            log.info("'" + server.getName() + "' n'est pas enregistrable");
         }
-    	
+
+        if (!bindingResult.hasErrors()) {
+            model.addAttribute("saved", true);
+            repositoryS.save(server.mapToServer());
+            log.info("Vous avez ajouté le serveur '" + server.getName() + "'");
+        }
+
         return "server/serverCreate";
     }
-    
-    
+
+
     @RequestMapping("data")
     public
     @ResponseBody

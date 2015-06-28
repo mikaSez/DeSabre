@@ -1,23 +1,12 @@
 package info.desabre.application.controllers;
 
 import info.desabre.application.views.forms.views.JobCreateView;
-import info.desabre.application.views.forms.views.JobLaunchView;
 import info.desabre.application.views.grid.JobGridView;
 import info.desabre.database.models.job.Job;
-import info.desabre.database.models.job.Script;
 import info.desabre.repositories.job.JobRepository;
 import info.desabre.repositories.job.ScriptRepository;
 import info.desabre.repositories.licence.LicenceRepository;
 import info.desabre.repositories.server.ServerRepository;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.logging.Logger;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +15,6 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -116,8 +104,8 @@ public class JobController {
     	
         return "job/jobCreate";
     }
-    
-    
+
+
     @RequestMapping("dataLaunch")
     public
     @ResponseBody
@@ -127,7 +115,7 @@ public class JobController {
         jobs.addAll(repositoryJ.findAll());
         return Collections.unmodifiableList(JobGridView.mapL(jobs));
     }
-    
+
     @RequestMapping("dataView")
     public
     @ResponseBody
@@ -137,6 +125,6 @@ public class JobController {
         jobs.addAll(repositoryJ.findAll());
         return Collections.unmodifiableList(JobGridView.mapV(jobs));
     }
-    
+
 }
 

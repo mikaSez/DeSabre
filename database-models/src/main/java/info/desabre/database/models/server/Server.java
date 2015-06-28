@@ -32,7 +32,7 @@ public class Server {
         this.coreCount = coreCount;
     }
 
-    public Server(String name,String address,int coreCount,List<Licence> licences) {
+    public Server(String name, String address, int coreCount, List<Licence> licences) {
         this.name = name;
         this.address = address;
         this.coreCount = coreCount;
