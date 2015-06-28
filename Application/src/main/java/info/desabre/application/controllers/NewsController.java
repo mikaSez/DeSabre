@@ -72,7 +72,7 @@ public class NewsController {
         News news = new News(message, new java.util.Date(), "refresh fa-spin", "#", UserConstants.GLOBAL_GROUPEID.getGroupeId());
 
         repository.save(news);
-        return "/news/list";
+        return "notification/newsList";
 
     }
 

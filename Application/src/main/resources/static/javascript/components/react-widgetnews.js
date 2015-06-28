@@ -37,7 +37,9 @@ var WidgetNewsList = React.createClass({
             render: function () {
                 var item = this.props.item;
                 var iconString = "fa fa-fw fa-" + item.icon;
- 
+                if (item.title.length > 30) {
+                    item.title = item.title.substring(0, 30) + " ...";
+                }
                 return (
                 		<a href={item.path} className="list-group-item">
                         <i className={iconString}></i> {item.title}
@@ -50,19 +52,23 @@ var WidgetNewsList = React.createClass({
 
 
         var data = this.state.data;
-		if(data.length===0)
+        if (data.length === 0) {
             var newsWidgetItem = <h2 className="text-center">
                 <small> Aucune information disponible pour le moment...</small>
             </h2>;
-		else
-			var newsWidgetItem = data.map(function (item) {
-	            var key = item.id;
-	
-	            return (
-	                <WidgetNewsItem key={key} item={item}/>
-	            );
+        }
+		else {
+            data.sort(function (a, b) {
+                return (b.time - a.time);
+            });
+            var newsWidgetItem = data.map(function (item) {
+                var key = item.id;
+                return (
+                    <WidgetNewsItem key={key} item={item}/>
+                );
 
-			});
+            });
+        }
         return (
             <div className="col-lg-5 col-md-6 hidden-sm hidden-xs">
                 <div className="panel panel-default">
