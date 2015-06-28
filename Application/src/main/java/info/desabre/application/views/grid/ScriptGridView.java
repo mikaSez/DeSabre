@@ -18,14 +18,14 @@ public class ScriptGridView {
     }
 
     private InputWithType<Boolean> mainScript;
-    // private String path;
+    private String path;
 
 
     private static List<String> headers;
 
     static {
         headers = new ArrayList<>();
-        headers.addAll(Arrays.asList("name", "est principal ?"));
+        headers.addAll(Arrays.asList("name", "est principal ?", "Visualiser"));
     }
 
 
@@ -35,7 +35,11 @@ public class ScriptGridView {
     }
 
     public static ScriptGridView map(Script script) {
-        return new ScriptGridView(script.getName(), script.getMainScript());
+        ScriptGridView view = new ScriptGridView(script.getName(), script.getMainScript());
+
+        view.path = "/script/detail?id=" + script.getId();
+
+        return view;
     }
 
     public static List<ScriptGridView> map(List<Script> scripts) {
@@ -51,8 +55,15 @@ public class ScriptGridView {
         this.name = name;
     }
 
+    public String getPath() {
+        return path;
+    }
+
+
 
     public List<String> getHeaders() {
         return headers;
     }
+
+
 }

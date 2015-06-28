@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -61,20 +62,32 @@ public class ScriptController {
     }
 
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(value = {"/create", "/detail"}, method = RequestMethod.POST)
     public String createRequest(Model model, @RequestParam("name") String name,
                                 @RequestParam(value = "isMain", required = false) Boolean isMain, @RequestParam("script") String script) throws IOException {
 
 
         Path path = createFile(name);
         log.info(script.toString());
+        Script s;
         saveFile(path, script.getBytes());
+        java.util.Optional<Script> opt = user.getUser().getScripts().stream().filter(o -> o.getName().equalsIgnoreCase(name)).findFirst();
+        if (opt.isPresent()) {
+            s = opt.get();
 
-        Script s = new Script(name, path.toString());
+        } else {
+            s = new Script(name, path.toString());
+            user.getUser().getScripts().add(s);
+            userRepository.save(user.getUser());
+        }
+
+
+        if (isMain == null) {
+            isMain = false;
+        }
+
         s.setMainScript(isMain);
         repository.save(s);
-        user.getUser().getScripts().add(s);
-        userRepository.save(user.getUser());
 
         return "script/scriptList";
     }
@@ -83,7 +96,7 @@ public class ScriptController {
     @RequestMapping("data")
     public
     @ResponseBody
-    List<ScriptGridView> data(Model model) {
+    List<ScriptGridView> data() {
         log.info("data requested");
         List<Script> scripts = user.getUser().getScripts();
         scripts.forEach(e -> log.info(e.toString()));
@@ -91,6 +104,27 @@ public class ScriptController {
 
     }
 
+
+    @RequestMapping(value = "/detail")
+    public String details(Model model, @RequestParam("id") String id) {
+        List<String> modes = new ArrayList<>();
+        for (ScriptTypes type : ScriptTypes.values()) {
+            modes.add(type.getName());
+        }
+        model.addAttribute("modes", modes);
+        Script script = repository.findById(id);
+        model.addAttribute("name", script.getName());
+        model.addAttribute("isMain", script.getMainScript());
+
+        String content = "";
+        try {
+            content = readFile(Paths.get(getPathToFiles() + script.getName()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        model.addAttribute("script", content);
+        return "script/scriptCreate";
+    }
 
     @RequestMapping(value = "/upload", method = RequestMethod.GET)
     public String uploadPage() {
@@ -109,14 +143,19 @@ public class ScriptController {
 
         Path path = createFile(name);
 
-
+        Script script;
         saveFile(path, file.getBytes());
+        java.util.Optional<Script> opt = user.getUser().getScripts().stream().filter(o -> o.getName().equalsIgnoreCase(name)).findFirst();
+        if (opt.isPresent()) {
+            script = opt.get();
+        } else {
+            script = new Script(name, path.toString());
+            user.getUser().getScripts().add(script);
+            userRepository.save(user.getUser());
+        }
 
-        Script script = new Script(name, path.toString());
         script.setMainScript(isMain);
         repository.save(script);
-        user.getUser().getScripts().add(script);
-        userRepository.save(user.getUser());
 
         return "script/scriptList";
 
@@ -124,7 +163,7 @@ public class ScriptController {
 
 
     private Path createFile(String fileName) throws IOException {
-        String pathToFile = "files/" + user.getUser().getId() + "/scripts/";
+        String pathToFile = getPathToFiles();
         Path path = Paths.get(pathToFile + fileName);
         if (!Files.isDirectory(Paths.get(pathToFile))) {
             Files.createDirectories(Paths.get(pathToFile));
@@ -142,4 +181,17 @@ public class ScriptController {
         channel.close();
     }
 
+    private String readFile(Path path) throws IOException {
+        BufferedReader reader = Files.newBufferedReader(path);
+        StringBuilder sb = new StringBuilder();
+        reader.lines().forEach(o -> {
+            sb.append(o).append('\n');
+        });
+        return sb.toString();
+
+    }
+
+    public String getPathToFiles() {
+        return "files/" + user.getUser().getId() + "/scripts/";
+    }
 }

@@ -61,8 +61,9 @@ public class NewsController {
         }
         news.addAll(repository.findByGroupId(UserConstants.GLOBAL_GROUPEID.getGroupeId()));
         news.sort(Comparator.comparing(News::getTime));
+
         //will be really bad on large chunk of data, limit the query not the output
-        return NewsGridView.map(news);
+        return NewsGridView.map(news.subList(0, 5));
     }
 
 
@@ -75,6 +76,5 @@ public class NewsController {
         return "notification/newsList";
 
     }
-
 
 }
