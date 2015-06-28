@@ -31,11 +31,12 @@
     <script src="/javascript/dataLoader.js"></script>
     <script>
         urls = [{
-            from: "/job/data",
+            from: "/job/dataView",
             to: "widgetGridData"
         }];
         console.info(window);
         var widgetGridData;
+        var widgetGridType = "list"; // list ou launch pour determiner le type de grid voulu => "visualiser" ou "lancer"
         dataLoader(window);
 
     </script>
@@ -59,11 +60,6 @@
 <script src="/javascript/plugins/dataTables/jquery.dataTables.js"></script>
 <script src="/javascript/plugins/dataTables/dataTables.bootstrap.js"></script>
 <script src="/javascript/sb-admin-2.js"></script>
-<script type="text/jsx">
-    $(document).ready(function () {
-        $('.datatable').dataTable();
 
-    });
-</script>
 </body>
 </html>

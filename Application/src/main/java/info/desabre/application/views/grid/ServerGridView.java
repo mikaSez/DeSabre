@@ -16,6 +16,7 @@ public class ServerGridView {
 
     private String name;
     private int cores;
+    private String path;
     private static List<String> headers;
     
     static {
@@ -31,7 +32,10 @@ public class ServerGridView {
 
 
     public static ServerGridView map(Server server) {
-        return new ServerGridView(server.getName(), server.getCoreCount());
+    	ServerGridView view = new ServerGridView(server.getName(), server.getCoreCount());
+    	view.path = "#";
+
+        return view;
     }
 
     public static List<ServerGridView> map(List<Server> servers) {
@@ -53,6 +57,14 @@ public class ServerGridView {
 
     public void setCores(int cores) {
         this.cores = cores;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
     
     public List<String> getHeaders(){

@@ -46,8 +46,8 @@ var WidgetGridDataItem = React.createClass({
 var WidgetGridBodyItem = React.createClass({
     render: function () {
         var item = this.props.item;
-        var visualiser = "";
-
+        var type = this.props.type;
+        var widgetGridType = "";
         //FIXME seems too ugly to be right
         var list = [];
         for (var a in item) {
@@ -55,7 +55,11 @@ var WidgetGridBodyItem = React.createClass({
             if (a !== "path" && a !== "headers"){
                 list.push(a);
             } else if (a !== "headers") {
-                visualiser = <td ><a href={item[a]}><i className="fa fa-eye fa-fw"></i>Visualiser</a></td>
+                if(type === "list") {
+                	widgetGridType = <td ><a href={item[a]}><i className="fa fa-eye fa-fw"></i> Visualiser</a></td>;
+                } else if(type === "launch") {
+                	widgetGridType = <td ><a href={item[a]}><i className="fa fa-play fa-fw"></i> Lancer</a></td>;
+                }
             }
         }
 
@@ -64,11 +68,15 @@ var WidgetGridBodyItem = React.createClass({
                 <WidgetGridDataItem key={intern} item={item[intern]}/>
             );
         });
+        
+        var widgetGridType;
+        
+        
 
         return (
             <tr className="gradeX">
                 {widgetGridDataItems}
-                {visualiser}
+                {widgetGridType}
             </tr>
         );
     }
@@ -78,9 +86,13 @@ var WidgetGridBodyItem = React.createClass({
 var WidgetGrid = React.createClass({
     render: function () {
         var data = this.props.data;
+        var type = this.props.type;
 
         if (data === undefined) {
             data = [];
+        }
+        if (type === undefined) {
+            type = "list";
         }
         var widgetGridBodyItems;
         if(data.length !== 0){
@@ -95,22 +107,21 @@ var WidgetGrid = React.createClass({
 
             });
         	
-        	 widgetGridBodyItems = data.map(function (item) {
-                var key = item.id;
-                return (
-                    <WidgetGridBodyItem key={key} item={item}/>
-                );
-            });
+        	 widgetGridBodyItems = (function(wtype) { //closure
+        		 return data.map(function (item) {
+	                var key = item.id;
+	                var type = wtype;
+	                return (
+	                    <WidgetGridBodyItem key={key} item={item} type={type}/>
+	                );
+        		 })
+        	 })(type);
         } else {
             widgetGridBodyItems = <tr>
                 <td>Aucune donnée disponible pour le moment</td>
             </tr>;
             widgetGridHeaderItems = <th> Nous sommes désolés. </th>
         }
-        
-        
-        
-        
 
         return (
             <div className="row">
@@ -148,7 +159,7 @@ var showGrid = function () {
 };
 
 React.render(
-    <WidgetGrid data={widgetGridData}/>,
+    <WidgetGrid data={widgetGridData} type={widgetGridType}/>,
     document.getElementById('widgetGrid'),
     showGrid
 );

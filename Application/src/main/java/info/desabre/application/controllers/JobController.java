@@ -1,11 +1,23 @@
 package info.desabre.application.controllers;
 
 import info.desabre.application.views.forms.views.JobCreateView;
+import info.desabre.application.views.forms.views.JobLaunchView;
 import info.desabre.application.views.grid.JobGridView;
 import info.desabre.database.models.job.Job;
+import info.desabre.database.models.job.Script;
 import info.desabre.repositories.job.JobRepository;
 import info.desabre.repositories.job.ScriptRepository;
 import info.desabre.repositories.licence.LicenceRepository;
+import info.desabre.repositories.server.ServerRepository;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.logging.Logger;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +26,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +51,8 @@ public class JobController {
     private LicenceRepository repositoryL;
     @Autowired
     private ScriptRepository repositoryS;
+    @Autowired
+    private ServerRepository repositoryServ;
     
     private int index = 0;
 
@@ -103,31 +118,25 @@ public class JobController {
     }
     
     
-    @RequestMapping("data")
+    @RequestMapping("dataLaunch")
     public
     @ResponseBody
-    List<JobGridView> data(Model model) {
+    List<JobGridView> dataL(Model model) {
         log.info("data requested");
         List<Job> jobs = new ArrayList();
         jobs.addAll(repositoryJ.findAll());
-        return Collections.unmodifiableList(JobGridView.map(jobs));
+        return Collections.unmodifiableList(JobGridView.mapL(jobs));
     }
     
-    
-    @RequestMapping("paramdata")
+    @RequestMapping("dataView")
     public
     @ResponseBody
-    List<JobGridView> paramdata(Model model) {
+    List<JobGridView> dataV(Model model) {
         log.info("data requested");
         List<Job> jobs = new ArrayList();
-        jobs.add(new Job("0", "Compter les poules", "10/02/2003"));
-        jobs.add(new Job("1", "Vitesse moyenne de Superman", "10/02/2005"));
-        jobs.add(new Job("2", "Nombre PI", "10/02/2003"));
-        jobs.add(new Job("3", "Dechiffrage enigma", "10/02/1941"));
-        jobs.add(new Job("4", "Chiffrage Titan", "10/02/1942"));
-        jobs.add(new Job("5", "Compter les poules", "10/02/2003"));
-        jobs.add(new Job("6", "Vitesse moyenne de Superman", "10/02/2003"));
-        return Collections.unmodifiableList(JobGridView.map(jobs));
+        jobs.addAll(repositoryJ.findAll());
+        return Collections.unmodifiableList(JobGridView.mapV(jobs));
     }
+    
 }
 

@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Creation d'un job"/>
-    <meta name="author" content="Naiirod"/>
-    <title>DeSaBre : create job</title>
+    <meta name="author" content="DeSaBre"/>
+    <title>DeSaBre : create server</title>
     <link href="/CSS/bootstrap.min.css" rel="stylesheet"/>
     <link href="/CSS/plugins/metisMenu/metisMenu.min.css" rel="stylesheet"/>
     <link href="/CSS/plugins/dataTables.bootstrap.css" rel="stylesheet"/>
+    <link href="/CSS/plugins/timeline.css" rel="stylesheet"/>
     <link href="/CSS/sb-admin-2.css" rel="stylesheet"/>
+    <link href="/CSS/plugins/morris.css" rel="stylesheet"/>
     <link href="/CSS/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="/CSS/global.css" rel="stylesheet" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
@@ -21,6 +23,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- we need that before page loading -->
+    
     <script src="/javascript/moment.min.js"></script>
     <script src="/javascript/react-with-addons.js"></script>
     <script src="/javascript/JSXTransformer.js"></script>
@@ -34,34 +37,53 @@
         
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Création d'un job</h1>
+				<h1 class="page-header">Création d'un serveur</h1>
 			</div>
 			<div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           Création d'une nouvelle tache
+                           Création d'un nouveau serveur
                         </div>
-                        <form role="form" th:action="@{/job/create}" method="post" th:object="${job}">
+                       
+                        <form role="form" th:action="@{/server/create}" method="post" th:object="${server}">
                             <div class="panel-body">
                             	<div th:if="${saved}" class="alert alert-info">
-			                        La job a été créé correctement.
+			                        Le serveur a été créé correctement.
 			                    </div>
-								<div th:if="${#fields.hasErrors('name')}" 
-								th:errors="*{name}" class="alert alert-danger">
-		                            Ce nom n'est pas valide.
+		                        <div th:if="${#fields.hasErrors('name')}" class="alert alert-danger">
+		                            Le nom n'est pas valide.
+		                        </div>
+		                        <div th:if="${#fields.hasErrors('address')}" class="alert alert-danger">
+		                            L'adresse n'est pas valide.
+		                        </div>
+		                        <div th:if="${#fields.hasErrors('coreCount')}" class="alert alert-danger">
+		                            Le nombre de coeur pour le serveur n'est pas valide.
 		                        </div>
                                 <div class="row">
 									<div class="col-lg-6">
 									    <div class="form-group">
-									        <label for="name">Nom de la tâche</label>
-									        <input class="form-control" id="name" name="name" type="text" placeholder="Nom de la tâche"
+									        <label for="TaskName">Nom du serveur</label>
+									        <input class="form-control" id="name" name="name" type="text" placeholder="Nom du serveur"
 									         	autofocus="true" th:field="*{name}"></input>
 									    </div>
+									    
+									    <div class="form-group">
+									        <label for="TaskAddress">Adresse du serveur</label>
+									        <input class="form-control" id="address" name="address" type="text" placeholder="Adresse du serveur"
+									         	autofocus="true" th:field="*{address}"></input>
+									    </div>
+									    
+									    <div class="form-group">
+									        <label for="TaskCoreCount">Nombre de coeur</label>
+									        <input class="form-control" id="coreCount" name="coreCount" type="number" min="1" max="1024" placeholder="Nombre de coeur"
+									         	autofocus="true" th:field="*{coreCount}"></input>
+									    </div>
+									    
                                         <div class="form-group">
                                             <label for="LicencesList">Licences necessaires</label>
                                             <select id="LicencesList" th:field="*{licences}" multiple="multiple" class="form-control">
-                                                <option th:each="licence : *{licences}"
+                                                <option th:each="licence : ${licences}"
 														th:value="${licence.id}"
 														th:text="${licence.name}">
 												</option>
@@ -71,43 +93,8 @@
 									<!-- /.col-lg-6 (nested) -->
 									<div class="col-lg-6">
 									
-										<div class="panel panel-default">
-							                <div class="panel-heading">
-							                    Scripts
-							                </div>
-							                <div class="panel-body">
-							                    <div class="table-responsive">
-							                        <table class="table" id="scriptList">
-							                            <thead>
-								                            <tr>
-								                                <th> Nom</th>
-								                                <th> Contenu</th>
-								                                <th> </th>
-								                            </tr>
-							                            </thead>
-							                            <tbody>
-							                            	<tr th:each="script : *{scripts}">
-							                            		<td><input type="text" th:field="*{scripts[__${script.index}__].name}" /></td>
-							                            		<td><input type="text" th:field="*{scripts[__${script.index}__].content}" /></td>
-												                <td>
-												                     <button type="button" name="removeRow" th:value="${script.index}"
-												                     class="fa fa-times btn btn-outline btn-danger btn-xs btn-delete">
-                														Remove row
-                													</button>
-												                </td>
-															</tr>
-							                            </tbody>
-							                        </table>
-							                    </div>
-							                    <div>
-									                <hr/>
-									                <button type="submit" name="addRow" class="btn btn-outline btn-success btn-params">
-									                	<i class="fa fa-plus"></i> Ajouter
-									                </button>
-									            </div>
-							                </div>
-							             </div>
-							             
+										
+									    
 									</div>
 									<!-- /.col-lg-6 (nested) -->
 								</div>
@@ -118,16 +105,14 @@
 							</div>
                     		<!-- /.panel-body -->
 						</form>
+						
 					</div>
                 	<!-- /.panel -->
 				</div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
-		</div>
-        <!-- /.row -->
-
-    </div>
+        </div>
+  </div>
 </div>
 
 <script src="/javascript/jquery.js"></script>
@@ -136,11 +121,7 @@
 <script src="/javascript/plugins/dataTables/jquery.dataTables.js"></script>
 <script src="/javascript/plugins/dataTables/dataTables.bootstrap.js"></script>
 <script src="/javascript/sb-admin-2.js"></script>
-<script type="text/jsx">
-    $(document).ready(function () {
-        $('.datatable').dataTable();
 
-    });
-</script>
+
 </body>
 </html>

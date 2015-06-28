@@ -16,15 +16,14 @@ public class JobGridView {
 
     private String id;
     private String name;
+    private String path;
 
     private static List<String> headers;
     
     static {
     	headers = new ArrayList<>();
-    	headers.addAll(Arrays.asList("Id", "Nom", "Visualiser"));
+    	headers.addAll(Arrays.asList("Id", "Nom", "Traitement"));
     }
-    
-    
     
     
     public JobGridView(String id, String name) {
@@ -33,12 +32,26 @@ public class JobGridView {
     }
 
 
-    public static JobGridView map(Job job) {
-        return new JobGridView(job.getId(), job.getName());
+    public static JobGridView mapL(Job job) {
+    	JobGridView view = new JobGridView(job.getId(), job.getName());
+    	view.path = "/job/launch/config?id=" + job.getId();
+    	
+        return view;
     }
 
-    public static List<JobGridView> map(List<Job> jobs) {
-        return jobs.stream().map(JobGridView::map).collect(Collectors.toList());
+    public static List<JobGridView> mapL(List<Job> jobs) {
+        return jobs.stream().map(JobGridView::mapL).collect(Collectors.toList());
+    }
+
+    public static JobGridView mapV(Job job) {
+    	JobGridView view = new JobGridView(job.getId(), job.getName());
+    	view.path = "/job/details?id=" + job.getId();
+    	
+        return view;
+    }
+
+    public static List<JobGridView> mapV(List<Job> jobs) {
+        return jobs.stream().map(JobGridView::mapV).collect(Collectors.toList());
     }
 
 
@@ -56,6 +69,14 @@ public class JobGridView {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
 

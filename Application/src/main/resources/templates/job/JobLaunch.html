@@ -4,9 +4,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Liste des serveurs"/>
-    <meta name="author" content="MikaSez"/>
-    <title>DeSaBre : server list</title>
+    <meta name="description" content="Lancement de job"/>
+    <meta name="author" content="Naiirod"/>
+    <title>DeSaBre : job launch</title>
     <link href="/CSS/bootstrap.min.css" rel="stylesheet"/>
     <link href="/CSS/plugins/metisMenu/metisMenu.min.css" rel="stylesheet"/>
     <link href="/CSS/plugins/dataTables.bootstrap.css" rel="stylesheet"/>
@@ -31,11 +31,12 @@
     <script src="/javascript/dataLoader.js"></script>
     <script>
         urls = [{
-            from: "/users/all",
+            from: "/job/dataLaunch",
             to: "widgetGridData"
         }];
+        console.info(window);
         var widgetGridData;
-        var widgetGridType = "list"; // list ou launch pour determiner le type de grid voulu
+        var widgetGridType = "launch"; // list ou launch pour determiner le type de grid voulu => "visualiser" ou "lancer"
         dataLoader(window);
 
     </script>
@@ -47,8 +48,11 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Liste des utilisateurs</h1>
+                <h1 class="page-header">Liste des jobs à lancer</h1>
             </div>
+        </div>
+        <div th:if="${launched}" class="alert alert-info">
+            La job a été lancé.
         </div>
         <div th:include="fragments/widget :: widgetGrid"></div>
     </div>
