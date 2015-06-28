@@ -51,6 +51,7 @@ var WidgetGridBodyItem = React.createClass({
         //FIXME seems too ugly to be right
         var list = [];
         for (var a in item) {
+            console.info(a);
             if (a !== "path" && a !== "headers"){
                 list.push(a);
             } else if (a !== "headers") {

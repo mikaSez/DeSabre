@@ -5,6 +5,7 @@ import info.desabre.application.services.UserService;
 import info.desabre.application.views.grid.ScriptGridView;
 import info.desabre.database.models.job.Script;
 import info.desabre.repositories.job.ScriptRepository;
+import info.desabre.repositories.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,6 +40,10 @@ public class ScriptController {
     @Autowired
     private ScriptRepository repository;
 
+
+    @Autowired
+    private UserRepository userRepository;
+
     @RequestMapping("list")
     public String list(Model model) {
         log.info("Asked for list");
@@ -67,8 +72,9 @@ public class ScriptController {
 
         Script s = new Script(name, path.toString());
         s.setMainScript(isMain);
-        s.setUser(user.getUser());
         repository.save(s);
+        user.getUser().getScripts().add(s);
+        userRepository.save(user.getUser());
 
         return "script/scriptList";
     }
@@ -79,7 +85,7 @@ public class ScriptController {
     @ResponseBody
     List<ScriptGridView> data(Model model) {
         log.info("data requested");
-        List<Script> scripts = repository.findAll();
+        List<Script> scripts = user.getUser().getScripts();
         scripts.forEach(e -> log.info(e.toString()));
         return Collections.unmodifiableList(ScriptGridView.map(scripts));
 
@@ -108,8 +114,9 @@ public class ScriptController {
 
         Script script = new Script(name, path.toString());
         script.setMainScript(isMain);
-        script.setUser(user.getUser());
         repository.save(script);
+        user.getUser().getScripts().add(script);
+        userRepository.save(user.getUser());
 
         return "script/scriptList";
 

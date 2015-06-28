@@ -1,7 +1,9 @@
 package info.desabre.database.models.user;
 
+import info.desabre.database.models.job.Script;
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,6 +24,8 @@ public class User {
     private Boolean deleted;
     private Boolean validated;
     private Integer groupeId;
+
+    private List<Script> scripts = new ArrayList<>();
 
     public User(String firstName, String lastName, String password, String login, String mail, Boolean admin, Integer groupeId) {
         this.firstName = firstName;
@@ -153,6 +157,21 @@ public class User {
     public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+
+    public List<Script> getScripts() {
+        if (scripts == null) {
+            this.scripts = new ArrayList<>();
+        }
+        return scripts;
+    }
+
+    public void setScripts(List<Script> scripts) {
+        if (scripts == null) {
+            scripts = new ArrayList<>();
+        }
+        this.scripts = scripts;
     }
 
     @Override

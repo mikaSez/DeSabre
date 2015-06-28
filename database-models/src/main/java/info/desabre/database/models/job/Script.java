@@ -1,6 +1,5 @@
 package info.desabre.database.models.job;
 
-import info.desabre.database.models.user.User;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
@@ -15,7 +14,6 @@ public class Script {
     private String name;
     private Boolean mainScript;
     private String content;
-    private User user;
 
 
     private List<ScriptParameters> parameters;
@@ -50,13 +48,6 @@ public class Script {
         this.content = content;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Boolean getMainScript() {
         if (mainScript == null) {
