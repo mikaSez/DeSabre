@@ -13,12 +13,13 @@ import java.io.ObjectInputStream;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class Window  extends JFrame {
 	  private JPanel container = new JPanel();
-	  private JTextField jtf = new JTextField();
+	  private JTextArea jtf = new JTextArea();
 
 	  public Window(){
 	    this.setTitle("Serveur distant - DaSabre");
@@ -41,39 +42,37 @@ public class Window  extends JFrame {
 	  }
 	  
 	  public String jobsToString(){
-		  
-		String directory = "../../../GitHub/DeSaBre/Application/distant";
+		String directory_en_cours = "../Application/distant/waiting";
+		
 		ObjectInputStream ois = null;
-		File file = new File(directory);
+		File file = new File(directory_en_cours);
 		int i;
 		String texte = "";
-	    	
+			
 		try {
 			if(file.isDirectory()){
 				final String[] files = file.list();
 				
 				for(i=0;i<files.length;i++){
-
-					System.out.println(files[i]);
-					final FileInputStream fichier = new FileInputStream(directory+"/"+files[i]);
-					ois = new ObjectInputStream(fichier);
-					final Job job = (Job) ois.readObject();
-					
-					texte += "Job"+i;
-					texte += "\nId"+job.getId();
-					texte += "\nNom"+job.getName();
-					texte += "\nDate"+job.getDate();
-					texte += "\n";
-					texte += "\n-------------------------------\n";
-					
+					if(files[i].contains(".ser")){
+						System.out.println(files[i]);
+						final FileInputStream fichier = new FileInputStream(directory_en_cours+"/"+files[i]);
+						ois = new ObjectInputStream(fichier);
+						final Job job = (Job) ois.readObject();
+						
+						texte += "Job"+i;
+						texte += "\n\rId"+job.getId();
+						texte += "\n\rNom"+job.getName();
+						texte += "\n\rDate"+job.getDate();
+						texte += "\n\r";
+						texte += "\n\r-------------------------------\n";
+					}
 				}
 				
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 		  try {
