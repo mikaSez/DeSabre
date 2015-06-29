@@ -6,8 +6,6 @@ import info.desabre.database.models.server.Licence;
 import java.io.Serializable;
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-
 /**
  * Created by MikaSez on 02/06/2015.
  */
@@ -19,7 +17,7 @@ public class Job implements Serializable {
 	private static final long serialVersionUID = 851143186253304745L;
 	
 	
-	@Id
+
     private String id;
     private String name;
     private String date;

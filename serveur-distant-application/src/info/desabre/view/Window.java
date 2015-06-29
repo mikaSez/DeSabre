@@ -1,5 +1,7 @@
 package info.desabre.view;
 
+import info.desabre.database.models.job.Job;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -16,7 +18,7 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class Window  extends JFrame {
 	  private JPanel container = new JPanel();
-	  private JTextField jtf = new JTextField("");
+	  private JTextField jtf = new JTextField();
 
 	  public Window(){
 	    this.setTitle("Serveur distant - DaSabre");
@@ -31,6 +33,7 @@ public class Window  extends JFrame {
 	    jtf.setPreferredSize(new Dimension(600, 600));
 	    jtf.setForeground(Color.BLACK);
 	    jtf.setText(jobsToString());
+	    jtf.setEditable(false);
 	    top.add(jtf);
 	    container.add(top, BorderLayout.NORTH);
 	    this.setContentPane(container);
@@ -54,19 +57,22 @@ public class Window  extends JFrame {
 					System.out.println(files[i]);
 					final FileInputStream fichier = new FileInputStream(directory+"/"+files[i]);
 					ois = new ObjectInputStream(fichier);
-//					final Job job = (Job) ois.readObject();
+					final Job job = (Job) ois.readObject();
 					
-//					texte += "Job"+i;
-//					texte += "\nId"+job.getId();
-//					texte += "\nNom"+job.getName();
-//					texte += "\nDate"+job.getDate();
-//					texte += "\n";
-//					texte += "\n-------------------------------\n";
+					texte += "Job"+i;
+					texte += "\nId"+job.getId();
+					texte += "\nNom"+job.getName();
+					texte += "\nDate"+job.getDate();
+					texte += "\n";
+					texte += "\n-------------------------------\n";
 					
 				}
 				
 			}
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
