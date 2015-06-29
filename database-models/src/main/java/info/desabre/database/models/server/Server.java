@@ -3,6 +3,7 @@ package info.desabre.database.models.server;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -96,6 +97,9 @@ public class Server {
     }
 
     public List<Licence> getLicences() {
+        if (licences == null) {
+            this.licences = new ArrayList<>();
+        }
         return licences;
     }
 

@@ -32,6 +32,9 @@ public class WidgetBoxController {
     private JobRepository jobRepository;
 
     @Autowired
+    private JobRepository serverRepository;
+
+    @Autowired
     private WidgetBoxRepository repository;
 
 
@@ -55,7 +58,7 @@ public class WidgetBoxController {
 
 
     private long getServerCount() {
-        return 0l;
+        return serverRepository.count();
     }
 
     private long getUserCount() {

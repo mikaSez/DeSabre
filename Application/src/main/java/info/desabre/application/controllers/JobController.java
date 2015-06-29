@@ -4,12 +4,19 @@ import info.desabre.application.views.forms.views.JobCreateView;
 import info.desabre.application.views.forms.views.JobLaunchView;
 import info.desabre.application.views.grid.JobGridView;
 import info.desabre.database.models.job.Job;
-import info.desabre.database.models.job.Script;
 import info.desabre.repositories.job.JobRepository;
 import info.desabre.repositories.job.ScriptRepository;
 import info.desabre.repositories.licence.LicenceRepository;
 import info.desabre.repositories.server.ServerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -18,26 +25,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Created by MikaSez on 01/06/2015.
@@ -68,12 +55,12 @@ public class JobController {
     
     @RequestMapping(value="/create", method=RequestMethod.GET)
     public String create(@ModelAttribute JobCreateView job, Model model) {
-    	job.setScripts(repositoryS.findAll());
-    	job.setLicences(repositoryL.findAll());
+        //job.setScripts(repositoryS.findAll());
+        job.setLicences(repositoryL.findAll());
     	model.addAttribute("job", job);
-    	model.addAttribute("scripts", job.getScripts());
-    	if(job.getScripts().size() != 0) // si vide le html teste si scripts est declaré
-    		model.addAttribute("scripts", job.getScripts());
+        //model.addAttribute("scripts", job.getScripts());
+        //if(job.getScripts().size() != 0) // si vide le html teste si scripts est declaré
+        //	model.addAttribute("scripts", job.getScripts());
         return "job/jobCreate";
     }
     
@@ -92,10 +79,10 @@ public class JobController {
         }
 
     	job.setLicences(repositoryL.findAll());
-    	job.setScripts(repositoryS.findAll());
-    	model.addAttribute("job", job);
-    	model.addAttribute("scripts", job.getScripts());
-    	
+        //job.setScripts(repositoryS.findAll());
+        model.addAttribute("job", job);
+        //model.addAttribute("scripts", job.getScripts());
+
         return "job/jobCreate";
     }
     
@@ -103,19 +90,19 @@ public class JobController {
     public String addRow(@ModelAttribute("job") JobCreateView job, BindingResult bindingResult, Model model) {
     	this.index++;
     	job.setLicences(repositoryL.findAll());
-        job.getScripts().add(new Script(this.index));
+        // job.getScripts().add(new Script(this.index));
     	model.addAttribute("job", job);
     	model.addAttribute("licences", job.getLicences());
-    	model.addAttribute("scripts", job.getScripts());
-    	
+        //model.addAttribute("scripts", job.getScripts());
+
         return "job/jobCreate";
     }
 
     @RequestMapping(value="/create", params={"removeRow"})
     public String removeRow(@ModelAttribute JobCreateView job, BindingResult bindingResult, final HttpServletRequest req, Model model) {
         final Integer rowId = Integer.valueOf(req.getParameter("removeRow"));
-        job.getScripts().remove(rowId.intValue());
-    	model.addAttribute("job", job);
+        //job.getScripts().remove(rowId.intValue());
+        model.addAttribute("job", job);
     	model.addAttribute("licences", job.getLicences());
     	
         return "job/jobCreate";

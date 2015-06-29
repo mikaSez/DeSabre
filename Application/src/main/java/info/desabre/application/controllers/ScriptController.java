@@ -175,7 +175,8 @@ public class ScriptController {
     }
 
     private void saveFile(Path path, byte[] bytes) throws IOException {
-        FileChannel channel = FileChannel.open(path, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
+        FileChannel channel = FileChannel
+                .open(path, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
 
         channel.write(ByteBuffer.wrap(bytes));
         channel.close();
@@ -184,9 +185,7 @@ public class ScriptController {
     private String readFile(Path path) throws IOException {
         BufferedReader reader = Files.newBufferedReader(path);
         StringBuilder sb = new StringBuilder();
-        reader.lines().forEach(o -> {
-            sb.append(o).append('\n');
-        });
+        reader.lines().forEach(o -> sb.append(o).append('\n'));
         return sb.toString();
 
     }

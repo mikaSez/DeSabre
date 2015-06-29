@@ -33,7 +33,7 @@ public class ServerGridView {
 
     public static ServerGridView map(Server server) {
         ServerGridView view = new ServerGridView(server.getName(), server.getCoreCount());
-        view.path = "#";
+        view.path = "/server/update/" + server.getId();
 
         return view;
     }

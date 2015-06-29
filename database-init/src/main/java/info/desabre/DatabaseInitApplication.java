@@ -54,6 +54,8 @@ public class DatabaseInitApplication implements CommandLineRunner {
         System.out.println("Encore du travail ?");
         databaseUserFiller.userMockData();
         databaseNewsFiller.newsMockData();
+
+        serverRepository.deleteAll();
         databaseWidgetBoxFiller.widgetBoxMockData();
         databaseLicenceFiller.licenceMockData();
         System.out.println("My work here is done");

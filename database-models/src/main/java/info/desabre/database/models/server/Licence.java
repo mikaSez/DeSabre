@@ -1,9 +1,9 @@
 package info.desabre.database.models.server;
 
 
-import java.util.Calendar;
-
 import org.springframework.data.annotation.Id;
+
+import java.util.Date;
 
 /**
  * Created by MikaSez on 02/06/2015.
@@ -14,13 +14,13 @@ public class Licence {
     private String id;
 
     private String name;
-    private Calendar expiration;
+    private Date expiration;
     private int count;
     
     public Licence(String name, int count){
     	this.name = name;
-    	this.expiration = Calendar.getInstance();
-    	this.count = count;
+        this.expiration = new Date();
+        this.count = count;
     }
 
     public String getId() {
@@ -39,11 +39,11 @@ public class Licence {
         this.name = name;
     }
 
-    public Calendar getExpiration() {
+    public Date getExpiration() {
         return expiration;
     }
 
-    public void setExpiration(Calendar expiration) {
+    public void setExpiration(Date expiration) {
         this.expiration = expiration;
     }
 
