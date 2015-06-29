@@ -2,18 +2,12 @@ package info.desabre.view;
 
 import info.desabre.database.models.job.Job;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
+import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class Window  extends JFrame {
@@ -31,8 +25,9 @@ public class Window  extends JFrame {
 	    Font police = new Font("Arial", Font.BOLD, 14);
 	    jtf.setFont(police);
 	    jtf.setPreferredSize(new Dimension(600, 600));
-	    jtf.setForeground(Color.BLACK);
-	    jtf.setText(jobsToString());
+          jtf.setBackground(Color.BLACK);
+          jtf.setForeground(Color.WHITE);
+          jtf.setText(jobsToString());
 	    jtf.setEditable(false);
 	    top.add(jtf);
 	    container.add(top, BorderLayout.NORTH);

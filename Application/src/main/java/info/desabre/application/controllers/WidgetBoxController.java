@@ -6,6 +6,8 @@ import info.desabre.database.models.information.WidgetBox;
 import info.desabre.repositories.information.NewsRepository;
 import info.desabre.repositories.information.WidgetBoxRepository;
 import info.desabre.repositories.job.JobRepository;
+import info.desabre.repositories.server.ServerRepository;
+import info.desabre.repositories.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,12 +29,12 @@ public class WidgetBoxController {
     @Autowired
     private NewsRepository newsRepository;
     @Autowired
-    private NewsRepository userRepository;
+    private UserRepository userRepository;
     @Autowired
     private JobRepository jobRepository;
 
     @Autowired
-    private JobRepository serverRepository;
+    private ServerRepository serverRepository;
 
     @Autowired
     private WidgetBoxRepository repository;
@@ -53,6 +55,27 @@ public class WidgetBoxController {
                 widgets = repository.findByGroupeId(UserConstants.GLOBAL_GROUPEID.getGroupeId());
             }
         }
+
+        widgets.forEach(s -> {
+            switch (s.getType()) {
+                case USER:
+                    s.setNumber((int) getUserCount());
+                    break;
+
+                case NEWS:
+                    s.setNumber(getMessageCount());
+                    break;
+                case SERVER:
+                    s.setNumber((int) getServerCount());
+                    break;
+                case JOB:
+                    s.setNumber((int) getJobCount());
+                    break;
+                case SCRIPT:
+                    s.setNumber(user.getUser().getScripts().size());
+            }
+        });
+
         return Collections.unmodifiableList(widgets);
     }
 
@@ -62,11 +85,17 @@ public class WidgetBoxController {
     }
 
     private long getUserCount() {
+
         return userRepository.count();
     }
 
-    private long getMessageCount() {
-        return newsRepository.count();
+    private int getMessageCount() {
+        return newsRepository.findByGroupId(user.getUser().getGroupeId()).size();
+    }
+
+
+    public long getJobCount() {
+        return jobRepository.count();
     }
 
 

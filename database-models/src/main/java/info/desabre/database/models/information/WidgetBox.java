@@ -14,6 +14,7 @@ public class WidgetBox {
     private int number;
     private String path;
     private String text;
+    private int groupeId;
     private WidgetType type;
 
 
@@ -22,12 +23,14 @@ public class WidgetBox {
 
     }
 
-    public WidgetBox(String color, String icon, int number, String path, String text, WidgetType type) {
+
+    public WidgetBox(String color, String icon, int number, String path, String text, int groupeId, WidgetType type) {
         this.color = color;
         this.icon = icon;
         this.number = number;
         this.path = path;
         this.text = text;
+        this.groupeId = groupeId;
         this.type = type;
     }
 
@@ -86,5 +89,21 @@ public class WidgetBox {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public int getGroupeId() {
+        return groupeId;
+    }
+
+    public void setGroupeId(int groupeId) {
+        this.groupeId = groupeId;
+    }
+
+    public WidgetType getType() {
+        return type;
+    }
+
+    public void setType(WidgetType type) {
+        this.type = type;
     }
 }
