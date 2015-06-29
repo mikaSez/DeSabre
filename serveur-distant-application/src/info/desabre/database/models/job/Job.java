@@ -14,7 +14,7 @@ public class Job implements Serializable {
     /**
 	 * 
 	 */
-	private static final long serialVersionUID = 851143186253304745L;
+	private static final long serialVersionUID = 1L;
 	
 	
 
