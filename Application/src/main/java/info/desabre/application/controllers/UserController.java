@@ -1,5 +1,6 @@
 package info.desabre.application.controllers;
 
+import info.desabre.application.services.MailService;
 import info.desabre.application.services.UserService;
 import info.desabre.application.views.UserInscriptionView;
 import info.desabre.application.views.forms.UserAdminProfilForm;
@@ -17,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import javax.validation.Valid;
 import java.util.Collections;
 import java.util.List;
@@ -35,6 +37,11 @@ public class UserController {
     private final static Logger log = Logger.getLogger(UserController.class.getName());
     @Autowired
     private UserRepository repository;
+
+
+    @Autowired
+    private MailService smtpMailSender;
+
     UserAdminProfilForm form;
 
     @Autowired
@@ -58,6 +65,11 @@ public class UserController {
         }
         if (!bindingResult.hasErrors()) {
             model.addAttribute("inscribed", true);
+            try {
+                sendInscriptionMail(user.getMail());
+            } catch (MessagingException e) {
+                log.severe(e.getMessage());
+            }
             repository.save(user.mapToUser());
             return "login";
         }
@@ -111,8 +123,32 @@ public class UserController {
     @RequestMapping(value = "/admin/users/detail/update", method = RequestMethod.POST)
     public String userUpdate(@RequestParam Map<String, String> view, Model model) {
         User u = repository.findByMail(view.get("mail"));
+        boolean isValidated = u.getValidated();
         form = new UserAdminProfilForm("userProfil");
-        repository.save(form.mapToObject(view, u));
+
+
+        User temp = form.mapToObject(view, u);
+
+        if (temp.getValidated() && !isValidated) {
+            try {
+                sendValidationMail(u.getMail());
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+        }
+        repository.save(temp);
         return "admin/userList";
+    }
+
+    private void sendValidationMail(String to) throws MessagingException {
+        smtpMailSender.send(to, "Inscription à Desabre.info", "<h1> Amazing ! </h1> " +
+                "<p> Votre inscription à notre service est désormais terminée.</p>" +
+                "<p> Vous pouvez dés maintenant utiliser notre service avec les données que vous avez utilisé à l'inscription. </p>");
+    }
+
+    public void sendInscriptionMail(String to) throws MessagingException {
+        smtpMailSender.send(to, "Inscription à Desabre.info", "<h1> Amazing ! </h1> " +
+                "<p> Première étape de l'inscription à desabre.info a été accomplie...</p>" +
+                "<p> Vous recevrez un mail confirmant votre inscription, une fois que l'administrateur aura validé votre compte </p>");
     }
 }
