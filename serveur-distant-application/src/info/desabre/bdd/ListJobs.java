@@ -13,7 +13,9 @@ public class ListJobs {
 	private ArrayList<Terminated> terminated;
 
 	public ListJobs() {
-		
+		this.waiting = new ArrayList<Waiting>();
+		this.running = new ArrayList<Running>();
+		this.terminated = new ArrayList<Terminated>();
 	}
 	
 	public void setWaiting(ArrayList<Waiting> waiting){
@@ -28,6 +30,10 @@ public class ListJobs {
 		waiting.add(w);
 	}
 	
+	public void removeWaiting(Waiting w){
+		waiting.remove(w);
+	}
+	
 	public void setRunning(ArrayList<Running> running){
 		this.running = running;
 	}
@@ -40,6 +46,10 @@ public class ListJobs {
 		running.add(r);
 	}
 	
+	public void removeRunning(Running r){
+		running.remove(r);
+	}
+	
 	public void setTerminated(ArrayList<Terminated> terminated){
 		this.terminated = terminated;
 	}
@@ -50,6 +60,10 @@ public class ListJobs {
 	
 	public void addTerminated(Terminated t){
 		terminated.add(t);
+	}
+	
+	public void removeTerminated(Terminated t){
+		terminated.remove(t);
 	}
 
 }
