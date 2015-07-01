@@ -21,6 +21,7 @@ public class Server {
     private String connexionAdress;
     private boolean deleted;
     private List<Licence> licences;
+    private int memory;
 
 
     public Server() {
@@ -105,5 +106,13 @@ public class Server {
 
     public void setLicences(List<Licence> licences) {
         this.licences = licences;
+    }
+
+    public int getMemory() {
+        return memory;
+    }
+
+    public void setMemory(int memory) {
+        this.memory = memory;
     }
 }

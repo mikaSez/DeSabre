@@ -16,23 +16,25 @@ public class ServerGridView {
 
     private String name;
     private int cores;
+    private int memory;
     private String path;
     private static List<String> headers;
     
     static {
     	headers = new ArrayList<>();
-    	headers.addAll(Arrays.asList("Nom", "Nombre de coeurs", "Visualiser"));
+        headers.addAll(Arrays.asList("Nom", "Nombre de coeurs", "Memoire", "Visualiser"));
     }
-    
-    
-    public ServerGridView(String name, int cores) {
+
+
+    public ServerGridView(String name, int cores, int memory) {
         this.name = name;
         this.cores = cores;
+        this.memory = memory;
     }
 
 
     public static ServerGridView map(Server server) {
-        ServerGridView view = new ServerGridView(server.getName(), server.getCoreCount());
+        ServerGridView view = new ServerGridView(server.getName(), server.getCoreCount(), server.getMemory());
         view.path = "/server/update/" + server.getId();
 
         return view;
@@ -59,6 +61,18 @@ public class ServerGridView {
         this.cores = cores;
     }
 
+    public int getMemory() {
+        return memory;
+    }
+
+    public void setMemory(int memory) {
+        this.memory = memory;
+    }
+
+    public static void setHeaders(List<String> headers) {
+        ServerGridView.headers = headers;
+    }
+
     public String getPath() {
         return path;
     }
@@ -66,7 +80,8 @@ public class ServerGridView {
     public void setPath(String path) {
         this.path = path;
     }
-    
+
+
     public List<String> getHeaders(){
 		return headers;
 	}
