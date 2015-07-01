@@ -197,14 +197,20 @@ var WidgetFormInput = React.createClass({
         var label = <label>{item.label}</label>;
         var value = this.state.value;
         var specialInputs = this.props.special;
+        console.log(value);
 
-        console.info(item);
-        console.log(specialInputs);
-
-        var input;
         if (item.name !== "special") {
+            console.log(value);
             if (item.readonly) {
                 input = <span className="form-control">{value}</span>
+            }
+            else if (value === "true") {
+
+                input =
+                    <input className="form-control" placeholder={item.placeholder} checked={value} type={item.type}
+                           id={item.name} name={item.name}
+                           readOnly="false" hidden={item.hidden}
+                           onChange={this.handleChange}/>;
             } else {
                 if (item.required) {
                     input =

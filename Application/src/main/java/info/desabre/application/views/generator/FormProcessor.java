@@ -100,8 +100,14 @@ public class FormProcessor {
         }
 
         try {
-            if (f.get(view) != null && f.get(view) instanceof String)
-                i.setValue((String) f.get(view));
+            if (f.get(view) != null) {
+                if (f.get(view) instanceof String) {
+                    i.setValue((String) f.get(view));
+                } else if (f.get(view) instanceof Boolean) {
+                    i.setValue((f.get(view)).toString());
+                }
+
+            }
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
