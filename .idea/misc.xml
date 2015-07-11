@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/Application/pom.xml" />
         <option value="$PROJECT_DIR$/database-models/pom.xml" />
         <option value="$PROJECT_DIR$/serveur-distant-application/pom.xml" />
+        <option value="$PROJECT_DIR$/distant-server/pom.xml" />
       </list>
     </option>
   </component>

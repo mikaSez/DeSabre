@@ -9,17 +9,22 @@ import info.desabre.repositories.job.ScriptRepository;
 import info.desabre.repositories.licence.LicenceRepository;
 import info.desabre.repositories.server.ServerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -65,8 +70,8 @@ public class JobController {
     }
     
     @RequestMapping(value="/create", method=RequestMethod.POST)
-    public String create(@ModelAttribute("job") @Valid JobCreateView job, BindingResult bindingResult, Model model) {
-    	if(job.getName() == "") {
+    public String create(@ModelAttribute("job") @Valid JobCreateView job, BindingResult bindingResult, Model model) throws IOException {
+        if(job.getName() == "") {
             model.addAttribute("name", true);
     		bindingResult.addError(new ObjectError("job", "le nom n'est pas valide"));
             log.info("'"+job.getName()+"' n'est pas enregistrable");
@@ -76,6 +81,8 @@ public class JobController {
         	model.addAttribute("saved", true);
         	repositoryJ.save(job.mapToJob());
             log.info("Vous avez ajouté le job '"+job.getName()+"'");
+            Path file = Files.createFile(Paths.get("./Application/distant/waiting/job" + repositoryJ.findByName(job.getName()).getId() + ".ser"));
+            System.out.println(file);
         }
 
     	job.setLicences(repositoryL.findAll());
@@ -146,7 +153,8 @@ public class JobController {
     	ObjectOutputStream oos = null;
     	
         try {
-          final FileOutputStream fichier = new FileOutputStream("./distant/job"+j.getId()+".ser");
+            final FileOutputStream fichier = new FileOutputStream("./Application/distant/waiting/job" + j.getId() + ".ser");
+
           oos = new ObjectOutputStream(fichier);
           oos.writeObject(j);
           oos.flush();
@@ -167,6 +175,31 @@ public class JobController {
         }
     	
         return "job/jobLaunch";
+    }
+
+    @RequestMapping("/job/view/{id}")
+    public String jobStatus(@PathVariable("id") String id, Model model) {
+        Job job = repositoryJ.findById(id);
+        model.addAttribute("jobName", job.getName());
+        model.addAttribute("jobStatus", getJobStatus(id));
+        return "/job/jobView";
+    }
+
+    private Object getJobStatus(String id) {
+        ResponseEntity<String> response = null;
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+            response = restTemplate.getForEntity(
+                    "http://localhost:8090/jobStatus/" + id,
+                    String.class);
+        } catch (Exception e) {
+
+        }
+        if (response == null) {
+            return "pas de connexion au serveur";
+        }
+
+        return response.getBody();
     }
 }
 

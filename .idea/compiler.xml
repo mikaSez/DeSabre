@@ -25,6 +25,7 @@
         <module name="application" />
         <module name="database-init" />
         <module name="database-models" />
+        <module name="distant-server" />
         <module name="serveur-distant-application" />
       </profile>
     </annotationProcessing>
@@ -32,6 +33,7 @@
       <module name="application" target="1.8" />
       <module name="database-init" target="1.8" />
       <module name="database-models" target="1.8" />
+      <module name="distant-server" target="1.8" />
       <module name="serveur-distant-application" target="1.5" />
     </bytecodeTargetLevel>
   </component>

@@ -45,7 +45,7 @@ public class JobGridView {
 
     public static JobGridView mapV(Job job) {
         JobGridView view = new JobGridView(job.getId(), job.getName());
-        view.path = "/job/details?id=" + job.getId();
+        view.path = "/job/view/" + job.getId();
 
         return view;
     }
